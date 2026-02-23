@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Automate workflows with hooks
 
 > Run shell commands automatically when Claude Code edits files, finishes tasks, or needs input. Format code, send notifications, validate commands, and enforce project rules.
@@ -12,61 +8,55 @@ For decisions that require judgment rather than deterministic rules, you can als
 
 For other ways to extend Claude Code, see [skills](/en/skills) for giving Claude additional instructions and executable commands, [subagents](/en/sub-agents) for running tasks in isolated contexts, and [plugins](/en/plugins) for packaging extensions to share across projects.
 
-<Tip>
-  This guide covers common use cases and how to get started. For full event schemas, JSON input/output formats, and advanced features like async hooks and MCP tool hooks, see the [Hooks reference](/en/hooks).
-</Tip>
+> **Tip:** This guide covers common use cases and how to get started. For full event schemas, JSON input/output formats, and advanced features like async hooks and MCP tool hooks, see the [Hooks reference](/en/hooks).
 
 ## Set up your first hook
 
 The fastest way to create a hook is through the `/hooks` interactive menu in Claude Code. This walkthrough creates a desktop notification hook, so you get alerted whenever Claude is waiting for your input instead of watching the terminal.
 
-<Steps>
-  <Step title="Open the hooks menu">
-    Type `/hooks` in the Claude Code CLI. You'll see a list of all available hook events, plus an option to disable all hooks. Each event corresponds to a point in Claude's lifecycle where you can run custom code. Select `Notification` to create a hook that fires when Claude needs your attention.
-  </Step>
+1. **Open the hooks menu**
 
-  <Step title="Configure the matcher">
-    The menu shows a list of matchers, which filter when the hook fires. Set the matcher to `*` to fire on all notification types. You can narrow it later by changing the matcher to a specific value like `permission_prompt` or `idle_prompt`.
-  </Step>
+Type `/hooks` in the Claude Code CLI. You'll see a list of all available hook events, plus an option to disable all hooks. Each event corresponds to a point in Claude's lifecycle where you can run custom code. Select `Notification` to create a hook that fires when Claude needs your attention.
 
-  <Step title="Add your command">
-    Select `+ Add new hook…`. The menu prompts you for a shell command to run when the event fires. Hooks run any shell command you provide, so you can use your platform's built-in notification tool. Copy the command for your OS:
+2. **Configure the matcher**
 
-    <Tabs>
-      <Tab title="macOS">
-        Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
+The menu shows a list of matchers, which filter when the hook fires. Set the matcher to `*` to fire on all notification types. You can narrow it later by changing the matcher to a specific value like `permission_prompt` or `idle_prompt`.
+
+3. **Add your command**
+
+Select `+ Add new hook…`. The menu prompts you for a shell command to run when the event fires. Hooks run any shell command you provide, so you can use your platform's built-in notification tool. Copy the command for your OS:
+
+    **macOS:**
+
+Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
 
         ```
         osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code"'
         ```
-      </Tab>
 
-      <Tab title="Linux">
-        Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
+**Linux:**
+
+Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
 
         ```
         notify-send 'Claude Code' 'Claude Code needs your attention'
         ```
-      </Tab>
 
-      <Tab title="Windows (PowerShell)">
-        Uses PowerShell to show a native message box through .NET's Windows Forms:
+**Windows (PowerShell):**
+
+Uses PowerShell to show a native message box through .NET's Windows Forms:
 
         ```
         powershell.exe -Command "[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Claude Code needs your attention', 'Claude Code')"
         ```
-      </Tab>
-    </Tabs>
-  </Step>
 
-  <Step title="Choose a storage location">
-    The menu asks where to save the hook configuration. Select `User settings` to store it in `~/.claude/settings.json`, which applies the hook to all your projects. You could also choose `Project settings` to scope it to the current project. See [Configure hook location](#configure-hook-location) for all available scopes.
-  </Step>
+4. **Choose a storage location**
 
-  <Step title="Test the hook">
-    Press `Esc` to return to the CLI. Ask Claude to do something that requires permission, then switch away from the terminal. You should receive a desktop notification.
-  </Step>
-</Steps>
+The menu asks where to save the hook configuration. Select `User settings` to store it in `~/.claude/settings.json`, which applies the hook to all your projects. You could also choose `Project settings` to scope it to the current project. See [Configure hook location](#configure-hook-location) for all available scopes.
+
+5. **Test the hook**
+
+Press `Esc` to return to the CLI. Ask Claude to do something that requires permission, then switch away from the terminal. You should receive a desktop notification.
 
 ## What you can automate
 
@@ -86,9 +76,9 @@ Get a desktop notification whenever Claude finishes working and needs your input
 
 This hook uses the `Notification` event, which fires when Claude is waiting for input or permission. Each tab below uses the platform's native notification command. Add this to `~/.claude/settings.json`, or use the [interactive walkthrough](#set-up-your-first-hook) above to configure it with `/hooks`:
 
-<Tabs>
-  <Tab title="macOS">
-    ```json  theme={null}
+**macOS:**
+
+    ```json
     {
       "hooks": {
         "Notification": [
@@ -105,10 +95,10 @@ This hook uses the `Notification` event, which fires when Claude is waiting for 
       }
     }
     ```
-  </Tab>
 
-  <Tab title="Linux">
-    ```json  theme={null}
+**Linux:**
+
+    ```json
     {
       "hooks": {
         "Notification": [
@@ -125,10 +115,10 @@ This hook uses the `Notification` event, which fires when Claude is waiting for 
       }
     }
     ```
-  </Tab>
 
-  <Tab title="Windows (PowerShell)">
-    ```json  theme={null}
+**Windows (PowerShell):**
+
+    ```json
     {
       "hooks": {
         "Notification": [
@@ -145,8 +135,6 @@ This hook uses the `Notification` event, which fires when Claude is waiting for 
       }
     }
     ```
-  </Tab>
-</Tabs>
 
 ### Auto-format code after edits
 
@@ -154,7 +142,7 @@ Automatically run [Prettier](https://prettier.io/) on every file Claude edits, s
 
 This hook uses the `PostToolUse` event with an `Edit|Write` matcher, so it runs only after file-editing tools. The command extracts the edited file path with [`jq`](https://jqlang.github.io/jq/) and passes it to Prettier. Add this to `.claude/settings.json` in your project root:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "PostToolUse": [
@@ -172,9 +160,7 @@ This hook uses the `PostToolUse` event with an `Edit|Write` matcher, so it runs 
 }
 ```
 
-<Note>
-  The Bash examples on this page use `jq` for JSON parsing. Install it with `brew install jq` (macOS), `apt-get install jq` (Debian/Ubuntu), or see [`jq` downloads](https://jqlang.github.io/jq/download/).
-</Note>
+> **Note:** The Bash examples on this page use `jq` for JSON parsing. Install it with `brew install jq` (macOS), `apt-get install jq` (Debian/Ubuntu), or see [`jq` downloads](https://jqlang.github.io/jq/download/).
 
 ### Block edits to protected files
 
@@ -182,11 +168,11 @@ Prevent Claude from modifying sensitive files like `.env`, `package-lock.json`, 
 
 This example uses a separate script file that the hook calls. The script checks the target file path against a list of protected patterns and exits with code 2 to block the edit.
 
-<Steps>
-  <Step title="Create the hook script">
-    Save this to `.claude/hooks/protect-files.sh`:
+1. **Create the hook script**
 
-    ```bash  theme={null}
+Save this to `.claude/hooks/protect-files.sh`:
+
+    ```bash
     #!/bin/bash
     # protect-files.sh
 
@@ -204,20 +190,20 @@ This example uses a separate script file that the hook calls. The script checks 
 
     exit 0
     ```
-  </Step>
 
-  <Step title="Make the script executable (macOS/Linux)">
-    Hook scripts must be executable for Claude Code to run them:
+2. **Make the script executable (macOS/Linux)**
 
-    ```bash  theme={null}
+Hook scripts must be executable for Claude Code to run them:
+
+    ```bash
     chmod +x .claude/hooks/protect-files.sh
     ```
-  </Step>
 
-  <Step title="Register the hook">
-    Add a `PreToolUse` hook to `.claude/settings.json` that runs the script before any `Edit` or `Write` tool call:
+3. **Register the hook**
 
-    ```json  theme={null}
+Add a `PreToolUse` hook to `.claude/settings.json` that runs the script before any `Edit` or `Write` tool call:
+
+    ```json
     {
       "hooks": {
         "PreToolUse": [
@@ -234,8 +220,6 @@ This example uses a separate script file that the hook calls. The script checks 
       }
     }
     ```
-  </Step>
-</Steps>
 
 ### Re-inject context after compaction
 
@@ -243,7 +227,7 @@ When Claude's context window fills up, compaction summarizes the conversation to
 
 Any text your command writes to stdout is added to Claude's context. This example reminds Claude of project conventions and recent work. Add this to `.claude/settings.json` in your project root:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "SessionStart": [
@@ -269,7 +253,7 @@ Track when settings or skills files change during a session. The `ConfigChange` 
 
 This example appends each change to an audit log. Add this to `~/.claude/settings.json`:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "ConfigChange": [
@@ -323,7 +307,7 @@ Hooks communicate with Claude Code through stdin, stdout, stderr, and exit codes
 
 Every event includes common fields like `session_id` and `cwd`, but each event type adds different data. For example, when Claude runs a Bash command, a `PreToolUse` hook receives something like this on stdin:
 
-```json  theme={null}
+```json
 {
   "session_id": "abc123",          // unique ID for this session
   "cwd": "/Users/sarah/myproject", // working directory when the event fired
@@ -341,7 +325,7 @@ Your script can parse that JSON and act on any of those fields. `UserPromptSubmi
 
 Your script tells Claude Code what to do next by writing to stdout or stderr and exiting with a specific code. For example, a `PreToolUse` hook that wants to block a command:
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 INPUT=$(cat)
 COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command')
@@ -364,13 +348,11 @@ The exit code determines what happens next:
 
 Exit codes give you two options: allow or block. For more control, exit 0 and print a JSON object to stdout instead.
 
-<Note>
-  Use exit 2 to block with a stderr message, or exit 0 with JSON for structured control. Don't mix them: Claude Code ignores JSON when you exit 2.
-</Note>
+> **Note:** Use exit 2 to block with a stderr message, or exit 0 with JSON for structured control. Don't mix them: Claude Code ignores JSON when you exit 2.
 
 For example, a `PreToolUse` hook can deny a tool call and tell Claude why, or escalate it to the user for approval:
 
-```json  theme={null}
+```json
 {
   "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
@@ -394,7 +376,7 @@ For `UserPromptSubmit` hooks, use `additionalContext` instead to inject text int
 
 Without a matcher, a hook fires on every occurrence of its event. Matchers let you narrow that down. For example, if you want to run a formatter only after file edits (not after every tool call), add a matcher to your `PostToolUse` hook:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "PostToolUse": [
@@ -427,11 +409,11 @@ Each event type matches on a specific field. Matchers support exact strings and 
 
 A few more examples showing matchers on different event types:
 
-<Tabs>
-  <Tab title="Log every Bash command">
-    Match only `Bash` tool calls and log each command to a file. The `PostToolUse` event fires after the command completes, so `tool_input.command` contains what ran. The hook receives the event data as JSON on stdin, and `jq -r '.tool_input.command'` extracts just the command string, which `>>` appends to the log file:
+**Log every Bash command:**
 
-    ```json  theme={null}
+Match only `Bash` tool calls and log each command to a file. The `PostToolUse` event fires after the command completes, so `tool_input.command` contains what ran. The hook receives the event data as JSON on stdin, and `jq -r '.tool_input.command'` extracts just the command string, which `>>` appends to the log file:
+
+    ```json
     {
       "hooks": {
         "PostToolUse": [
@@ -448,14 +430,14 @@ A few more examples showing matchers on different event types:
       }
     }
     ```
-  </Tab>
 
-  <Tab title="Match MCP tools">
-    MCP tools use a different naming convention than built-in tools: `mcp__<server>__<tool>`, where `<server>` is the MCP server name and `<tool>` is the tool it provides. For example, `mcp__github__search_repositories` or `mcp__filesystem__read_file`. Use a regex matcher to target all tools from a specific server, or match across servers with a pattern like `mcp__.*__write.*`. See [Match MCP tools](/en/hooks#match-mcp-tools) in the reference for the full list of examples.
+**Match MCP tools:**
+
+MCP tools use a different naming convention than built-in tools: `mcp__<server>__<tool>`, where `<server>` is the MCP server name and `<tool>` is the tool it provides. For example, `mcp__github__search_repositories` or `mcp__filesystem__read_file`. Use a regex matcher to target all tools from a specific server, or match across servers with a pattern like `mcp__.*__write.*`. See [Match MCP tools](/en/hooks#match-mcp-tools) in the reference for the full list of examples.
 
     The command below extracts the tool name from the hook's JSON input with `jq` and writes it to stderr, where it shows up in verbose mode (`Ctrl+O`):
 
-    ```json  theme={null}
+    ```json
     {
       "hooks": {
         "PreToolUse": [
@@ -472,12 +454,12 @@ A few more examples showing matchers on different event types:
       }
     }
     ```
-  </Tab>
 
-  <Tab title="Clean up on session end">
-    The `SessionEnd` event supports matchers on the reason the session ended. This hook only fires on `clear` (when you run `/clear`), not on normal exits:
+**Clean up on session end:**
 
-    ```json  theme={null}
+The `SessionEnd` event supports matchers on the reason the session ended. This hook only fires on `clear` (when you run `/clear`), not on normal exits:
+
+    ```json
     {
       "hooks": {
         "SessionEnd": [
@@ -494,8 +476,6 @@ A few more examples showing matchers on different event types:
       }
     }
     ```
-  </Tab>
-</Tabs>
 
 For full matcher syntax, see the [Hooks reference](/en/hooks#configuration).
 
@@ -527,7 +507,7 @@ The model's only job is to return a yes/no decision as JSON:
 
 This example uses a `Stop` hook to ask the model whether all requested tasks are complete. If the model returns `"ok": false`, Claude keeps working and uses the `reason` as its next instruction:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "Stop": [
@@ -554,7 +534,7 @@ Agent hooks use the same `"ok"` / `"reason"` response format as prompt hooks, bu
 
 This example verifies that tests pass before allowing Claude to stop:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "Stop": [
@@ -600,7 +580,7 @@ The hook is configured but never executes.
 You see a message like "PreToolUse hook error: ..." in the transcript.
 
 * Your script exited with a non-zero code unexpectedly. Test it manually by piping sample JSON:
-  ```bash  theme={null}
+  ```bash
   echo '{"tool_name":"Bash","tool_input":{"command":"ls"}}' | ./my-hook.sh
   echo $?  # Check the exit code
   ```
@@ -622,7 +602,7 @@ Claude keeps working in an infinite loop instead of stopping.
 
 Your Stop hook script needs to check whether it already triggered a continuation. Parse the `stop_hook_active` field from the JSON input and exit early if it's `true`:
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 INPUT=$(cat)
 if [ "$(echo "$INPUT" | jq -r '.stop_hook_active')" = "true" ]; then
@@ -644,7 +624,7 @@ Shell ready on arm64
 
 Claude Code tries to parse this as JSON and fails. To fix this, wrap echo statements in your shell profile so they only run in interactive shells:
 
-```bash  theme={null}
+```bash
 # In ~/.zshrc or ~/.bashrc
 if [[ $- == *i* ]]; then
   echo "Shell ready"

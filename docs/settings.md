@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Claude Code settings
 
 > Configure Claude Code with global and project-level settings, and environment variables.
@@ -89,23 +85,17 @@ Code through hierarchical settings:
   * Linux and WSL: `/etc/claude-code/`
   * Windows: `C:\Program Files\ClaudeCode\`
 
-  <Note>
-    These are system-wide paths (not user home directories like `~/Library/...`) that require administrator privileges. They are designed to be deployed by IT administrators.
-  </Note>
+  > **Note:** These are system-wide paths (not user home directories like `~/Library/...`) that require administrator privileges. They are designed to be deployed by IT administrators.
 
   See [Managed settings](/en/permissions#managed-settings) and [Managed MCP configuration](/en/mcp#managed-mcp-configuration) for details. For organizations without device management infrastructure, see [server-managed settings](/en/server-managed-settings).
 
-  <Note>
-    Managed deployments can also restrict **plugin marketplace additions** using
-    `strictKnownMarketplaces`. For more information, see [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions).
-  </Note>
+  > **Note:** Managed deployments can also restrict **plugin marketplace additions** using
+>     `strictKnownMarketplaces`. For more information, see [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions).
 * **Other configuration** is stored in `~/.claude.json`. This file contains your preferences (theme, notification settings, editor mode), OAuth session, [MCP server](/en/mcp) configurations for user and local scopes, per-project state (allowed tools, trust settings), and various caches. Project-scoped MCP servers are stored separately in `.mcp.json`.
 
-<Note>
-  Claude Code automatically creates timestamped backups of configuration files and retains the five most recent backups to prevent data loss.
-</Note>
+> **Note:** Claude Code automatically creates timestamped backups of configuration files and retains the five most recent backups to prevent data loss.
 
-```JSON Example settings.json theme={null}
+```JSON Example settings.json
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
@@ -229,7 +219,7 @@ Configure advanced sandboxing behavior. Sandboxing isolates bash commands from y
 
 **Configuration example:**
 
-```json  theme={null}
+```json
 {
   "sandbox": {
     "enabled": true,
@@ -287,7 +277,7 @@ Claude Code adds attribution to git commits and pull requests. These are configu
 
 **Example:**
 
-```json  theme={null}
+```json
 {
   "attribution": {
     "commit": "Generated with AI\n\nCo-Authored-By: AI <ai@example.com>",
@@ -296,15 +286,13 @@ Claude Code adds attribution to git commits and pull requests. These are configu
 }
 ```
 
-<Note>
-  The `attribution` setting takes precedence over the deprecated `includeCoAuthoredBy` setting. To hide all attribution, set `commit` and `pr` to empty strings.
-</Note>
+> **Note:** The `attribution` setting takes precedence over the deprecated `includeCoAuthoredBy` setting. To hide all attribution, set `commit` and `pr` to empty strings.
 
 ### File suggestion settings
 
 Configure a custom command for `@` file path autocomplete. The built-in file suggestion uses fast filesystem traversal, but large monorepos may benefit from project-specific indexing such as a pre-built file index or custom tooling.
 
-```json  theme={null}
+```json
 {
   "fileSuggestion": {
     "type": "command",
@@ -315,7 +303,7 @@ Configure a custom command for `@` file path autocomplete. The built-in file sug
 
 The command runs with the same environment variables as [hooks](/en/hooks), including `CLAUDE_PROJECT_DIR`. It receives JSON via stdin with a `query` field:
 
-```json  theme={null}
+```json
 {"query": "src/comp"}
 ```
 
@@ -329,7 +317,7 @@ src/components/Form.tsx
 
 **Example:**
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 query=$(cat | jq -r '.query')
 your-repo-file-index --query "$query" | head -20
@@ -346,7 +334,7 @@ your-repo-file-index --query "$query" | head -20
 
 **Configuration:**
 
-```json  theme={null}
+```json
 {
   "allowManagedHooksOnly": true
 }
@@ -393,7 +381,7 @@ Claude Code's internal system prompt is not published. To add custom instruction
 
 To prevent Claude Code from accessing files containing sensitive information like API keys, secrets, and environment files, use the `permissions.deny` setting in your `.claude/settings.json` file:
 
-```json  theme={null}
+```json
 {
   "permissions": {
     "deny": [
@@ -426,7 +414,7 @@ Claude Code supports a plugin system that lets you extend functionality with ski
 
 Plugin-related settings in `settings.json`:
 
-```json  theme={null}
+```json
 {
   "enabledPlugins": {
     "formatter@acme-tools": true,
@@ -454,7 +442,7 @@ Controls which plugins are enabled. Format: `"plugin-name@marketplace-name": tru
 
 **Example**:
 
-```json  theme={null}
+```json
 {
   "enabledPlugins": {
     "code-formatter@team-tools": true,
@@ -477,7 +465,7 @@ Defines additional marketplaces that should be made available for the repository
 
 **Example**:
 
-```json  theme={null}
+```json
 {
   "extraKnownMarketplaces": {
     "acme-tools": {
@@ -532,7 +520,7 @@ The allowlist supports seven marketplace source types. Most sources use exact ma
 
 1. **GitHub repositories**:
 
-```json  theme={null}
+```json
 { "source": "github", "repo": "acme-corp/approved-plugins" }
 { "source": "github", "repo": "acme-corp/security-tools", "ref": "v2.0" }
 { "source": "github", "repo": "acme-corp/plugins", "ref": "main", "path": "marketplace" }
@@ -542,7 +530,7 @@ Fields: `repo` (required), `ref` (optional: branch/tag/SHA), `path` (optional: s
 
 2. **Git repositories**:
 
-```json  theme={null}
+```json
 { "source": "git", "url": "https://gitlab.example.com/tools/plugins.git" }
 { "source": "git", "url": "https://bitbucket.org/acme-corp/plugins.git", "ref": "production" }
 { "source": "git", "url": "ssh://git@git.example.com/plugins.git", "ref": "v3.1", "path": "approved" }
@@ -552,20 +540,18 @@ Fields: `url` (required), `ref` (optional: branch/tag/SHA), `path` (optional: su
 
 3. **URL-based marketplaces**:
 
-```json  theme={null}
+```json
 { "source": "url", "url": "https://plugins.example.com/marketplace.json" }
 { "source": "url", "url": "https://cdn.example.com/marketplace.json", "headers": { "Authorization": "Bearer ${TOKEN}" } }
 ```
 
 Fields: `url` (required), `headers` (optional: HTTP headers for authenticated access)
 
-<Note>
-  URL-based marketplaces only download the `marketplace.json` file. They do not download plugin files from the server. Plugins in URL-based marketplaces must use external sources (GitHub, npm, or git URLs) rather than relative paths. For plugins with relative paths, use a Git-based marketplace instead. See [Troubleshooting](/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces) for details.
-</Note>
+> **Note:** URL-based marketplaces only download the `marketplace.json` file. They do not download plugin files from the server. Plugins in URL-based marketplaces must use external sources (GitHub, npm, or git URLs) rather than relative paths. For plugins with relative paths, use a Git-based marketplace instead. See [Troubleshooting](/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces) for details.
 
 4. **NPM packages**:
 
-```json  theme={null}
+```json
 { "source": "npm", "package": "@acme-corp/claude-plugins" }
 { "source": "npm", "package": "@acme-corp/approved-marketplace" }
 ```
@@ -574,7 +560,7 @@ Fields: `package` (required, supports scoped packages)
 
 5. **File paths**:
 
-```json  theme={null}
+```json
 { "source": "file", "path": "/usr/local/share/claude/acme-marketplace.json" }
 { "source": "file", "path": "/opt/acme-corp/plugins/marketplace.json" }
 ```
@@ -583,7 +569,7 @@ Fields: `path` (required: absolute path to marketplace.json file)
 
 6. **Directory paths**:
 
-```json  theme={null}
+```json
 { "source": "directory", "path": "/usr/local/share/claude/acme-plugins" }
 { "source": "directory", "path": "/opt/acme-corp/approved-marketplaces" }
 ```
@@ -592,7 +578,7 @@ Fields: `path` (required: absolute path to directory containing `.claude-plugin/
 
 7. **Host pattern matching**:
 
-```json  theme={null}
+```json
 { "source": "hostPattern", "hostPattern": "^github\\.example\\.com$" }
 { "source": "hostPattern", "hostPattern": "^gitlab\\.internal\\.example\\.com$" }
 ```
@@ -612,7 +598,7 @@ Host extraction by source type:
 
 Example: allow specific marketplaces only:
 
-```json  theme={null}
+```json
 {
   "strictKnownMarketplaces": [
     {
@@ -638,7 +624,7 @@ Example: allow specific marketplaces only:
 
 Example - Disable all marketplace additions:
 
-```json  theme={null}
+```json
 {
   "strictKnownMarketplaces": []
 }
@@ -646,7 +632,7 @@ Example - Disable all marketplace additions:
 
 Example: allow all marketplaces from an internal git server:
 
-```json  theme={null}
+```json
 {
   "strictKnownMarketplaces": [
     {
@@ -667,7 +653,7 @@ Marketplace sources must match **exactly** for a user's addition to be allowed. 
 
 Examples of sources that **do NOT match**:
 
-```json  theme={null}
+```json
 // These are DIFFERENT sources:
 { "source": "github", "repo": "acme-corp/plugins" }
 { "source": "github", "repo": "acme-corp/plugins", "ref": "main" }
@@ -693,7 +679,7 @@ Examples of sources that **do NOT match**:
 
 `strictKnownMarketplaces` uses direct source objects:
 
-```json  theme={null}
+```json
 {
   "strictKnownMarketplaces": [
     { "source": "github", "repo": "acme-corp/plugins" }
@@ -703,7 +689,7 @@ Examples of sources that **do NOT match**:
 
 `extraKnownMarketplaces` requires named marketplaces:
 
-```json  theme={null}
+```json
 {
   "extraKnownMarketplaces": {
     "acme-tools": {
@@ -738,9 +724,7 @@ Learn more about the plugin system in the [plugins documentation](/en/plugins).
 
 Claude Code supports the following environment variables to control its behavior:
 
-<Note>
-  All environment variables can also be configured in [`settings.json`](#available-settings). This is useful as a way to automatically set environment variables for each session, or to roll out a set of environment variables for your whole team or organization.
-</Note>
+> **Note:** All environment variables can also be configured in [`settings.json`](#available-settings). This is useful as a way to automatically set environment variables for each session, or to roll out a set of environment variables for your whole team or organization.
 
 | Variable                                       | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |     |
 | :--------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
@@ -875,7 +859,7 @@ To make environment variables available in Bash commands, you have **three optio
 
 Activate your virtual environment in your terminal before launching Claude Code:
 
-```bash  theme={null}
+```bash
 conda activate myenv
 # or: source /path/to/venv/bin/activate
 claude
@@ -887,14 +871,14 @@ This works for shell environments but environment variables set within Claude's 
 
 Export the path to a shell script containing your environment setup:
 
-```bash  theme={null}
+```bash
 export CLAUDE_ENV_FILE=/path/to/env-setup.sh
 claude
 ```
 
 Where `/path/to/env-setup.sh` contains:
 
-```bash  theme={null}
+```bash
 conda activate myenv
 # or: source /path/to/venv/bin/activate
 # or: export MY_VAR=value
@@ -906,7 +890,7 @@ Claude Code will source this file before each Bash command, making the environme
 
 Configure in `.claude/settings.json`:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "SessionStart": [{

@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Authentication
 
 > Learn how to configure user authentication and credential management for Claude Code in your organization.
@@ -23,70 +19,64 @@ Setting up Claude Code requires access to Anthropic models. For teams, you can s
 * **Claude for Teams**: self-service plan with collaboration features, admin tools, and billing management. Best for smaller teams.
 * **Claude for Enterprise**: adds SSO, domain capture, role-based permissions, compliance API, and managed policy settings for organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
 
-<Steps>
-  <Step title="Subscribe">
-    Subscribe to [Claude for Teams](https://claude.com/pricing#team-&-enterprise) or contact sales for [Claude for Enterprise](https://anthropic.com/contact-sales).
-  </Step>
+1. **Subscribe**
 
-  <Step title="Invite team members">
-    Invite team members from the admin dashboard.
-  </Step>
+Subscribe to [Claude for Teams](https://claude.com/pricing#team-&-enterprise) or contact sales for [Claude for Enterprise](https://anthropic.com/contact-sales).
 
-  <Step title="Install and log in">
-    Team members install Claude Code and log in with their Claude.ai accounts.
-  </Step>
-</Steps>
+2. **Invite team members**
+
+Invite team members from the admin dashboard.
+
+3. **Install and log in**
+
+Team members install Claude Code and log in with their Claude.ai accounts.
 
 ### Claude Console authentication
 
 For organizations that prefer API-based billing, you can set up access through the Claude Console.
 
-<Steps>
-  <Step title="Create or use a Console account">
-    Use your existing Claude Console account or create a new one.
-  </Step>
+1. **Create or use a Console account**
 
-  <Step title="Add users">
-    You can add users through either method:
+Use your existing Claude Console account or create a new one.
+
+2. **Add users**
+
+You can add users through either method:
 
     * Bulk invite users from within the Console (Console -> Settings -> Members -> Invite)
     * [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
-  </Step>
 
-  <Step title="Assign roles">
-    When inviting users, assign one of:
+3. **Assign roles**
+
+When inviting users, assign one of:
 
     * **Claude Code** role: users can only create Claude Code API keys
     * **Developer** role: users can create any kind of API key
-  </Step>
 
-  <Step title="Users complete setup">
-    Each invited user needs to:
+4. **Users complete setup**
+
+Each invited user needs to:
 
     * Accept the Console invite
     * [Check system requirements](/en/setup#system-requirements)
     * [Install Claude Code](/en/setup#installation)
     * Log in with Console account credentials
-  </Step>
-</Steps>
 
 ### Cloud provider authentication
 
 For teams using Amazon Bedrock, Google Vertex AI, or Microsoft Azure:
 
-<Steps>
-  <Step title="Follow provider setup">
-    Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry).
-  </Step>
+1. **Follow provider setup**
 
-  <Step title="Distribute configuration">
-    Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
-  </Step>
+Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry).
 
-  <Step title="Install Claude Code">
-    Users can [install Claude Code](/en/setup#installation).
-  </Step>
-</Steps>
+2. **Distribute configuration**
+
+Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
+
+3. **Install Claude Code**
+
+Users can [install Claude Code](/en/setup#installation).
 
 ## Credential management
 

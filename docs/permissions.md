@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Configure permissions
 
 > Control what Claude Code can access and do with fine-grained permission rules, modes, and managed policies.
@@ -40,9 +36,7 @@ Claude Code supports several permission modes that control how tools are approve
 | `dontAsk`           | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
 | `bypassPermissions` | Skips all permission prompts (requires safe environment, see warning below)           |
 
-<Warning>
-  `bypassPermissions` mode disables all permission checks. Only use this in isolated environments like containers or VMs where Claude Code cannot cause damage. Administrators can prevent this mode by setting `disableBypassPermissionsMode` to `"disable"` in [managed settings](#managed-settings).
-</Warning>
+> **Warning:** `bypassPermissions` mode disables all permission checks. Only use this in isolated environments like containers or VMs where Claude Code cannot cause damage. Administrators can prevent this mode by setting `disableBypassPermissionsMode` to `"disable"` in [managed settings](#managed-settings).
 
 ## Permission rule syntax
 
@@ -74,7 +68,7 @@ Add a specifier in parentheses to match specific tool uses:
 
 Bash rules support glob patterns with `*`. Wildcards can appear at any position in the command. This configuration allows npm and git commit commands while blocking git push:
 
-```json  theme={null}
+```json
 {
   "permissions": {
     "allow": [
@@ -107,27 +101,23 @@ Bash permission rules support wildcard matching with `*`. Wildcards can appear a
 
 When `*` appears at the end with a space before it (like `Bash(ls *)`), it enforces a word boundary, requiring the prefix to be followed by a space or end-of-string. For example, `Bash(ls *)` matches `ls -la` but not `lsof`. In contrast, `Bash(ls*)` without a space matches both `ls -la` and `lsof` because there's no word boundary constraint.
 
-<Tip>
-  Claude Code is aware of shell operators (like `&&`) so a prefix match rule like `Bash(safe-cmd *)` won't give it permission to run the command `safe-cmd && other-cmd`.
-</Tip>
+> **Tip:** Claude Code is aware of shell operators (like `&&`) so a prefix match rule like `Bash(safe-cmd *)` won't give it permission to run the command `safe-cmd && other-cmd`.
 
-<Warning>
-  Bash permission patterns that try to constrain command arguments are fragile. For example, `Bash(curl http://github.com/ *)` intends to restrict curl to GitHub URLs, but won't match variations like:
-
-  * Options before URL: `curl -X GET http://github.com/...`
-  * Different protocol: `curl https://github.com/...`
-  * Redirects: `curl -L http://bit.ly/xyz` (redirects to github)
-  * Variables: `URL=http://github.com && curl $URL`
-  * Extra spaces: `curl  http://github.com`
-
-  For more reliable URL filtering, consider:
-
-  * **Restrict Bash network tools**: use deny rules to block `curl`, `wget`, and similar commands, then use the WebFetch tool with `WebFetch(domain:github.com)` permission for allowed domains
-  * **Use PreToolUse hooks**: implement a hook that validates URLs in Bash commands and blocks disallowed domains
-  * Instructing Claude Code about your allowed curl patterns via CLAUDE.md
-
-  Note that using WebFetch alone does not prevent network access. If Bash is allowed, Claude can still use `curl`, `wget`, or other tools to reach any URL.
-</Warning>
+> **Warning:** Bash permission patterns that try to constrain command arguments are fragile. For example, `Bash(curl http://github.com/ *)` intends to restrict curl to GitHub URLs, but won't match variations like:
+>
+>   * Options before URL: `curl -X GET http://github.com/...`
+>   * Different protocol: `curl https://github.com/...`
+>   * Redirects: `curl -L http://bit.ly/xyz` (redirects to github)
+>   * Variables: `URL=http://github.com && curl $URL`
+>   * Extra spaces: `curl  http://github.com`
+>
+>   For more reliable URL filtering, consider:
+>
+>   * **Restrict Bash network tools**: use deny rules to block `curl`, `wget`, and similar commands, then use the WebFetch tool with `WebFetch(domain:github.com)` permission for allowed domains
+>   * **Use PreToolUse hooks**: implement a hook that validates URLs in Bash commands and blocks disallowed domains
+>   * Instructing Claude Code about your allowed curl patterns via CLAUDE.md
+>
+>   Note that using WebFetch alone does not prevent network access. If Bash is allowed, Claude can still use `curl`, `wget`, or other tools to reach any URL.
 
 ### Read and Edit
 
@@ -142,9 +132,7 @@ Read and Edit rules both follow the [gitignore](https://git-scm.com/docs/gitigno
 | `/path`            | Path **relative to settings file**     | `Edit(/src/**/*.ts)`             | `<settings file path>/src/**/*.ts` |
 | `path` or `./path` | Path **relative to current directory** | `Read(*.env)`                    | `<cwd>/*.env`                      |
 
-<Warning>
-  A pattern like `/Users/alice/file` is NOT an absolute path. It's relative to your settings file. Use `//Users/alice/file` for absolute paths.
-</Warning>
+> **Warning:** A pattern like `/Users/alice/file` is NOT an absolute path. It's relative to your settings file. Use `//Users/alice/file` for absolute paths.
 
 Examples:
 
@@ -153,9 +141,7 @@ Examples:
 * `Edit(//tmp/scratch.txt)`: edits the absolute path `/tmp/scratch.txt`
 * `Read(src/**)`: reads from `<current-directory>/src/`
 
-<Note>
-  In gitignore patterns, `*` matches files in a single directory while `**` matches recursively across directories. To allow all file access, use just the tool name without parentheses: `Read`, `Edit`, or `Write`.
-</Note>
+> **Note:** In gitignore patterns, `*` matches files in a single directory while `**` matches recursively across directories. To allow all file access, use just the tool name without parentheses: `Read`, `Edit`, or `Write`.
 
 ### WebFetch
 
@@ -177,7 +163,7 @@ Use `Task(AgentName)` rules to control which [subagents](/en/sub-agents) Claude 
 
 Add these rules to the `deny` array in your settings or use the `--disallowedTools` CLI flag to disable specific agents. To disable the Explore agent:
 
-```json  theme={null}
+```json
 {
   "permissions": {
     "deny": ["Task(Explore)"]
@@ -223,9 +209,7 @@ For organizations that need centralized control over Claude Code configuration, 
 * **Linux and WSL**: `/etc/claude-code/managed-settings.json`
 * **Windows**: `C:\Program Files\ClaudeCode\managed-settings.json`
 
-<Note>
-  These are system-wide paths (not user home directories like `~/Library/...`) that require administrator privileges. They are designed to be deployed by IT administrators.
-</Note>
+> **Note:** These are system-wide paths (not user home directories like `~/Library/...`) that require administrator privileges. They are designed to be deployed by IT administrators.
 
 ### Managed-only settings
 

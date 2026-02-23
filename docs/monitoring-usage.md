@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Monitoring
 
 > Learn how to enable and configure OpenTelemetry for Claude Code.
@@ -12,7 +8,7 @@ Track Claude Code usage, costs, and tool activity across your organization by ex
 
 Configure OpenTelemetry using environment variables:
 
-```bash  theme={null}
+```bash
 # 1. Enable telemetry
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
 
@@ -35,9 +31,7 @@ export OTEL_LOGS_EXPORT_INTERVAL=5000     # 5 seconds (default: 5000ms)
 claude
 ```
 
-<Note>
-  The default export intervals are 60 seconds for metrics and 5 seconds for logs. During setup, you may want to use shorter intervals for debugging purposes. Remember to reset these for production use.
-</Note>
+> **Note:** The default export intervals are 60 seconds for metrics and 5 seconds for logs. During setup, you may want to use shorter intervals for debugging purposes. Remember to reset these for production use.
 
 For full configuration options, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options).
 
@@ -47,7 +41,7 @@ Administrators can configure OpenTelemetry settings for all users through the [m
 
 Example managed settings configuration:
 
-```json  theme={null}
+```json
 {
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
@@ -60,9 +54,7 @@ Example managed settings configuration:
 }
 ```
 
-<Note>
-  Managed settings can be distributed via MDM (Mobile Device Management) or other device management solutions. Environment variables defined in the managed settings file have high precedence and cannot be overridden by users.
-</Note>
+> **Note:** Managed settings can be distributed via MDM (Mobile Device Management) or other device management solutions. Environment variables defined in the managed settings file have high precedence and cannot be overridden by users.
 
 ## Configuration details
 
@@ -109,7 +101,7 @@ For enterprise environments that require dynamic authentication, you can configu
 
 Add to your `.claude/settings.json`:
 
-```json  theme={null}
+```json
 {
   "otelHeadersHelper": "/bin/generate_opentelemetry_headers.sh"
 }
@@ -119,7 +111,7 @@ Add to your `.claude/settings.json`:
 
 The script must output valid JSON with string key-value pairs representing HTTP headers:
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 # Example: Multiple headers
 echo "{\"Authorization\": \"Bearer $(get-token.sh)\", \"X-API-Key\": \"$(get-api-key.sh)\"}"
@@ -133,7 +125,7 @@ The headers helper script runs at startup and periodically thereafter to support
 
 Organizations with multiple teams or departments can add custom attributes to distinguish between different groups using the `OTEL_RESOURCE_ATTRIBUTES` environment variable:
 
-```bash  theme={null}
+```bash
 # Add custom attributes for team identification
 export OTEL_RESOURCE_ATTRIBUTES="department=engineering,team.id=platform,cost_center=eng-123"
 ```
@@ -145,19 +137,18 @@ These custom attributes will be included in all metrics and events, allowing you
 * Create team-specific dashboards
 * Set up alerts for specific teams
 
-<Warning>
-  **Important formatting requirements for OTEL\_RESOURCE\_ATTRIBUTES:**
-
-  The `OTEL_RESOURCE_ATTRIBUTES` environment variable uses comma-separated key=value pairs with strict formatting requirements:
-
-  * **No spaces allowed**: Values cannot contain spaces. For example, `user.organizationName=My Company` is invalid
-  * **Format**: Must be comma-separated key=value pairs: `key1=value1,key2=value2`
-  * **Allowed characters**: Only US-ASCII characters excluding control characters, whitespace, double quotes, commas, semicolons, and backslashes
-  * **Special characters**: Characters outside the allowed range must be percent-encoded
-
-  **Examples:**
-
-  ```bash  theme={null}
+> **Warning:** **Important formatting requirements for OTEL\_RESOURCE\_ATTRIBUTES:**
+>
+>   The `OTEL_RESOURCE_ATTRIBUTES` environment variable uses comma-separated key=value pairs with strict formatting requirements:
+>
+>   * **No spaces allowed**: Values cannot contain spaces. For example, `user.organizationName=My Company` is invalid
+>   * **Format**: Must be comma-separated key=value pairs: `key1=value1,key2=value2`
+>   * **Allowed characters**: Only US-ASCII characters excluding control characters, whitespace, double quotes, commas, semicolons, and backslashes
+>   * **Special characters**: Characters outside the allowed range must be percent-encoded
+>
+>   **Examples:**
+> 
+  ```bash
   # ❌ Invalid - contains spaces
   export OTEL_RESOURCE_ATTRIBUTES="org.name=John's Organization"
 
@@ -169,14 +160,13 @@ These custom attributes will be included in all metrics and events, allowing you
   export OTEL_RESOURCE_ATTRIBUTES="org.name=John%27s%20Organization"
   ```
 
-  Note: wrapping values in quotes doesn't escape spaces. For example, `org.name="My Company"` results in the literal value `"My Company"` (with quotes included), not `My Company`.
-</Warning>
+>   Note: wrapping values in quotes doesn't escape spaces. For example, `org.name="My Company"` results in the literal value `"My Company"` (with quotes included), not `My Company`.
 
 ### Example configurations
 
 Set these environment variables before running `claude`. Each block shows a complete configuration for a different exporter or deployment scenario:
 
-```bash  theme={null}
+```bash
 # Console debugging (1-second intervals)
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
 export OTEL_METRICS_EXPORTER=console
@@ -341,9 +331,7 @@ When a user submits a prompt, Claude Code may make multiple API calls and run se
 
 To trace all activity triggered by a single prompt, filter your events by a specific `prompt.id` value. This returns the user\_prompt event, any api\_request events, and any tool\_result events that occurred while processing that prompt.
 
-<Note>
-  `prompt.id` is intentionally excluded from metrics because each prompt generates a unique ID, which would create an ever-growing number of time series. Use it for event-level analysis and audit trails only.
-</Note>
+> **Note:** `prompt.id` is intentionally excluded from metrics because each prompt generates a unique ID, which would create an ever-growing number of time series. Use it for event-level analysis and audit trails only.
 
 #### User prompt event
 
@@ -461,9 +449,7 @@ The `claude_code.cost.usage` metric helps with:
 * Tracking usage trends across teams or individuals
 * Identifying high-usage sessions for optimization
 
-<Note>
-  Cost metrics are approximations. For official billing data, refer to your API provider (Claude Console, AWS Bedrock, or Google Cloud Vertex).
-</Note>
+> **Note:** Cost metrics are approximations. For official billing data, refer to your API provider (Claude Console, AWS Bedrock, or Google Cloud Vertex).
 
 ### Alerting and segmentation
 

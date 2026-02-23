@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Configure server-managed settings (public beta)
 
 > Centrally configure Claude Code for your organization through server-delivered settings, without requiring device management infrastructure.
@@ -10,9 +6,7 @@ Server-managed settings allow administrators to centrally configure Claude Code 
 
 This approach is designed for organizations that do not have device management infrastructure in place, or need to manage settings for users on unmanaged devices.
 
-<Note>
-  Server-managed settings are in public beta and available for [Claude for Teams](https://claude.com/pricing#team-&-enterprise) and [Claude for Enterprise](https://anthropic.com/contact-sales) customers. Features may evolve before general availability.
-</Note>
+> **Note:** Server-managed settings are in public beta and available for [Claude for Teams](https://claude.com/pricing#team-&-enterprise) and [Claude for Enterprise](https://anthropic.com/contact-sales) customers. Features may evolve before general availability.
 
 ## Requirements
 
@@ -35,17 +29,17 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
 
 ## Configure server-managed settings
 
-<Steps>
-  <Step title="Open the admin console">
-    In [Claude.ai](https://claude.ai), navigate to **Admin Settings > Claude Code > Managed settings**.
-  </Step>
+1. **Open the admin console**
 
-  <Step title="Define your settings">
-    Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [managed-only settings](/en/permissions#managed-only-settings) like `disableBypassPermissionsMode`.
+In [Claude.ai](https://claude.ai), navigate to **Admin Settings > Claude Code > Managed settings**.
+
+2. **Define your settings**
+
+Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [managed-only settings](/en/permissions#managed-only-settings) like `disableBypassPermissionsMode`.
 
     This example enforces a permission deny list and prevents users from bypassing permissions:
 
-    ```json  theme={null}
+    ```json
     {
       "permissions": {
         "deny": [
@@ -58,12 +52,10 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
       "disableBypassPermissionsMode": "disable"
     }
     ```
-  </Step>
 
-  <Step title="Save and deploy">
-    Save your changes. Claude Code clients receive the updated settings on their next startup or hourly polling cycle.
-  </Step>
-</Steps>
+3. **Save and deploy**
+
+Save your changes. Claude Code clients receive the updated settings on their next startup or hourly polling cycle.
 
 ### Verify settings delivery
 
@@ -119,9 +111,7 @@ Certain settings that could pose security risks require explicit user approval b
 
 When these settings are present, users see a security dialog explaining what is being configured. Users must approve to proceed. If a user rejects the settings, Claude Code exits.
 
-<Note>
-  In non-interactive mode with the `-p` flag, Claude Code skips security dialogs and applies settings without user approval.
-</Note>
+> **Note:** In non-interactive mode with the `-p` flag, Claude Code skips security dialogs and applies settings without user approval.
 
 ## Platform availability
 

@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Security
 
 > Learn about Claude Code's security safeguards and best practices for safe usage.
@@ -65,9 +61,7 @@ For full details, please review our [Commercial Terms of Service](https://www.an
 * **Natural language descriptions**: Complex bash commands include explanations for user understanding
 * **Secure credential storage**: API keys and tokens are encrypted. See [Credential Management](/en/authentication#credential-management)
 
-<Warning>
-  **Windows WebDAV security risk**: When running Claude Code on Windows, we recommend against enabling WebDAV or allowing Claude Code to access paths such as `\\*` that may contain WebDAV subdirectories. [WebDAV has been deprecated by Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features#:~:text=The%20Webclient%20\(WebDAV\)%20service%20is%20deprecated) due to security risks. Enabling WebDAV may allow Claude Code to trigger network requests to remote hosts, bypassing the permission system.
-</Warning>
+> **Warning:** **Windows WebDAV security risk**: When running Claude Code on Windows, we recommend against enabling WebDAV or allowing Claude Code to access paths such as `\\*` that may contain WebDAV subdirectories. [WebDAV has been deprecated by Microsoft](https://learn.microsoft.com/en-us/windows/whats-new/deprecated-features#:~:text=The%20Webclient%20\(WebDAV\)%20service%20is%20deprecated) due to security risks. Enabling WebDAV may allow Claude Code to trigger network requests to remote hosts, bypassing the permission system.
 
 **Best practices for working with untrusted content**:
 
@@ -77,11 +71,9 @@ For full details, please review our [Commercial Terms of Service](https://www.an
 4. Use virtual machines (VMs) to run scripts and make tool calls, especially when interacting with external web services
 5. Report suspicious behavior with `/bug`
 
-<Warning>
-  While these protections significantly reduce risk, no system is completely
-  immune to all attacks. Always maintain good security practices when working
-  with any AI tool.
-</Warning>
+> **Warning:** While these protections significantly reduce risk, no system is completely
+>   immune to all attacks. Always maintain good security practices when working
+>   with any AI tool.
 
 ## MCP security
 

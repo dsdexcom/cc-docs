@@ -1,24 +1,18 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Interactive mode
 
 > Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions.
 
 ## Keyboard shortcuts
 
-<Note>
-  Keyboard shortcuts may vary by platform and terminal. Press `?` to see available shortcuts for your environment.
-
-  **macOS users**: Option/Alt key shortcuts (`Alt+B`, `Alt+F`, `Alt+Y`, `Alt+M`, `Alt+P`) require configuring Option as Meta in your terminal:
-
-  * **iTerm2**: Settings → Profiles → Keys → Set Left/Right Option key to "Esc+"
-  * **Terminal.app**: Settings → Profiles → Keyboard → Check "Use Option as Meta Key"
-  * **VS Code**: Settings → Profiles → Keys → Set Left/Right Option key to "Esc+"
-
-  See [Terminal configuration](/en/terminal-config) for details.
-</Note>
+> **Note:** Keyboard shortcuts may vary by platform and terminal. Press `?` to see available shortcuts for your environment.
+>
+>   **macOS users**: Option/Alt key shortcuts (`Alt+B`, `Alt+F`, `Alt+Y`, `Alt+M`, `Alt+P`) require configuring Option as Meta in your terminal:
+>
+>   * **iTerm2**: Settings → Profiles → Keys → Set Left/Right Option key to "Esc+"
+>   * **Terminal.app**: Settings → Profiles → Keyboard → Check "Use Option as Meta Key"
+>   * **VS Code**: Settings → Profiles → Keys → Set Left/Right Option key to "Esc+"
+>
+>   See [Terminal configuration](/en/terminal-config) for details.
 
 ### General controls
 
@@ -58,9 +52,7 @@
 | :------- | :----------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
 | `Ctrl+T` | Toggle syntax highlighting for code blocks | Only works inside the `/theme` picker menu. Controls whether code in Claude's responses uses syntax coloring |
 
-<Note>
-  Syntax highlighting is only available in the native build of Claude Code.
-</Note>
+> **Note:** Syntax highlighting is only available in the native build of Claude Code.
 
 ### Multiline input
 
@@ -72,9 +64,7 @@
 | Control sequence | `Ctrl+J`       | Line feed character for multiline                       |
 | Paste mode       | Paste directly | For code blocks, logs                                   |
 
-<Tip>
-  Shift+Enter works without configuration in iTerm2, WezTerm, Ghostty, and Kitty. For other terminals (VS Code, Alacritty, Zed, Warp), run `/terminal-setup` to install the binding.
-</Tip>
+> **Tip:** Shift+Enter works without configuration in iTerm2, WezTerm, Ghostty, and Kitty. For other terminals (VS Code, Alacritty, Zed, Warp), run `/terminal-setup` to install the binding.
 
 ### Quick commands
 
@@ -162,9 +152,7 @@ Enable vim-style editing with `/vim` command or configure permanently via `/conf
 | `;`             | Repeat last f/F/t/T motion                          |
 | `,`             | Repeat last f/F/t/T motion in reverse               |
 
-<Note>
-  In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, the arrow keys navigate command history instead.
-</Note>
+> **Note:** In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, the arrow keys navigate command history instead.
 
 ### Editing (NORMAL mode)
 
@@ -258,7 +246,7 @@ To disable all background task functionality, set the `CLAUDE_CODE_DISABLE_BACKG
 
 Run bash commands directly without going through Claude by prefixing your input with `!`:
 
-```bash  theme={null}
+```bash
 ! npm test
 ! git status
 ! ls -la
@@ -289,7 +277,7 @@ Suggestions are automatically skipped after the first turn of a conversation, in
 
 To disable prompt suggestions entirely, set the environment variable or toggle the setting in `/config`:
 
-```bash  theme={null}
+```bash
 export CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=false
 ```
 
@@ -315,9 +303,7 @@ When working on a branch with an open pull request, Claude Code displays a click
 
 `Cmd+click` (Mac) or `Ctrl+click` (Windows/Linux) the link to open the pull request in your browser. The status updates automatically every 60 seconds.
 
-<Note>
-  PR status requires the `gh` CLI to be installed and authenticated (`gh auth login`).
-</Note>
+> **Note:** PR status requires the `gh` CLI to be installed and authenticated (`gh auth login`).
 
 ## See also
 

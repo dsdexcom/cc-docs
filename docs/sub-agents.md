@@ -1,16 +1,10 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Create custom subagents
 
 > Create and use specialized AI subagents in Claude Code for task-specific workflows and improved context management.
 
 Subagents are specialized AI assistants that handle specific types of tasks. Each subagent runs in its own context window with a custom system prompt, specific tool access, and independent permissions. When Claude encounters a task that matches a subagent's description, it delegates to that subagent, which works independently and returns results.
 
-<Note>
-  If you need multiple agents working in parallel and communicating with each other, see [agent teams](/en/agent-teams) instead. Subagents work within a single session; agent teams coordinate across separate sessions.
-</Note>
+> **Note:** If you need multiple agents working in parallel and communicating with each other, see [agent teams](/en/agent-teams) instead. Subagents work within a single session; agent teams coordinate across separate sessions.
 
 Subagents help you:
 
@@ -28,9 +22,9 @@ Claude Code includes several built-in subagents like **Explore**, **Plan**, and 
 
 Claude Code includes built-in subagents that Claude automatically uses when appropriate. Each inherits the parent conversation's permissions with additional tool restrictions.
 
-<Tabs>
-  <Tab title="Explore">
-    A fast, read-only agent optimized for searching and analyzing codebases.
+**Explore:**
+
+A fast, read-only agent optimized for searching and analyzing codebases.
 
     * **Model**: Haiku (fast, low-latency)
     * **Tools**: Read-only tools (denied access to Write and Edit tools)
@@ -39,38 +33,36 @@ Claude Code includes built-in subagents that Claude automatically uses when appr
     Claude delegates to Explore when it needs to search or understand a codebase without making changes. This keeps exploration results out of your main conversation context.
 
     When invoking Explore, Claude specifies a thoroughness level: **quick** for targeted lookups, **medium** for balanced exploration, or **very thorough** for comprehensive analysis.
-  </Tab>
 
-  <Tab title="Plan">
-    A research agent used during [plan mode](/en/common-workflows#use-plan-mode-for-safe-code-analysis) to gather context before presenting a plan.
+**Plan:**
+
+A research agent used during [plan mode](/en/common-workflows#use-plan-mode-for-safe-code-analysis) to gather context before presenting a plan.
 
     * **Model**: Inherits from main conversation
     * **Tools**: Read-only tools (denied access to Write and Edit tools)
     * **Purpose**: Codebase research for planning
 
     When you're in plan mode and Claude needs to understand your codebase, it delegates research to the Plan subagent. This prevents infinite nesting (subagents cannot spawn other subagents) while still gathering necessary context.
-  </Tab>
 
-  <Tab title="General-purpose">
-    A capable agent for complex, multi-step tasks that require both exploration and action.
+**General-purpose:**
+
+A capable agent for complex, multi-step tasks that require both exploration and action.
 
     * **Model**: Inherits from main conversation
     * **Tools**: All tools
     * **Purpose**: Complex research, multi-step operations, code modifications
 
     Claude delegates to general-purpose when the task requires both exploration and modification, complex reasoning to interpret results, or multiple dependent steps.
-  </Tab>
 
-  <Tab title="Other">
-    Claude Code includes additional helper agents for specific tasks. These are typically invoked automatically, so you don't need to use them directly.
+**Other:**
+
+Claude Code includes additional helper agents for specific tasks. These are typically invoked automatically, so you don't need to use them directly.
 
     | Agent             | Model    | When Claude uses it                                      |
     | :---------------- | :------- | :------------------------------------------------------- |
     | Bash              | Inherits | Running terminal commands in a separate context          |
     | statusline-setup  | Sonnet   | When you run `/statusline` to configure your status line |
     | Claude Code Guide | Haiku    | When you ask questions about Claude Code features        |
-  </Tab>
-</Tabs>
 
 Beyond these built-in subagents, you can create your own with custom prompts, tool restrictions, permission modes, hooks, and skills. The following sections show how to get started and customize subagents.
 
@@ -80,21 +72,21 @@ Subagents are defined in Markdown files with YAML frontmatter. You can [create t
 
 This walkthrough guides you through creating a user-level subagent with the `/agent` command. The subagent reviews code and suggests improvements for the codebase.
 
-<Steps>
-  <Step title="Open the subagents interface">
-    In Claude Code, run:
+1. **Open the subagents interface**
+
+In Claude Code, run:
 
     ```
     /agents
     ```
-  </Step>
 
-  <Step title="Create a new user-level agent">
-    Select **Create new agent**, then choose **User-level**. This saves the subagent to `~/.claude/agents/` so it's available in all your projects.
-  </Step>
+2. **Create a new user-level agent**
 
-  <Step title="Generate with Claude">
-    Select **Generate with Claude**. When prompted, describe the subagent:
+Select **Create new agent**, then choose **User-level**. This saves the subagent to `~/.claude/agents/` so it's available in all your projects.
+
+3. **Generate with Claude**
+
+Select **Generate with Claude**. When prompted, describe the subagent:
 
     ```
     A code improvement agent that scans files and suggests improvements
@@ -103,30 +95,28 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
     ```
 
     Claude generates the system prompt and configuration. Press `e` to open it in your editor if you want to customize it.
-  </Step>
 
-  <Step title="Select tools">
-    For a read-only reviewer, deselect everything except **Read-only tools**. If you keep all tools selected, the subagent inherits all tools available to the main conversation.
-  </Step>
+4. **Select tools**
 
-  <Step title="Select model">
-    Choose which model the subagent uses. For this example agent, select **Sonnet**, which balances capability and speed for analyzing code patterns.
-  </Step>
+For a read-only reviewer, deselect everything except **Read-only tools**. If you keep all tools selected, the subagent inherits all tools available to the main conversation.
 
-  <Step title="Choose a color">
-    Pick a background color for the subagent. This helps you identify which subagent is running in the UI.
-  </Step>
+5. **Select model**
 
-  <Step title="Save and try it out">
-    Save the subagent. It's available immediately (no restart needed). Try it:
+Choose which model the subagent uses. For this example agent, select **Sonnet**, which balances capability and speed for analyzing code patterns.
+
+6. **Choose a color**
+
+Pick a background color for the subagent. This helps you identify which subagent is running in the UI.
+
+7. **Save and try it out**
+
+Save the subagent. It's available immediately (no restart needed). Try it:
 
     ```
     Use the code-improver agent to suggest improvements in this project
     ```
 
     Claude delegates to your new subagent, which scans the codebase and returns improvement suggestions.
-  </Step>
-</Steps>
 
 You now have a subagent you can use in any project on your machine to analyze codebases and suggest improvements.
 
@@ -165,7 +155,7 @@ Subagents are Markdown files with YAML frontmatter. Store them in different loca
 
 **CLI-defined subagents** are passed as JSON when launching Claude Code. They exist only for that session and aren't saved to disk, making them useful for quick testing or automation scripts:
 
-```bash  theme={null}
+```bash
 claude --agents '{
   "code-reviewer": {
     "description": "Expert code reviewer. Use proactively after code changes.",
@@ -184,11 +174,9 @@ The `--agents` flag accepts JSON with the same [frontmatter](#supported-frontmat
 
 Subagent files use YAML frontmatter for configuration, followed by the system prompt in Markdown:
 
-<Note>
-  Subagents are loaded at session start. If you create a subagent by manually adding a file, restart your session or use `/agents` to load it immediately.
-</Note>
+> **Note:** Subagents are loaded at session start. If you create a subagent by manually adding a file, restart your session or use `/agents` to load it immediately.
 
-```markdown  theme={null}
+```markdown
 ---
 name: code-reviewer
 description: Reviews code for quality and best practices
@@ -240,7 +228,7 @@ Subagents can use any of Claude Code's [internal tools](/en/settings#tools-avail
 
 To restrict tools, use the `tools` field (allowlist) or `disallowedTools` field (denylist):
 
-```yaml  theme={null}
+```yaml
 ---
 name: safe-researcher
 description: Research agent with restricted capabilities
@@ -253,7 +241,7 @@ disallowedTools: Write, Edit
 
 When an agent runs as the main thread with `claude --agent`, it can spawn subagents using the Task tool. To restrict which subagent types it can spawn, use `Task(agent_type)` syntax in the `tools` field:
 
-```yaml  theme={null}
+```yaml
 ---
 name: coordinator
 description: Coordinates work across specialized agents
@@ -265,7 +253,7 @@ This is an allowlist: only the `worker` and `researcher` subagents can be spawne
 
 To allow spawning any subagent without restrictions, use `Task` without parentheses:
 
-```yaml  theme={null}
+```yaml
 tools: Task, Read, Bash
 ```
 
@@ -283,9 +271,7 @@ The `permissionMode` field controls how the subagent handles permission prompts.
 | `bypassPermissions` | Skip all permission checks                                         |
 | `plan`              | Plan mode (read-only exploration)                                  |
 
-<Warning>
-  Use `bypassPermissions` with caution. It skips all permission checks, allowing the subagent to execute any operation without approval.
-</Warning>
+> **Warning:** Use `bypassPermissions` with caution. It skips all permission checks, allowing the subagent to execute any operation without approval.
 
 If the parent uses `bypassPermissions`, this takes precedence and cannot be overridden.
 
@@ -293,7 +279,7 @@ If the parent uses `bypassPermissions`, this takes precedence and cannot be over
 
 Use the `skills` field to inject skill content into a subagent's context at startup. This gives the subagent domain knowledge without requiring it to discover and load skills during execution.
 
-```yaml  theme={null}
+```yaml
 ---
 name: api-developer
 description: Implement API endpoints following team conventions
@@ -307,15 +293,13 @@ Implement API endpoints. Follow the conventions and patterns from the preloaded 
 
 The full content of each skill is injected into the subagent's context, not just made available for invocation. Subagents don't inherit skills from the parent conversation; you must list them explicitly.
 
-<Note>
-  This is the inverse of [running a skill in a subagent](/en/skills#run-skills-in-a-subagent). With `skills` in a subagent, the subagent controls the system prompt and loads skill content. With `context: fork` in a skill, the skill content is injected into the agent you specify. Both use the same underlying system.
-</Note>
+> **Note:** This is the inverse of [running a skill in a subagent](/en/skills#run-skills-in-a-subagent). With `skills` in a subagent, the subagent controls the system prompt and loads skill content. With `context: fork` in a skill, the skill content is injected into the agent you specify. Both use the same underlying system.
 
 #### Enable persistent memory
 
 The `memory` field gives the subagent a persistent directory that survives across conversations. The subagent uses this directory to build up knowledge over time, such as codebase patterns, debugging insights, and architectural decisions.
 
-```yaml  theme={null}
+```yaml
 ---
 name: code-reviewer
 description: Reviews code for quality and best practices
@@ -347,7 +331,7 @@ When memory is enabled:
 * Ask the subagent to update its memory after completing a task: "Now that you're done, save what you learned to your memory." Over time, this builds a knowledge base that makes the subagent more effective.
 * Include memory instructions directly in the subagent's markdown file so it proactively maintains its own knowledge base:
 
-  ```markdown  theme={null}
+  ```markdown
   Update your agent memory as you discover codepaths, patterns, library
   locations, and key architectural decisions. This builds up institutional
   knowledge across conversations. Write concise notes about what you found
@@ -360,7 +344,7 @@ For more dynamic control over tool usage, use `PreToolUse` hooks to validate ope
 
 This example creates a subagent that only allows read-only database queries. The `PreToolUse` hook runs the script specified in `command` before each Bash command executes:
 
-```yaml  theme={null}
+```yaml
 ---
 name: db-reader
 description: Execute read-only database queries
@@ -376,7 +360,7 @@ hooks:
 
 Claude Code [passes hook input as JSON](/en/hooks#pretooluse-input) via stdin to hook commands. The validation script reads this JSON, extracts the Bash command, and [exits with code 2](/en/hooks#exit-code-2-behavior-per-event) to block write operations:
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 # ./scripts/validate-readonly-query.sh
 
@@ -398,7 +382,7 @@ See [Hook input](/en/hooks#pretooluse-input) for the complete input schema and [
 
 You can prevent Claude from using specific subagents by adding them to the `deny` array in your [settings](/en/settings#permission-settings). Use the format `Task(subagent-name)` where `subagent-name` matches the subagent's name field.
 
-```json  theme={null}
+```json
 {
   "permissions": {
     "deny": ["Task(Explore)", "Task(my-custom-agent)"]
@@ -408,7 +392,7 @@ You can prevent Claude from using specific subagents by adding them to the `deny
 
 This works for both built-in and custom subagents. You can also use the `--disallowedTools` CLI flag:
 
-```bash  theme={null}
+```bash
 claude --disallowedTools "Task(Explore)"
 ```
 
@@ -435,7 +419,7 @@ All [hook events](/en/hooks#hook-events) are supported. The most common events f
 
 This example validates Bash commands with the `PreToolUse` hook and runs a linter after file edits with `PostToolUse`:
 
-```yaml  theme={null}
+```yaml
 ---
 name: code-reviewer
 description: Review code changes with automatic linting
@@ -466,7 +450,7 @@ Configure hooks in `settings.json` that respond to subagent lifecycle events in 
 
 Both events support matchers to target specific agent types by name. This example runs a setup script only when the `db-agent` subagent starts, and a cleanup script when any subagent stops:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "SubagentStart": [
@@ -539,9 +523,7 @@ Research the authentication, database, and API modules in parallel using separat
 
 Each subagent explores its area independently, then Claude synthesizes the findings. This works best when the research paths don't depend on each other.
 
-<Warning>
-  When subagents complete, their results return to your main conversation. Running many subagents that each return detailed results can consume significant context.
-</Warning>
+> **Warning:** When subagents complete, their results return to your main conversation. Running many subagents that each return detailed results can consume significant context.
 
 For tasks that need sustained parallelism or exceed your context window, [agent teams](/en/agent-teams) give each worker its own independent context.
 
@@ -570,9 +552,7 @@ Use **subagents** when:
 
 Consider [Skills](/en/skills) instead when you want reusable prompts or workflows that run in the main conversation context rather than isolated subagent context.
 
-<Note>
-  Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](/en/skills) or [chain subagents](#chain-subagents) from the main conversation.
-</Note>
+> **Note:** Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](/en/skills) or [chain subagents](#chain-subagents) from the main conversation.
 
 ### Manage subagent context
 
@@ -606,7 +586,7 @@ Subagents support automatic compaction using the same logic as the main conversa
 
 Compaction events are logged in subagent transcript files:
 
-```json  theme={null}
+```json
 {
   "type": "system",
   "subtype": "compact_boundary",
@@ -623,20 +603,18 @@ The `preTokens` value shows how many tokens were used before compaction occurred
 
 These examples demonstrate effective patterns for building subagents. Use them as starting points, or generate a customized version with Claude.
 
-<Tip>
-  **Best practices:**
-
-  * **Design focused subagents:** each subagent should excel at one specific task
-  * **Write detailed descriptions:** Claude uses the description to decide when to delegate
-  * **Limit tool access:** grant only necessary permissions for security and focus
-  * **Check into version control:** share project subagents with your team
-</Tip>
+> **Tip:** **Best practices:**
+>
+>   * **Design focused subagents:** each subagent should excel at one specific task
+>   * **Write detailed descriptions:** Claude uses the description to decide when to delegate
+>   * **Limit tool access:** grant only necessary permissions for security and focus
+>   * **Check into version control:** share project subagents with your team
 
 ### Code reviewer
 
 A read-only subagent that reviews code without modifying it. This example shows how to design a focused subagent with limited tool access (no Edit or Write) and a detailed prompt that specifies exactly what to look for and how to format output.
 
-```markdown  theme={null}
+```markdown
 ---
 name: code-reviewer
 description: Expert code review specialist. Proactively reviews code for quality, security, and maintainability. Use immediately after writing or modifying code.
@@ -673,7 +651,7 @@ Include specific examples of how to fix issues.
 
 A subagent that can both analyze and fix issues. Unlike the code reviewer, this one includes Edit because fixing bugs requires modifying code. The prompt provides a clear workflow from diagnosis to verification.
 
-```markdown  theme={null}
+```markdown
 ---
 name: debugger
 description: Debugging specialist for errors, test failures, and unexpected behavior. Use proactively when encountering any issues.
@@ -710,7 +688,7 @@ Focus on fixing the underlying issue, not the symptoms.
 
 A domain-specific subagent for data analysis work. This example shows how to create subagents for specialized workflows outside of typical coding tasks. It explicitly sets `model: sonnet` for more capable analysis.
 
-```markdown  theme={null}
+```markdown
 ---
 name: data-scientist
 description: Data analysis expert for SQL queries, BigQuery operations, and data insights. Use proactively for data analysis tasks and queries.
@@ -747,7 +725,7 @@ Always ensure queries are efficient and cost-effective.
 
 A subagent that allows Bash access but validates commands to permit only read-only SQL queries. This example shows how to use `PreToolUse` hooks for conditional validation when you need finer control than the `tools` field provides.
 
-```markdown  theme={null}
+```markdown
 ---
 name: db-reader
 description: Execute read-only database queries. Use when analyzing data or generating reports.
@@ -774,7 +752,7 @@ Claude Code [passes hook input as JSON](/en/hooks#pretooluse-input) via stdin to
 
 Create the validation script anywhere in your project. The path must match the `command` field in your hook configuration:
 
-```bash  theme={null}
+```bash
 #!/bin/bash
 # Blocks SQL write operations, allows SELECT queries
 
@@ -799,7 +777,7 @@ exit 0
 
 Make the script executable:
 
-```bash  theme={null}
+```bash
 chmod +x ./scripts/validate-readonly-query.sh
 ```
 

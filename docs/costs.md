@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Manage costs effectively
 
 > Track token usage, set team spend limits, and reduce Claude Code costs with context management, model selection, extended thinking settings, and preprocessing hooks.
@@ -16,9 +12,7 @@ This page covers how to [track your costs](#track-your-costs), [manage costs for
 
 ### Using the `/cost` command
 
-<Note>
-  The `/cost` command shows API token usage and is intended for API users. Claude Max and Pro subscribers have usage included in their subscription, so `/cost` data isn't relevant for billing purposes. Subscribers can use `/stats` to view usage patterns.
-</Note>
+> **Note:** The `/cost` command shows API token usage and is intended for API users. Claude Max and Pro subscribers have usage included in their subscription, so `/cost` data isn't relevant for billing purposes. Subscribers can use `/stats` to view usage patterns.
 
 The `/cost` command provides detailed token usage statistics for your current session:
 
@@ -33,9 +27,7 @@ Total code changes:    0 lines added, 0 lines removed
 
 When using Claude API, you can [set workspace spend limits](https://platform.claude.com/docs/en/build-with-claude/workspaces#workspace-limits) on the total Claude Code workspace spend. Admins can [view cost and usage reporting](https://platform.claude.com/docs/en/build-with-claude/workspaces#usage-and-cost-tracking) in the Console.
 
-<Note>
-  When you first authenticate Claude Code with your Claude Console account, a workspace called "Claude Code" is automatically created for you. This workspace provides centralized cost tracking and management for all Claude Code usage in your organization. You cannot create API keys for this workspace; it is exclusively for Claude Code authentication and usage.
-</Note>
+> **Note:** When you first authenticate Claude Code with your Claude Console account, a workspace called "Claude Code" is automatically created for you. This workspace provides centralized cost tracking and management for all Claude Code usage in your organization. You cannot create API keys for this workspace; it is exclusively for Claude Code authentication and usage.
 
 On Bedrock, Vertex, and Foundry, Claude Code does not send metrics from your cloud. To get cost metrics, several large enterprises reported using [LiteLLM](/en/llm-gateway#litellm-configuration), which is an open-source tool that helps companies [track spend by key](https://docs.litellm.ai/docs/proxy/virtual_keys#tracking-spend). This project is unaffiliated with Anthropic and has not been audited for security.
 
@@ -56,9 +48,7 @@ For example, if you have 200 users, you might request 20k TPM for each user, or 
 
 The TPM per user decreases as team size grows because fewer users tend to use Claude Code concurrently in larger organizations. These rate limits apply at the organization level, not per individual user, which means individual users can temporarily consume more than their calculated share when others aren't actively using the service.
 
-<Note>
-  If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user.
-</Note>
+> **Note:** If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user.
 
 ### Agent team token costs
 
@@ -87,7 +77,7 @@ Use `/cost` to check your current token usage, or [configure your status line](/
 
 You can also customize compaction behavior in your CLAUDE.md:
 
-```markdown  theme={null}
+```markdown
 # Compact instructions
 
 When you are using compact, please focus on test output and code changes
@@ -117,11 +107,11 @@ A [skill](/en/skills) can give Claude domain knowledge so it doesn't have to exp
 
 For example, this PreToolUse hook filters test output to show only failures:
 
-<Tabs>
-  <Tab title="settings.json">
-    Add this to your [settings.json](/en/settings#settings-files) to run the hook before every Bash command:
+**settings.json:**
 
-    ```json  theme={null}
+Add this to your [settings.json](/en/settings#settings-files) to run the hook before every Bash command:
+
+    ```json
     {
       "hooks": {
         "PreToolUse": [
@@ -138,12 +128,12 @@ For example, this PreToolUse hook filters test output to show only failures:
       }
     }
     ```
-  </Tab>
 
-  <Tab title="filter-test-output.sh">
-    The hook calls this script, which checks if the command is a test runner and modifies it to show only failures:
+**filter-test-output.sh:**
 
-    ```bash  theme={null}
+The hook calls this script, which checks if the command is a test runner and modifies it to show only failures:
+
+    ```bash
     #!/bin/bash
     input=$(cat)
     cmd=$(echo "$input" | jq -r '.tool_input.command')
@@ -156,8 +146,6 @@ For example, this PreToolUse hook filters test output to show only failures:
       echo "{}"
     fi
     ```
-  </Tab>
-</Tabs>
 
 ### Move instructions from CLAUDE.md to skills
 

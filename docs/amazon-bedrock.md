@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Claude Code on Amazon Bedrock
 
 > Learn about configuring Claude Code through Amazon Bedrock, including setup, IAM configuration, and troubleshooting.
@@ -15,9 +11,7 @@ Before configuring Claude Code with Bedrock, ensure you have:
 * AWS CLI installed and configured (optional - only needed if you don't have another mechanism for getting credentials)
 * Appropriate IAM permissions
 
-<Note>
-  If you are deploying Claude Code to multiple users, [pin your model versions](#4-pin-model-versions) to prevent breakage when Anthropic releases new models.
-</Note>
+> **Note:** If you are deploying Claude Code to multiple users, [pin your model versions](#4-pin-model-versions) to prevent breakage when Anthropic releases new models.
 
 ## Setup
 
@@ -36,13 +30,13 @@ Claude Code uses the default AWS SDK credential chain. Set up your credentials u
 
 **Option A: AWS CLI configuration**
 
-```bash  theme={null}
+```bash
 aws configure
 ```
 
 **Option B: Environment variables (access key)**
 
-```bash  theme={null}
+```bash
 export AWS_ACCESS_KEY_ID=your-access-key-id
 export AWS_SECRET_ACCESS_KEY=your-secret-access-key
 export AWS_SESSION_TOKEN=your-session-token
@@ -50,7 +44,7 @@ export AWS_SESSION_TOKEN=your-session-token
 
 **Option C: Environment variables (SSO profile)**
 
-```bash  theme={null}
+```bash
 aws sso login --profile=<your-profile-name>
 
 export AWS_PROFILE=your-profile-name
@@ -58,7 +52,7 @@ export AWS_PROFILE=your-profile-name
 
 **Option D: AWS Management Console credentials**
 
-```bash  theme={null}
+```bash
 aws login
 ```
 
@@ -66,7 +60,7 @@ aws login
 
 **Option E: Bedrock API keys**
 
-```bash  theme={null}
+```bash
 export AWS_BEARER_TOKEN_BEDROCK=your-bedrock-api-key
 ```
 
@@ -80,7 +74,7 @@ When Claude Code detects that your AWS credentials are expired (either locally b
 
 ##### Example configuration
 
-```json  theme={null}
+```json
 {
   "awsAuthRefresh": "aws sso login --profile myprofile",
   "env": {
@@ -95,7 +89,7 @@ When Claude Code detects that your AWS credentials are expired (either locally b
 
 **`awsCredentialExport`**: Only use this if you can't modify `.aws` and must directly return credentials. Output is captured silently and not shown to the user. The command must output JSON in this format:
 
-```json  theme={null}
+```json
 {
   "Credentials": {
     "AccessKeyId": "value",
@@ -109,7 +103,7 @@ When Claude Code detects that your AWS credentials are expired (either locally b
 
 Set the following environment variables to enable Bedrock:
 
-```bash  theme={null}
+```bash
 # Enable Bedrock integration
 export CLAUDE_CODE_USE_BEDROCK=1
 export AWS_REGION=us-east-1  # or your preferred region
@@ -126,13 +120,11 @@ When enabling Bedrock for Claude Code, keep the following in mind:
 
 ### 4. Pin model versions
 
-<Warning>
-  Pin specific model versions for every deployment. If you use model aliases (`sonnet`, `opus`, `haiku`) without pinning, Claude Code may attempt to use a newer model version that isn't available in your Bedrock account, breaking existing users when Anthropic releases updates.
-</Warning>
+> **Warning:** Pin specific model versions for every deployment. If you use model aliases (`sonnet`, `opus`, `haiku`) without pinning, Claude Code may attempt to use a newer model version that isn't available in your Bedrock account, breaking existing users when Anthropic releases updates.
 
 Set these environment variables to specific Bedrock model IDs:
 
-```bash  theme={null}
+```bash
 export ANTHROPIC_DEFAULT_OPUS_MODEL='us.anthropic.claude-opus-4-6-v1'
 export ANTHROPIC_DEFAULT_SONNET_MODEL='us.anthropic.claude-sonnet-4-6'
 export ANTHROPIC_DEFAULT_HAIKU_MODEL='us.anthropic.claude-haiku-4-5-20251001-v1:0'
@@ -149,7 +141,7 @@ Claude Code uses these default models when no pinning variables are set:
 
 To customize models further, use one of these methods:
 
-```bash  theme={null}
+```bash
 # Using inference profile ID
 export ANTHROPIC_MODEL='global.anthropic.claude-sonnet-4-6'
 export ANTHROPIC_SMALL_FAST_MODEL='us.anthropic.claude-haiku-4-5-20251001-v1:0'
@@ -161,13 +153,13 @@ export ANTHROPIC_MODEL='arn:aws:bedrock:us-east-2:your-account-id:application-in
 export DISABLE_PROMPT_CACHING=1
 ```
 
-<Note>[Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) may not be available in all regions.</Note>
+> **Note:** [Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) may not be available in all regions.
 
 ## IAM configuration
 
 Create an IAM policy with the required permissions for Claude Code:
 
-```json  theme={null}
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -207,9 +199,7 @@ For more restrictive permissions, you can limit the Resource to specific inferen
 
 For details, see [Bedrock IAM documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html).
 
-<Note>
-  Create a dedicated AWS account for Claude Code to simplify cost tracking and access control.
-</Note>
+> **Note:** Create a dedicated AWS account for Claude Code to simplify cost tracking and access control.
 
 ## AWS Guardrails
 
@@ -217,7 +207,7 @@ For details, see [Bedrock IAM documentation](https://docs.aws.amazon.com/bedrock
 
 Example configuration:
 
-```json  theme={null}
+```json
 {
   "env": {
     "ANTHROPIC_CUSTOM_HEADERS": "X-Amzn-Bedrock-GuardrailIdentifier: your-guardrail-id\nX-Amzn-Bedrock-GuardrailVersion: 1"

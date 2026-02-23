@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Troubleshooting
 
 > Discover solutions to common issues with Claude Code installation and usage.
@@ -32,7 +28,7 @@ To resolve this issue, fix your Linux PATH to ensure the Linux node/npm versions
 
 The most common cause is that nvm isn't loaded in non-interactive shells. Add the following to your shell configuration file (`~/.bashrc`, `~/.zshrc`, etc.):
 
-```bash  theme={null}
+```bash
 # Load nvm if it exists
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -41,7 +37,7 @@ export NVM_DIR="$HOME/.nvm"
 
 Or run directly in your current session:
 
-```bash  theme={null}
+```bash
 source ~/.nvm/nvm.sh
 ```
 
@@ -49,31 +45,27 @@ source ~/.nvm/nvm.sh
 
 If nvm is properly loaded but Windows paths still take priority, you can explicitly prepend your Linux paths to PATH in your shell configuration:
 
-```bash  theme={null}
+```bash
 export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
 ```
 
-<Warning>
-  Avoid disabling Windows PATH importing (`appendWindowsPath = false`) as this breaks the ability to call Windows executables from WSL. Similarly, avoid uninstalling Node.js from Windows if you use it for Windows development.
-</Warning>
+> **Warning:** Avoid disabling Windows PATH importing (`appendWindowsPath = false`) as this breaks the ability to call Windows executables from WSL. Similarly, avoid uninstalling Node.js from Windows if you use it for Windows development.
 
 ### WSL2 sandbox setup
 
 [Sandboxing](/en/sandboxing) is supported on WSL2 but requires installing additional packages. If you see an error like "Sandbox requires socat and bubblewrap" when running `/sandbox`, install the dependencies:
 
-<Tabs>
-  <Tab title="Ubuntu/Debian">
-    ```bash  theme={null}
+**Ubuntu/Debian:**
+
+    ```bash
     sudo apt-get install bubblewrap socat
     ```
-  </Tab>
 
-  <Tab title="Fedora">
-    ```bash  theme={null}
+**Fedora:**
+
+    ```bash
     sudo dnf install bubblewrap socat
     ```
-  </Tab>
-</Tabs>
 
 WSL1 does not support sandboxing. If you see "Sandboxing requires WSL2", you need to upgrade to WSL2 or run Claude Code without sandboxing.
 
@@ -90,7 +82,7 @@ Use the following command to run the native installer.
 
 **macOS, Linux, WSL:**
 
-```bash  theme={null}
+```bash
 # Install stable version (default)
 curl -fsSL https://claude.ai/install.sh | bash
 
@@ -103,7 +95,7 @@ curl -fsSL https://claude.ai/install.sh | bash -s 1.0.58
 
 **Windows PowerShell:**
 
-```powershell  theme={null}
+```powershell
 # Install stable version (default)
 irm https://claude.ai/install.ps1 | iex
 
@@ -117,16 +109,14 @@ irm https://claude.ai/install.ps1 | iex
 
 This command installs the appropriate build of Claude Code for your operating system and architecture and adds a symlink to the installation at `~/.local/bin/claude` (or `%USERPROFILE%\.local\bin\claude.exe` on Windows).
 
-<Tip>
-  Make sure that you have the installation directory in your system PATH.
-</Tip>
+> **Tip:** Make sure that you have the installation directory in your system PATH.
 
 ### Windows: "Claude Code on Windows requires git-bash"
 
 Claude Code on native Windows requires [Git for Windows](https://git-scm.com/downloads/win) which includes Git Bash. If Git is installed but not detected:
 
 1. Set the path explicitly in PowerShell before running Claude:
-   ```powershell  theme={null}
+   ```powershell
    $env:CLAUDE_CODE_GIT_BASH_PATH="C:\Program Files\Git\bin\bash.exe"
    ```
 
@@ -138,27 +128,25 @@ If Git is installed in a non-standard location, adjust the path accordingly.
 
 If you see this error after installation, the `claude` command isn't in your PATH. Add it manually:
 
-<Steps>
-  <Step title="Open Environment Variables">
-    Press `Win + R`, type `sysdm.cpl`, and press Enter. Click **Advanced** → **Environment Variables**.
-  </Step>
+1. **Open Environment Variables**
 
-  <Step title="Edit User PATH">
-    Under "User variables", select **Path** and click **Edit**. Click **New** and add:
+Press `Win + R`, type `sysdm.cpl`, and press Enter. Click **Advanced** → **Environment Variables**.
+
+2. **Edit User PATH**
+
+Under "User variables", select **Path** and click **Edit**. Click **New** and add:
 
     ```
     %USERPROFILE%\.local\bin
     ```
-  </Step>
 
-  <Step title="Restart your terminal">
-    Close and reopen PowerShell or CMD for changes to take effect.
-  </Step>
-</Steps>
+3. **Restart your terminal**
+
+Close and reopen PowerShell or CMD for changes to take effect.
 
 Verify installation:
 
-```bash  theme={null}
+```bash
 claude doctor # Check installation health
 ```
 
@@ -181,7 +169,7 @@ If the browser doesn't open automatically during login, press `c` to copy the OA
 
 If problems persist, try:
 
-```bash  theme={null}
+```bash
 rm -rf ~/.config/claude-code/auth.json
 claude
 ```
@@ -216,7 +204,7 @@ For details on configuring these files, see [Settings](/en/settings) and [MCP](/
 
 To reset Claude Code to default settings, you can remove the configuration files:
 
-```bash  theme={null}
+```bash
 # Reset all user settings and state
 rm ~/.claude.json
 rm -rf ~/.claude/
@@ -226,9 +214,7 @@ rm -rf .claude/
 rm .mcp.json
 ```
 
-<Warning>
-  This will remove all your settings, MCP server configurations, and session history.
-</Warning>
+> **Warning:** This will remove all your settings, MCP server configurations, and session history.
 
 ## Performance and stability
 
@@ -251,7 +237,7 @@ If Claude Code seems unresponsive:
 
 If Search tool, `@file` mentions, custom agents, and custom skills aren't working, install system `ripgrep`:
 
-```bash  theme={null}
+```bash
 # macOS (Homebrew)  
 brew install ripgrep
 
@@ -274,9 +260,7 @@ Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/en/settings#environment-
 
 Disk read performance penalties when [working across file systems on WSL](https://learn.microsoft.com/en-us/windows/wsl/filesystems) may result in fewer-than-expected matches (but not a complete lack of search functionality) when using Claude Code on WSL.
 
-<Note>
-  `/doctor` will show Search as OK in this case.
-</Note>
+> **Note:** `/doctor` will show Search as OK in this case.
 
 **Solutions:**
 
@@ -299,13 +283,13 @@ WSL2 uses NAT networking by default, which can prevent IDE detection. You have t
 **Option 1: Configure Windows Firewall** (recommended)
 
 1. Find your WSL2 IP address:
-   ```bash  theme={null}
+   ```bash
    wsl hostname -I
    # Example output: 172.21.123.456
    ```
 
 2. Open PowerShell as Administrator and create a firewall rule:
-   ```powershell  theme={null}
+   ```powershell
    New-NetFirewallRule -DisplayName "Allow WSL2 Internal Traffic" -Direction Inbound -Protocol TCP -Action Allow -RemoteAddress 172.21.0.0/16 -LocalAddress 172.21.0.0/16
    ```
    (Adjust the IP range based on your WSL2 subnet from step 1)
@@ -316,16 +300,14 @@ WSL2 uses NAT networking by default, which can prevent IDE detection. You have t
 
 Add to `.wslconfig` in your Windows user directory:
 
-```ini  theme={null}
+```ini
 [wsl2]
 networkingMode=mirrored
 ```
 
 Then restart WSL with `wsl --shutdown` from PowerShell.
 
-<Note>
-  These networking issues only affect WSL2. WSL1 uses the host's network directly and doesn't require these configurations.
-</Note>
+> **Note:** These networking issues only affect WSL2. WSL1 uses the host's network directly and doesn't require these configurations.
 
 For additional JetBrains configuration tips, see our [JetBrains IDE guide](/en/jetbrains#plugin-settings).
 
@@ -361,7 +343,7 @@ Claude Code sometimes generates markdown files with missing language tags on cod
 
 If you notice code blocks like this in generated markdown:
 
-````markdown  theme={null}
+````markdown
 ```
 function example() {
   return "hello";
@@ -371,7 +353,7 @@ function example() {
 
 Instead of properly tagged blocks like:
 
-````markdown  theme={null}
+````markdown
 ```javascript
 function example() {
   return "hello";

@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # CLI reference
 
 > Complete reference for Claude Code command-line interface, including commands and flags.
@@ -77,10 +73,8 @@ Customize Claude Code's behavior with these command-line flags:
 | `--version`, `-v`                      | Output the version number                                                                                                                                                                                 | `claude -v`                                                                                        |
 | `--worktree`, `-w`                     | Start Claude in an isolated [git worktree](/en/common-workflows#run-parallel-claude-code-sessions-with-git-worktrees) at `<repo>/.claude/worktrees/<name>`. If no name is given, one is auto-generated    | `claude -w feature-auth`                                                                           |
 
-<Tip>
-  The `--output-format json` flag is particularly useful for scripting and
-  automation, allowing you to parse Claude's responses programmatically.
-</Tip>
+> **Tip:** The `--output-format json` flag is particularly useful for scripting and
+>   automation, allowing you to parse Claude's responses programmatically.
 
 ### Agents flag format
 
@@ -99,7 +93,7 @@ The `--agents` flag accepts a JSON object that defines one or more custom subage
 
 Example:
 
-```bash  theme={null}
+```bash
 claude --agents '{
   "code-reviewer": {
     "description": "Expert code reviewer. Use proactively after code changes.",
@@ -130,22 +124,22 @@ Claude Code provides four flags for customizing the system prompt, each serving 
 **When to use each:**
 
 * **`--system-prompt`**: Use when you need complete control over Claude's system prompt. This removes all default Claude Code instructions, giving you a blank slate.
-  ```bash  theme={null}
+  ```bash
   claude --system-prompt "You are a Python expert who only writes type-annotated code"
   ```
 
 * **`--system-prompt-file`**: Use when you want to load a custom prompt from a file, useful for team consistency or version-controlled prompt templates.
-  ```bash  theme={null}
+  ```bash
   claude -p --system-prompt-file ./prompts/code-review.txt "Review this PR"
   ```
 
 * **`--append-system-prompt`**: Use when you want to add specific instructions while keeping Claude Code's default capabilities intact. This is the safest option for most use cases.
-  ```bash  theme={null}
+  ```bash
   claude --append-system-prompt "Always use TypeScript and include JSDoc comments"
   ```
 
 * **`--append-system-prompt-file`**: Use when you want to append instructions from a file while keeping Claude Code's defaults. Useful for version-controlled additions.
-  ```bash  theme={null}
+  ```bash
   claude -p --append-system-prompt-file ./prompts/style-rules.txt "Review this PR"
   ```
 

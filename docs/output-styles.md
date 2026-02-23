@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Output styles
 
 > Adapt Claude Code for uses beyond software engineering
@@ -59,7 +55,7 @@ field in a settings file at a different level.
 Custom output styles are Markdown files with frontmatter and the text that will
 be added to the system prompt:
 
-```markdown  theme={null}
+```markdown
 ---
 name: My Custom Style
 description:

@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Customize keyboard shortcuts
 
 > Customize keyboard shortcuts in Claude Code with a keybindings configuration file.
@@ -12,7 +8,7 @@ Claude Code supports customizable keyboard shortcuts. Run `/keybindings` to crea
 
 The keybindings configuration file is an object with a `bindings` array. Each block specifies a context and a map of keystrokes to actions.
 
-<Note>Changes to the keybindings file are automatically detected and applied without restarting Claude Code.</Note>
+> **Note:** Changes to the keybindings file are automatically detected and applied without restarting Claude Code.
 
 | Field      | Description                                        |
 | :--------- | :------------------------------------------------- |
@@ -22,7 +18,7 @@ The keybindings configuration file is an object with a `bindings` array. Each bl
 
 This example binds `Ctrl+E` to open an external editor in the chat context, and unbinds `Ctrl+U`:
 
-```json  theme={null}
+```json
 {
   "$schema": "https://www.schemastore.org/claude-code-keybindings.json",
   "$docs": "https://code.claude.com/docs/en/keybindings",
@@ -326,7 +322,7 @@ ctrl+k ctrl+s   Press Ctrl+K, release, then Ctrl+S
 
 Set an action to `null` to unbind a default shortcut:
 
-```json  theme={null}
+```json
 {
   "bindings": [
     {

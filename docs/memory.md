@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Manage Claude's memory
 
 > Learn how to manage Claude Code's memory across sessions with different memory locations and best practices.
@@ -28,17 +24,13 @@ Claude Code offers several memory locations in a hierarchical structure, each se
 
 CLAUDE.md files in the directory hierarchy above the working directory are loaded in full at launch. CLAUDE.md files in child directories load on demand when Claude reads files in those directories. Auto memory loads only the first 200 lines of `MEMORY.md`. More specific instructions take precedence over broader ones.
 
-<Note>
-  CLAUDE.local.md files are automatically added to .gitignore, making them ideal for private project-specific preferences that shouldn't be checked into version control.
-</Note>
+> **Note:** CLAUDE.local.md files are automatically added to .gitignore, making them ideal for private project-specific preferences that shouldn't be checked into version control.
 
 ## Auto memory
 
 Auto memory is a persistent directory where Claude records learnings, patterns, and insights as it works. Unlike CLAUDE.md files that contain instructions you write for Claude, auto memory contains notes Claude writes for itself based on what it discovers during sessions.
 
-<Note>
-  Auto memory is being rolled out gradually. If you aren't seeing auto memory, you can opt in by setting `CLAUDE_CODE_DISABLE_AUTO_MEMORY=0` in your environment.
-</Note>
+> **Note:** Auto memory is being rolled out gradually. If you aren't seeing auto memory, you can opt in by setting `CLAUDE_CODE_DISABLE_AUTO_MEMORY=0` in your environment.
 
 ### What Claude remembers
 
@@ -55,7 +47,7 @@ Each project gets its own memory directory at `~/.claude/projects/<project>/memo
 
 The directory contains a `MEMORY.md` entrypoint and optional topic files:
 
-```text  theme={null}
+```text
 ~/.claude/projects/<project>/memory/
 ├── MEMORY.md          # Concise index, loaded into every session
 ├── debugging.md       # Detailed notes on debugging patterns
@@ -79,7 +71,7 @@ To ask Claude to save something specific, tell it directly: "remember that we us
 
 When neither variable is set, auto memory follows the gradual rollout. The variable name uses double-negative logic: `DISABLE=0` means "don't disable" and forces auto memory on.
 
-```bash  theme={null}
+```bash
 export CLAUDE_CODE_DISABLE_AUTO_MEMORY=1  # Force off
 export CLAUDE_CODE_DISABLE_AUTO_MEMORY=0  # Force on
 ```
@@ -104,9 +96,7 @@ If you work across multiple git worktrees, `CLAUDE.local.md` only exists in one.
 - @~/.claude/my-project-instructions.md
 ```
 
-<Warning>
-  The first time Claude Code encounters external imports in a project, it shows an approval dialog listing the specific files. Approve to load them; decline to skip them. This is a one-time decision per project: once declined, the dialog does not resurface and the imports remain disabled.
-</Warning>
+> **Warning:** The first time Claude Code encounters external imports in a project, it shows an approval dialog listing the specific files. Approve to load them; decline to skip them. This is a one-time decision per project: once declined, the dialog does not resurface and the imports remain disabled.
 
 To avoid potential collisions, imports are not evaluated inside markdown code spans and code blocks.
 
@@ -128,7 +118,7 @@ The `--add-dir` flag gives Claude access to additional directories outside your 
 
 To also load memory files (CLAUDE.md, .claude/CLAUDE.md, and .claude/rules/\*.md) from additional directories, set the `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` environment variable:
 
-```bash  theme={null}
+```bash
 CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 claude --add-dir ../shared-config
 ```
 
@@ -146,14 +136,12 @@ Bootstrap a CLAUDE.md for your codebase with the following command:
 > /init
 ```
 
-<Tip>
-  Tips:
-
-  * Include frequently used commands (build, test, lint) to avoid repeated searches
-  * Document code style preferences and naming conventions
-  * Add important architectural patterns specific to your project
-  * CLAUDE.md memories can be used for both instructions shared with your team and for your individual preferences.
-</Tip>
+> **Tip:** Tips:
+>
+>   * Include frequently used commands (build, test, lint) to avoid repeated searches
+>   * Document code style preferences and naming conventions
+>   * Add important architectural patterns specific to your project
+>   * CLAUDE.md memories can be used for both instructions shared with your team and for your individual preferences.
 
 ## Modular rules with `.claude/rules/`
 
@@ -179,7 +167,7 @@ All `.md` files in `.claude/rules/` are automatically loaded as project memory, 
 
 Rules can be scoped to specific files using YAML frontmatter with the `paths` field. These conditional rules only apply when Claude is working with files matching the specified patterns.
 
-```markdown  theme={null}
+```markdown
 ---
 paths:
   - "src/api/**/*.ts"
@@ -207,7 +195,7 @@ The `paths` field supports standard glob patterns:
 
 You can specify multiple patterns:
 
-```markdown  theme={null}
+```markdown
 ---
 paths:
   - "src/**/*.ts"
@@ -218,7 +206,7 @@ paths:
 
 Brace expansion is supported for matching multiple extensions or directories:
 
-```markdown  theme={null}
+```markdown
 ---
 paths:
   - "src/**/*.{ts,tsx}"
@@ -251,7 +239,7 @@ All `.md` files are discovered recursively.
 
 The `.claude/rules/` directory supports symlinks, allowing you to share common rules across multiple projects:
 
-```bash  theme={null}
+```bash
 # Symlink a shared rules directory
 ln -s ~/shared-claude-rules .claude/rules/shared
 
@@ -273,14 +261,12 @@ You can create personal rules that apply to all your projects in `~/.claude/rule
 
 User-level rules are loaded before project rules, giving project rules higher priority.
 
-<Tip>
-  Best practices for `.claude/rules/`:
-
-  * **Keep rules focused**: Each file should cover one topic (e.g., `testing.md`, `api-design.md`)
-  * **Use descriptive filenames**: The filename should indicate what the rules cover
-  * **Use conditional rules sparingly**: Only add `paths` frontmatter when rules truly apply to specific file types
-  * **Organize with subdirectories**: Group related rules (e.g., `frontend/`, `backend/`)
-</Tip>
+> **Tip:** Best practices for `.claude/rules/`:
+>
+>   * **Keep rules focused**: Each file should cover one topic (e.g., `testing.md`, `api-design.md`)
+>   * **Use descriptive filenames**: The filename should indicate what the rules cover
+>   * **Use conditional rules sparingly**: Only add `paths` frontmatter when rules truly apply to specific file types
+>   * **Organize with subdirectories**: Group related rules (e.g., `frontend/`, `backend/`)
 
 ## Organization-level memory management
 

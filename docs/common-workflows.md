@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Common workflows
 
 > Step-by-step guides for exploring codebases, fixing bugs, refactoring, testing, and other everyday tasks with Claude Code.
@@ -14,26 +10,26 @@ This page covers practical workflows for everyday development: exploring unfamil
 
 Suppose you've just joined a new project and need to understand its structure quickly.
 
-<Steps>
-  <Step title="Navigate to the project root directory">
-    ```bash  theme={null}
+1. **Navigate to the project root directory**
+
+    ```bash
     cd /path/to/project 
     ```
-  </Step>
 
-  <Step title="Start Claude Code">
-    ```bash  theme={null}
+2. **Start Claude Code**
+
+    ```bash
     claude 
     ```
-  </Step>
 
-  <Step title="Ask for a high-level overview">
+3. **Ask for a high-level overview**
+
     ```
     > give me an overview of this codebase 
     ```
-  </Step>
 
-  <Step title="Dive deeper into specific components">
+4. **Dive deeper into specific components**
+
     ```
     > explain the main architecture patterns used here 
     ```
@@ -45,48 +41,40 @@ Suppose you've just joined a new project and need to understand its structure qu
     ```
     > how is authentication handled?
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Start with broad questions, then narrow down to specific areas
-  * Ask about coding conventions and patterns used in the project
-  * Request a glossary of project-specific terms
-</Tip>
+> **Tip:** Tips:
+>
+>   * Start with broad questions, then narrow down to specific areas
+>   * Ask about coding conventions and patterns used in the project
+>   * Request a glossary of project-specific terms
 
 ### Find relevant code
 
 Suppose you need to locate code related to a specific feature or functionality.
 
-<Steps>
-  <Step title="Ask Claude to find relevant files">
+1. **Ask Claude to find relevant files**
+
     ```
     > find the files that handle user authentication 
     ```
-  </Step>
 
-  <Step title="Get context on how components interact">
+2. **Get context on how components interact**
+
     ```
     > how do these authentication files work together? 
     ```
-  </Step>
 
-  <Step title="Understand the execution flow">
+3. **Understand the execution flow**
+
     ```
     > trace the login process from front-end to database 
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Be specific about what you're looking for
-  * Use domain language from the project
-  * Install a [code intelligence plugin](/en/discover-plugins#code-intelligence) for your language to give Claude precise "go to definition" and "find references" navigation
-</Tip>
+> **Tip:** Tips:
+>
+>   * Be specific about what you're looking for
+>   * Use domain language from the project
+>   * Install a [code intelligence plugin](/en/discover-plugins#code-intelligence) for your language to give Claude precise "go to definition" and "find references" navigation
 
 ***
 
@@ -94,33 +82,29 @@ Suppose you need to locate code related to a specific feature or functionality.
 
 Suppose you've encountered an error message and need to find and fix its source.
 
-<Steps>
-  <Step title="Share the error with Claude">
+1. **Share the error with Claude**
+
     ```
     > I'm seeing an error when I run npm test 
     ```
-  </Step>
 
-  <Step title="Ask for fix recommendations">
+2. **Ask for fix recommendations**
+
     ```
     > suggest a few ways to fix the @ts-ignore in user.ts 
     ```
-  </Step>
 
-  <Step title="Apply the fix">
+3. **Apply the fix**
+
     ```
     > update user.ts to add the null check you suggested 
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Tell Claude the command to reproduce the issue and get a stack trace
-  * Mention any steps to reproduce the error
-  * Let Claude know if the error is intermittent or consistent
-</Tip>
+> **Tip:** Tips:
+>
+>   * Tell Claude the command to reproduce the issue and get a stack trace
+>   * Mention any steps to reproduce the error
+>   * Let Claude know if the error is intermittent or consistent
 
 ***
 
@@ -128,39 +112,35 @@ Suppose you've encountered an error message and need to find and fix its source.
 
 Suppose you need to update old code to use modern patterns and practices.
 
-<Steps>
-  <Step title="Identify legacy code for refactoring">
+1. **Identify legacy code for refactoring**
+
     ```
     > find deprecated API usage in our codebase 
     ```
-  </Step>
 
-  <Step title="Get refactoring recommendations">
+2. **Get refactoring recommendations**
+
     ```
     > suggest how to refactor utils.js to use modern JavaScript features 
     ```
-  </Step>
 
-  <Step title="Apply the changes safely">
+3. **Apply the changes safely**
+
     ```
     > refactor utils.js to use ES2024 features while maintaining the same behavior 
     ```
-  </Step>
 
-  <Step title="Verify the refactoring">
+4. **Verify the refactoring**
+
     ```
     > run tests for the refactored code 
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Ask Claude to explain the benefits of the modern approach
-  * Request that changes maintain backward compatibility when needed
-  * Do refactoring in small, testable increments
-</Tip>
+> **Tip:** Tips:
+>
+>   * Ask Claude to explain the benefits of the modern approach
+>   * Request that changes maintain backward compatibility when needed
+>   * Do refactoring in small, testable increments
 
 ***
 
@@ -168,17 +148,17 @@ Suppose you need to update old code to use modern patterns and practices.
 
 Suppose you want to use specialized AI subagents to handle specific tasks more effectively.
 
-<Steps>
-  <Step title="View available subagents">
+1. **View available subagents**
+
     ```
     > /agents
     ```
 
     This shows all available subagents and lets you create new ones.
-  </Step>
 
-  <Step title="Use subagents automatically">
-    Claude Code automatically delegates appropriate tasks to specialized subagents:
+2. **Use subagents automatically**
+
+Claude Code automatically delegates appropriate tasks to specialized subagents:
 
     ```
     > review my recent code changes for security issues
@@ -187,9 +167,9 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
     ```
     > run all tests and fix any failures
     ```
-  </Step>
 
-  <Step title="Explicitly request specific subagents">
+3. **Explicitly request specific subagents**
+
     ```
     > use the code-reviewer subagent to check the auth module
     ```
@@ -197,9 +177,9 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
     ```
     > have the debugger subagent investigate why users can't log in
     ```
-  </Step>
 
-  <Step title="Create custom subagents for your workflow">
+4. **Create custom subagents for your workflow**
+
     ```
     > /agents
     ```
@@ -210,17 +190,13 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
     * When Claude should use this agent
     * Which tools it can access
     * A system prompt describing the agent's role and behavior
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Create project-specific subagents in `.claude/agents/` for team sharing
-  * Use descriptive `description` fields to enable automatic delegation
-  * Limit tool access to what each subagent actually needs
-  * Check the [subagents documentation](/en/sub-agents) for detailed examples
-</Tip>
+> **Tip:** Tips:
+>
+>   * Create project-specific subagents in `.claude/agents/` for team sharing
+>   * Use descriptive `description` fields to enable automatic delegation
+>   * Limit tool access to what each subagent actually needs
+>   * Check the [subagents documentation](/en/sub-agents) for detailed examples
 
 ***
 
@@ -246,7 +222,7 @@ If you are in Normal Mode, **Shift+Tab** first switches into Auto-Accept Mode, i
 
 To start a new session in Plan Mode, use the `--permission-mode plan` flag:
 
-```bash  theme={null}
+```bash
 claude --permission-mode plan
 ```
 
@@ -254,13 +230,13 @@ claude --permission-mode plan
 
 You can also run a query in Plan Mode directly with `-p` (that is, in ["headless mode"](/en/headless)):
 
-```bash  theme={null}
+```bash
 claude --permission-mode plan -p "Analyze the authentication system and suggest improvements"
 ```
 
 ### Example: Planning a complex refactor
 
-```bash  theme={null}
+```bash
 claude --permission-mode plan
 ```
 
@@ -275,11 +251,11 @@ Claude analyzes the current implementation and create a comprehensive plan. Refi
 > How should we handle database migration?
 ```
 
-<Tip>Press `Ctrl+G` to open the plan in your default text editor, where you can edit it directly before Claude proceeds.</Tip>
+> **Tip:** Press `Ctrl+G` to open the plan in your default text editor, where you can edit it directly before Claude proceeds.
 
 ### Configure Plan Mode as default
 
-```json  theme={null}
+```json
 // .claude/settings.json
 {
   "permissions": {
@@ -296,31 +272,29 @@ See [settings documentation](/en/settings#available-settings) for more configura
 
 Suppose you need to add tests for uncovered code.
 
-<Steps>
-  <Step title="Identify untested code">
+1. **Identify untested code**
+
     ```
     > find functions in NotificationsService.swift that are not covered by tests 
     ```
-  </Step>
 
-  <Step title="Generate test scaffolding">
+2. **Generate test scaffolding**
+
     ```
     > add tests for the notification service 
     ```
-  </Step>
 
-  <Step title="Add meaningful test cases">
+3. **Add meaningful test cases**
+
     ```
     > add test cases for edge conditions in the notification service 
     ```
-  </Step>
 
-  <Step title="Run and verify tests">
+4. **Run and verify tests**
+
     ```
     > run the new tests and fix any failures 
     ```
-  </Step>
-</Steps>
 
 Claude can generate tests that follow your project's existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use.
 
@@ -340,69 +314,61 @@ If you have a Slack MCP server configured and specify channels in your CLAUDE.md
 
 For more control over the process, guide Claude through it step-by-step or [create your own skill](/en/skills):
 
-<Steps>
-  <Step title="Summarize your changes">
+1. **Summarize your changes**
+
     ```
     > summarize the changes I've made to the authentication module
     ```
-  </Step>
 
-  <Step title="Generate a pull request">
+2. **Generate a pull request**
+
     ```
     > create a pr
     ```
-  </Step>
 
-  <Step title="Review and refine">
+3. **Review and refine**
+
     ```
     > enhance the PR description with more context about the security improvements
     ```
-  </Step>
-</Steps>
 
 When you create a PR using `gh pr create`, the session is automatically linked to that PR. You can resume it later with `claude --from-pr <number>`.
 
-<Tip>
-  Review Claude's generated PR before submitting and ask Claude to highlight potential risks or considerations.
-</Tip>
+> **Tip:** Review Claude's generated PR before submitting and ask Claude to highlight potential risks or considerations.
 
 ## Handle documentation
 
 Suppose you need to add or update documentation for your code.
 
-<Steps>
-  <Step title="Identify undocumented code">
+1. **Identify undocumented code**
+
     ```
     > find functions without proper JSDoc comments in the auth module 
     ```
-  </Step>
 
-  <Step title="Generate documentation">
+2. **Generate documentation**
+
     ```
     > add JSDoc comments to the undocumented functions in auth.js 
     ```
-  </Step>
 
-  <Step title="Review and enhance">
+3. **Review and enhance**
+
     ```
     > improve the generated documentation with more context and examples 
     ```
-  </Step>
 
-  <Step title="Verify documentation">
+4. **Verify documentation**
+
     ```
     > check if the documentation follows our project standards 
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Specify the documentation style you want (JSDoc, docstrings, etc.)
-  * Ask for examples in the documentation
-  * Request documentation for public APIs, interfaces, and complex logic
-</Tip>
+> **Tip:** Tips:
+>
+>   * Specify the documentation style you want (JSDoc, docstrings, etc.)
+>   * Ask for examples in the documentation
+>   * Request documentation for public APIs, interfaces, and complex logic
 
 ***
 
@@ -410,16 +376,16 @@ Suppose you need to add or update documentation for your code.
 
 Suppose you need to work with images in your codebase, and you want Claude's help analyzing image content.
 
-<Steps>
-  <Step title="Add an image to the conversation">
-    You can use any of these methods:
+1. **Add an image to the conversation**
+
+You can use any of these methods:
 
     1. Drag and drop an image into the Claude Code window
     2. Copy an image and paste it into the CLI with ctrl+v (Do not use cmd+v)
     3. Provide an image path to Claude. E.g., "Analyze this image: /path/to/your/image.png"
-  </Step>
 
-  <Step title="Ask Claude to analyze the image">
+2. **Ask Claude to analyze the image**
+
     ```
     > What does this image show?
     ```
@@ -431,9 +397,9 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
     ```
     > Are there any problematic elements in this diagram?
     ```
-  </Step>
 
-  <Step title="Use images for context">
+3. **Use images for context**
+
     ```
     > Here's a screenshot of the error. What's causing it?
     ```
@@ -441,9 +407,9 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
     ```
     > This is our current database schema. How should we modify it for the new feature?
     ```
-  </Step>
 
-  <Step title="Get code suggestions from visual content">
+4. **Get code suggestions from visual content**
+
     ```
     > Generate CSS to match this design mockup
     ```
@@ -451,18 +417,14 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
     ```
     > What HTML structure would recreate this component?
     ```
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Use images when text descriptions would be unclear or cumbersome
-  * Include screenshots of errors, UI designs, or diagrams for better context
-  * You can work with multiple images in a conversation
-  * Image analysis works with diagrams, screenshots, mockups, and more
-  * When Claude references images (for example, `[Image #1]`), `Cmd+Click` (Mac) or `Ctrl+Click` (Windows/Linux) the link to open the image in your default viewer
-</Tip>
+> **Tip:** Tips:
+>
+>   * Use images when text descriptions would be unclear or cumbersome
+>   * Include screenshots of errors, UI designs, or diagrams for better context
+>   * You can work with multiple images in a conversation
+>   * Image analysis works with diagrams, screenshots, mockups, and more
+>   * When Claude references images (for example, `[Image #1]`), `Cmd+Click` (Mac) or `Ctrl+Click` (Windows/Linux) the link to open the image in your default viewer
 
 ***
 
@@ -470,40 +432,36 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
 
 Use @ to quickly include files or directories without waiting for Claude to read them.
 
-<Steps>
-  <Step title="Reference a single file">
+1. **Reference a single file**
+
     ```
     > Explain the logic in @src/utils/auth.js
     ```
 
     This includes the full content of the file in the conversation.
-  </Step>
 
-  <Step title="Reference a directory">
+2. **Reference a directory**
+
     ```
     > What's the structure of @src/components?
     ```
 
     This provides a directory listing with file information.
-  </Step>
 
-  <Step title="Reference MCP resources">
+3. **Reference MCP resources**
+
     ```
     > Show me the data from @github:repos/owner/repo/issues
     ```
 
     This fetches data from connected MCP servers using the format @server:resource. See [MCP resources](/en/mcp#use-mcp-resources) for details.
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * File paths can be relative or absolute
-  * @ file references add `CLAUDE.md` in the file's directory and parent directories to context
-  * Directory references show file listings, not contents
-  * You can reference multiple files in a single message (for example, "@file1.js and @file2.js")
-</Tip>
+> **Tip:** Tips:
+>
+>   * File paths can be relative or absolute
+>   * @ file references add `CLAUDE.md` in the file's directory and parent directories to context
+>   * Directory references show file listings, not contents
+>   * You can reference multiple files in a single message (for example, "@file1.js and @file2.js")
 
 ***
 
@@ -515,9 +473,7 @@ Additionally, Opus 4.6 introduces adaptive reasoning: instead of a fixed thinkin
 
 Extended thinking is particularly valuable for complex architectural decisions, challenging bugs, multi-step implementation planning, and evaluating tradeoffs between different approaches.
 
-<Note>
-  Phrases like "think", "think hard", "ultrathink", and "think more" are interpreted as regular prompt instructions and don't allocate thinking tokens.
-</Note>
+> **Note:** Phrases like "think", "think hard", "ultrathink", and "think more" are interpreted as regular prompt instructions and don't allocate thinking tokens.
 
 ### Configure thinking mode
 
@@ -542,9 +498,7 @@ Extended thinking controls how much internal reasoning Claude performs before re
 
 `MAX_THINKING_TOKENS` is ignored when using Opus 4.6, since adaptive reasoning controls thinking depth instead. The one exception: setting `MAX_THINKING_TOKENS=0` still disables thinking entirely on any model.
 
-<Warning>
-  You're charged for all thinking tokens used, even though Claude 4 models show summarized thinking
-</Warning>
+> **Warning:** You're charged for all thinking tokens used, even though Claude 4 models show summarized thinking
 
 ***
 
@@ -564,21 +518,21 @@ Sessions are stored per project directory. The `/resume` picker shows sessions f
 
 Give sessions descriptive names to find them later. This is a best practice when working on multiple tasks or features.
 
-<Steps>
-  <Step title="Name the current session">
-    Use `/rename` during a session to give it a memorable name:
+1. **Name the current session**
+
+Use `/rename` during a session to give it a memorable name:
 
     ```
     > /rename auth-refactor
     ```
 
     You can also rename any session from the picker: run `/resume`, navigate to a session, and press `R`.
-  </Step>
 
-  <Step title="Resume by name later">
-    From the command line:
+2. **Resume by name later**
 
-    ```bash  theme={null}
+From the command line:
+
+    ```bash
     claude --resume auth-refactor
     ```
 
@@ -587,8 +541,6 @@ Give sessions descriptive names to find them later. This is a best practice when
     ```
     > /resume auth-refactor
     ```
-  </Step>
-</Steps>
 
 ### Use the session picker
 
@@ -619,24 +571,22 @@ The picker displays sessions with helpful metadata:
 
 Forked sessions (created with `/rewind` or `--fork-session`) are grouped together under their root session, making it easier to find related conversations.
 
-<Tip>
-  Tips:
-
-  * **Name sessions early**: Use `/rename` when starting work on a distinct task—it's much easier to find "payment-integration" than "explain this function" later
-  * Use `--continue` for quick access to your most recent conversation in the current directory
-  * Use `--resume session-name` when you know which session you need
-  * Use `--resume` (without a name) when you need to browse and select
-  * For scripts, use `claude --continue --print "prompt"` to resume in non-interactive mode
-  * Press `P` in the picker to preview a session before resuming it
-  * The resumed conversation starts with the same model and configuration as the original
-
-  How it works:
-
-  1. **Conversation Storage**: All conversations are automatically saved locally with their full message history
-  2. **Message Deserialization**: When resuming, the entire message history is restored to maintain context
-  3. **Tool State**: Tool usage and results from the previous conversation are preserved
-  4. **Context Restoration**: The conversation resumes with all previous context intact
-</Tip>
+> **Tip:** Tips:
+>
+>   * **Name sessions early**: Use `/rename` when starting work on a distinct task—it's much easier to find "payment-integration" than "explain this function" later
+>   * Use `--continue` for quick access to your most recent conversation in the current directory
+>   * Use `--resume session-name` when you know which session you need
+>   * Use `--resume` (without a name) when you need to browse and select
+>   * For scripts, use `claude --continue --print "prompt"` to resume in non-interactive mode
+>   * Press `P` in the picker to preview a session before resuming it
+>   * The resumed conversation starts with the same model and configuration as the original
+>
+>   How it works:
+>
+>   1. **Conversation Storage**: All conversations are automatically saved locally with their full message history
+>   2. **Message Deserialization**: When resuming, the entire message history is restored to maintain context
+>   3. **Tool State**: Tool usage and results from the previous conversation are preserved
+>   4. **Context Restoration**: The conversation resumes with all previous context intact
 
 ***
 
@@ -646,7 +596,7 @@ When working on multiple tasks at once, you need each Claude session to have its
 
 Use the `--worktree` (`-w`) flag to create an isolated worktree and start Claude in it. The value you pass becomes the worktree directory name and branch name:
 
-```bash  theme={null}
+```bash
 # Start Claude in a worktree named "feature-auth"
 # Creates .claude/worktrees/feature-auth/ with a new branch
 claude --worktree feature-auth
@@ -657,7 +607,7 @@ claude --worktree bugfix-123
 
 If you omit the name, Claude generates a random one automatically:
 
-```bash  theme={null}
+```bash
 # Auto-generates a name like "bright-running-fox"
 claude --worktree
 ```
@@ -679,15 +629,13 @@ When you exit a worktree session, Claude handles cleanup based on whether you ma
 
 To clean up worktrees outside of a Claude session, use [manual worktree management](#manage-worktrees-manually).
 
-<Tip>
-  Add `.claude/worktrees/` to your `.gitignore` to prevent worktree contents from appearing as untracked files in your main repository.
-</Tip>
+> **Tip:** Add `.claude/worktrees/` to your `.gitignore` to prevent worktree contents from appearing as untracked files in your main repository.
 
 ### Manage worktrees manually
 
 For more control over worktree location and branch configuration, create worktrees with Git directly. This is useful when you need to check out a specific existing branch or place the worktree outside the repository.
 
-```bash  theme={null}
+```bash
 # Create a worktree with a new branch
 git worktree add ../project-feature-a -b feature-a
 
@@ -704,9 +652,7 @@ git worktree remove ../project-feature-a
 
 Learn more in the [official Git worktree documentation](https://git-scm.com/docs/git-worktree).
 
-<Tip>
-  Remember to initialize your development environment in each new worktree according to your project's setup. Depending on your stack, this might include running dependency installation (`npm install`, `yarn`), setting up virtual environments, or following your project's standard setup process.
-</Tip>
+> **Tip:** Remember to initialize your development environment in each new worktree according to your project's setup. Depending on your stack, this might include running dependency installation (`npm install`, `yarn`), setting up virtual environments, or following your project's standard setup process.
 
 ### Non-git version control
 
@@ -720,13 +666,13 @@ For automated coordination of parallel sessions with shared tasks and messaging,
 
 When you kick off a long-running task and switch to another window, you can set up desktop notifications so you know when Claude finishes or needs your input. This uses the `Notification` [hook event](/en/hooks-guide#get-notified-when-claude-needs-input), which fires whenever Claude is waiting for permission, idle and ready for a new prompt, or completing authentication.
 
-<Steps>
-  <Step title="Open the hooks menu">
-    Type `/hooks` and select `Notification` from the list of events.
-  </Step>
+1. **Open the hooks menu**
 
-  <Step title="Configure the matcher">
-    Select `+ Match all (no filter)` to fire on all notification types. To notify only for specific events, select `+ Add new matcher…` and enter one of these values:
+Type `/hooks` and select `Notification` from the list of events.
+
+2. **Configure the matcher**
+
+Select `+ Match all (no filter)` to fire on all notification types. To notify only for specific events, select `+ Add new matcher…` and enter one of these values:
 
     | Matcher              | Fires when                                      |
     | :------------------- | :---------------------------------------------- |
@@ -734,42 +680,38 @@ When you kick off a long-running task and switch to another window, you can set 
     | `idle_prompt`        | Claude is done and waiting for your next prompt |
     | `auth_success`       | Authentication completes                        |
     | `elicitation_dialog` | Claude is asking you a question                 |
-  </Step>
 
-  <Step title="Add your notification command">
-    Select `+ Add new hook…` and enter the command for your OS:
+3. **Add your notification command**
 
-    <Tabs>
-      <Tab title="macOS">
-        Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
+Select `+ Add new hook…` and enter the command for your OS:
+
+    **macOS:**
+
+Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
 
         ```
         osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code"'
         ```
-      </Tab>
 
-      <Tab title="Linux">
-        Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
+**Linux:**
+
+Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
 
         ```
         notify-send 'Claude Code' 'Claude Code needs your attention'
         ```
-      </Tab>
 
-      <Tab title="Windows (PowerShell)">
-        Uses PowerShell to show a native message box through .NET's Windows Forms:
+**Windows (PowerShell):**
+
+Uses PowerShell to show a native message box through .NET's Windows Forms:
 
         ```
         powershell.exe -Command "[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Claude Code needs your attention', 'Claude Code')"
         ```
-      </Tab>
-    </Tabs>
-  </Step>
 
-  <Step title="Save to user settings">
-    Select `User settings` to apply the notification across all your projects.
-  </Step>
-</Steps>
+4. **Save to user settings**
+
+Select `User settings` to apply the notification across all your projects.
 
 For the full walkthrough with JSON configuration examples, see [Automate workflows with hooks](/en/hooks-guide#get-notified-when-claude-needs-input). For the complete event schema and notification types, see the [Notification reference](/en/hooks#notification).
 
@@ -783,7 +725,7 @@ Suppose you want to use Claude Code as a linter or code reviewer.
 
 **Add Claude to your build script:**
 
-```json  theme={null}
+```json
 // package.json
 {
     ...
@@ -794,13 +736,11 @@ Suppose you want to use Claude Code as a linter or code reviewer.
 }
 ```
 
-<Tip>
-  Tips:
-
-  * Use Claude for automated code review in your CI/CD pipeline
-  * Customize the prompt to check for specific issues relevant to your project
-  * Consider creating multiple scripts for different types of verification
-</Tip>
+> **Tip:** Tips:
+>
+>   * Use Claude for automated code review in your CI/CD pipeline
+>   * Customize the prompt to check for specific issues relevant to your project
+>   * Consider creating multiple scripts for different types of verification
 
 ### Pipe in, pipe out
 
@@ -808,55 +748,49 @@ Suppose you want to pipe data into Claude, and get back data in a structured for
 
 **Pipe data through Claude:**
 
-```bash  theme={null}
+```bash
 cat build-error.txt | claude -p 'concisely explain the root cause of this build error' > output.txt
 ```
 
-<Tip>
-  Tips:
-
-  * Use pipes to integrate Claude into existing shell scripts
-  * Combine with other Unix tools for powerful workflows
-  * Consider using --output-format for structured output
-</Tip>
+> **Tip:** Tips:
+>
+>   * Use pipes to integrate Claude into existing shell scripts
+>   * Combine with other Unix tools for powerful workflows
+>   * Consider using --output-format for structured output
 
 ### Control output format
 
 Suppose you need Claude's output in a specific format, especially when integrating Claude Code into scripts or other tools.
 
-<Steps>
-  <Step title="Use text format (default)">
-    ```bash  theme={null}
+1. **Use text format (default)**
+
+    ```bash
     cat data.txt | claude -p 'summarize this data' --output-format text > summary.txt
     ```
 
     This outputs just Claude's plain text response (default behavior).
-  </Step>
 
-  <Step title="Use JSON format">
-    ```bash  theme={null}
+2. **Use JSON format**
+
+    ```bash
     cat code.py | claude -p 'analyze this code for bugs' --output-format json > analysis.json
     ```
 
     This outputs a JSON array of messages with metadata including cost and duration.
-  </Step>
 
-  <Step title="Use streaming JSON format">
-    ```bash  theme={null}
+3. **Use streaming JSON format**
+
+    ```bash
     cat log.txt | claude -p 'parse this log file for errors' --output-format stream-json
     ```
 
     This outputs a series of JSON objects in real-time as Claude processes the request. Each message is a valid JSON object, but the entire output is not valid JSON if concatenated.
-  </Step>
-</Steps>
 
-<Tip>
-  Tips:
-
-  * Use `--output-format text` for simple integrations where you just need Claude's response
-  * Use `--output-format json` when you need the full conversation log
-  * Use `--output-format stream-json` for real-time output of each conversation turn
-</Tip>
+> **Tip:** Tips:
+>
+>   * Use `--output-format text` for simple integrations where you just need Claude's response
+>   * Use `--output-format json` when you need the full conversation log
+>   * Use `--output-format stream-json` for real-time output of each conversation turn
 
 ***
 
@@ -890,36 +824,21 @@ Claude has built-in access to its documentation and can answer questions about i
 > what are the limitations of Claude Code?
 ```
 
-<Note>
-  Claude provides documentation-based answers to these questions. For executable examples and hands-on demonstrations, refer to the specific workflow sections above.
-</Note>
+> **Note:** Claude provides documentation-based answers to these questions. For executable examples and hands-on demonstrations, refer to the specific workflow sections above.
 
-<Tip>
-  Tips:
-
-  * Claude always has access to the latest Claude Code documentation, regardless of the version you're using
-  * Ask specific questions to get detailed answers
-  * Claude can explain complex features like MCP integration, enterprise configurations, and advanced workflows
-</Tip>
+> **Tip:** Tips:
+>
+>   * Claude always has access to the latest Claude Code documentation, regardless of the version you're using
+>   * Ask specific questions to get detailed answers
+>   * Claude can explain complex features like MCP integration, enterprise configurations, and advanced workflows
 
 ***
 
 ## Next steps
+  - **[Best practices](/en/best-practices)**: Patterns for getting the most out of Claude Code
 
-<CardGroup cols={2}>
-  <Card title="Best practices" icon="lightbulb" href="/en/best-practices">
-    Patterns for getting the most out of Claude Code
-  </Card>
+  - **[How Claude Code works](/en/how-claude-code-works)**: Understand the agentic loop and context management
 
-  <Card title="How Claude Code works" icon="gear" href="/en/how-claude-code-works">
-    Understand the agentic loop and context management
-  </Card>
+  - **[Extend Claude Code](/en/features-overview)**: Add skills, hooks, MCP, subagents, and plugins
 
-  <Card title="Extend Claude Code" icon="puzzle-piece" href="/en/features-overview">
-    Add skills, hooks, MCP, subagents, and plugins
-  </Card>
-
-  <Card title="Reference implementation" icon="code" href="https://github.com/anthropics/claude-code/tree/main/.devcontainer">
-    Clone our development container reference implementation
-  </Card>
-</CardGroup>
+  - **[Reference implementation](https://github.com/anthropics/claude-code/tree/main/.devcontainer)**: Clone our development container reference implementation

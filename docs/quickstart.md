@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Quickstart
 
 > Welcome to Claude Code!
@@ -16,70 +12,60 @@ Make sure you have:
 * A code project to work with
 * A [Claude subscription](https://claude.com/pricing) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/en/third-party-integrations)
 
-<Note>
-  This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/en/desktop), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](/en/slack), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
-</Note>
+> **Note:** This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/en/desktop), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](/en/slack), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
 
 ## Step 1: Install Claude Code
 
 To install Claude Code, use one of the following methods:
 
-<Tabs>
-  <Tab title="Native Install (Recommended)">
-    **macOS, Linux, WSL:**
+**Native Install (Recommended):**
 
-    ```bash  theme={null}
+**macOS, Linux, WSL:**
+
+    ```bash
     curl -fsSL https://claude.ai/install.sh | bash
     ```
 
     **Windows PowerShell:**
 
-    ```powershell  theme={null}
+    ```powershell
     irm https://claude.ai/install.ps1 | iex
     ```
 
     **Windows CMD:**
 
-    ```batch  theme={null}
+    ```batch
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
     ```
 
-    <Info>
-      Native installations automatically update in the background to keep you on the latest version.
-    </Info>
-  </Tab>
+    > **Info:** Native installations automatically update in the background to keep you on the latest version.
 
-  <Tab title="Homebrew">
-    ```sh  theme={null}
+**Homebrew:**
+
+    ```sh
     brew install --cask claude-code
     ```
 
-    <Info>
-      Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
-    </Info>
-  </Tab>
+    > **Info:** Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
 
-  <Tab title="WinGet">
-    ```powershell  theme={null}
+**WinGet:**
+
+    ```powershell
     winget install Anthropic.ClaudeCode
     ```
 
-    <Info>
-      WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
-    </Info>
-  </Tab>
-</Tabs>
+    > **Info:** WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
 
 ## Step 2: Log in to your account
 
 Claude Code requires an account to use. When you start an interactive session with the `claude` command, you'll need to log in:
 
-```bash  theme={null}
+```bash
 claude
 # You'll be prompted to log in on first use
 ```
 
-```bash  theme={null}
+```bash
 /login
 # Follow the prompts to log in with your account
 ```
@@ -96,16 +82,14 @@ Once logged in, your credentials are stored and you won't need to log in again. 
 
 Open your terminal in any project directory and start Claude Code:
 
-```bash  theme={null}
+```bash
 cd /path/to/your/project
 claude
 ```
 
 You'll see the Claude Code welcome screen with your session information, recent conversations, and latest updates. Type `/help` for available commands or `/resume` to continue a previous conversation.
 
-<Tip>
-  After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/en/authentication#credential-management).
-</Tip>
+> **Tip:** After logging in (Step 2), your credentials are stored on your system. Learn more in [Credential Management](/en/authentication#credential-management).
 
 ## Step 4: Ask your first question
 
@@ -143,9 +127,7 @@ how do I create custom skills in Claude Code?
 can Claude Code work with Docker?
 ```
 
-<Note>
-  Claude Code reads your files as needed - you don't have to manually add context. Claude also has access to its own documentation and can answer questions about its features and capabilities.
-</Note>
+> **Note:** Claude Code reads your files as needed - you don't have to manually add context. Claude also has access to its own documentation and can answer questions about its features and capabilities.
 
 ## Step 5: Make your first code change
 
@@ -162,9 +144,7 @@ Claude Code will:
 3. Ask for your approval
 4. Make the edit
 
-<Note>
-  Claude Code always asks for permission before modifying files. You can approve individual changes or enable "Accept all" mode for a session.
-</Note>
+> **Note:** Claude Code always asks for permission before modifying files. You can approve individual changes or enable "Accept all" mode for a session.
 
 ## Step 6: Use Git with Claude Code
 
@@ -243,9 +223,7 @@ update the README with installation instructions
 review my changes and suggest improvements
 ```
 
-<Tip>
-  **Remember**: Claude Code is your AI pair programmer. Talk to it like you would a helpful colleague - describe what you want to achieve, and it will help you get there.
-</Tip>
+> **Tip:** **Remember**: Claude Code is your AI pair programmer. Talk to it like you would a helpful colleague - describe what you want to achieve, and it will help you get there.
 
 ## Essential commands
 
@@ -268,26 +246,25 @@ See the [CLI reference](/en/cli-reference) for a complete list of commands.
 ## Pro tips for beginners
 
 For more, see [best practices](/en/best-practices) and [common workflows](/en/common-workflows).
+  ### Be specific with your requests
 
-<AccordionGroup>
-  <Accordion title="Be specific with your requests">
-    Instead of: "fix the bug"
+Instead of: "fix the bug"
 
-    Try: "fix the login bug where users see a blank screen after entering wrong credentials"
-  </Accordion>
+Try: "fix the login bug where users see a blank screen after entering wrong credentials"
 
-  <Accordion title="Use step-by-step instructions">
-    Break complex tasks into steps:
+  ### Use step-by-step instructions
+
+Break complex tasks into steps:
 
     ```
     1. create a new database table for user profiles
     2. create an API endpoint to get and update user profiles
     3. build a webpage that allows users to see and edit their information
     ```
-  </Accordion>
 
-  <Accordion title="Let Claude explore first">
-    Before making changes, let Claude understand your code:
+  ### Let Claude explore first
+
+Before making changes, let Claude understand your code:
 
     ```
     analyze the database schema
@@ -296,38 +273,23 @@ For more, see [best practices](/en/best-practices) and [common workflows](/en/co
     ```
     build a dashboard showing products that are most frequently returned by our UK customers
     ```
-  </Accordion>
 
-  <Accordion title="Save time with shortcuts">
-    * Press `?` to see all available keyboard shortcuts
-    * Use Tab for command completion
-    * Press ↑ for command history
-    * Type `/` to see all commands and skills
-  </Accordion>
-</AccordionGroup>
+  ### Save time with shortcuts
 
+* Press `?` to see all available keyboard shortcuts
+* Use Tab for command completion
+* Press ↑ for command history
+* Type `/` to see all commands and skills
 ## What's next?
 
 Now that you've learned the basics, explore more advanced features:
+  - **[How Claude Code works](/en/how-claude-code-works)**: Understand the agentic loop, built-in tools, and how Claude Code interacts with your project
 
-<CardGroup cols={2}>
-  <Card title="How Claude Code works" icon="microchip" href="/en/how-claude-code-works">
-    Understand the agentic loop, built-in tools, and how Claude Code interacts with your project
-  </Card>
+  - **[Best practices](/en/best-practices)**: Get better results with effective prompting and project setup
 
-  <Card title="Best practices" icon="star" href="/en/best-practices">
-    Get better results with effective prompting and project setup
-  </Card>
+  - **[Common workflows](/en/common-workflows)**: Step-by-step guides for common tasks
 
-  <Card title="Common workflows" icon="graduation-cap" href="/en/common-workflows">
-    Step-by-step guides for common tasks
-  </Card>
-
-  <Card title="Extend Claude Code" icon="puzzle-piece" href="/en/features-overview">
-    Customize with CLAUDE.md, skills, hooks, MCP, and more
-  </Card>
-</CardGroup>
-
+  - **[Extend Claude Code](/en/features-overview)**: Customize with CLAUDE.md, skills, hooks, MCP, and more
 ## Getting help
 
 * **In Claude Code**: Type `/help` or ask "how do I..."

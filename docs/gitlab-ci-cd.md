@@ -1,20 +1,12 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Claude Code GitLab CI/CD
 
 > Learn about integrating Claude Code into your development workflow with GitLab CI/CD
 
-<Info>
-  Claude Code for GitLab CI/CD is currently in beta. Features and functionality may evolve as we refine the experience.
+> **Info:** Claude Code for GitLab CI/CD is currently in beta. Features and functionality may evolve as we refine the experience.
+>
+>   This integration is maintained by GitLab. For support, see the following [GitLab issue](https://gitlab.com/gitlab-org/gitlab/-/issues/573776).
 
-  This integration is maintained by GitLab. For support, see the following [GitLab issue](https://gitlab.com/gitlab-org/gitlab/-/issues/573776).
-</Info>
-
-<Note>
-  This integration is built on top of the [Claude Code CLI and Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview), enabling programmatic use of Claude in your CI/CD jobs and custom automation workflows.
-</Note>
+> **Note:** This integration is built on top of the [Claude Code CLI and Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview), enabling programmatic use of Claude in your CI/CD jobs and custom automation workflows.
 
 ## Why use Claude Code with GitLab?
 
@@ -62,7 +54,7 @@ The fastest way to get started is to add a minimal job to your `.gitlab-ci.yml` 
 
 2. **Add a Claude job to `.gitlab-ci.yml`**
 
-```yaml  theme={null}
+```yaml
 stages:
   - ai
 
@@ -97,9 +89,7 @@ claude:
 
 After adding the job and your `ANTHROPIC_API_KEY` variable, test by running the job manually from **CI/CD** → **Pipelines**, or trigger it from an MR to let Claude propose updates in a branch and open an MR if needed.
 
-<Note>
-  To run on AWS Bedrock or Google Vertex AI instead of the Claude API, see the [Using with AWS Bedrock & Google Vertex AI](#using-with-aws-bedrock--google-vertex-ai) section below for authentication and environment setup.
-</Note>
+> **Note:** To run on AWS Bedrock or Google Vertex AI instead of the Claude API, see the [Using with AWS Bedrock & Google Vertex AI](#using-with-aws-bedrock--google-vertex-ai) section below for authentication and environment setup.
 
 ### Manual setup (recommended for production)
 
@@ -156,9 +146,9 @@ Claude locates the bug, implements a fix, and updates the branch or opens a new 
 
 For enterprise environments, you can run Claude Code entirely on your cloud infrastructure with the same developer experience.
 
-<Tabs>
-  <Tab title="AWS Bedrock">
-    ### Prerequisites
+**AWS Bedrock:**
+
+### Prerequisites
 
     Before setting up Claude Code with AWS Bedrock, you need:
 
@@ -187,17 +177,17 @@ For enterprise environments, you can run Claude Code entirely on your cloud infr
 
     Add variables in Settings → CI/CD → Variables:
 
-    ```yaml  theme={null}
+    ```yaml
     # For AWS Bedrock:
     - AWS_ROLE_TO_ASSUME
     - AWS_REGION
     ```
 
     Use the AWS Bedrock job example above to exchange the GitLab job token for temporary AWS credentials at runtime.
-  </Tab>
 
-  <Tab title="Google Vertex AI">
-    ### Prerequisites
+**Google Vertex AI:**
+
+### Prerequisites
 
     Before setting up Claude Code with Google Vertex AI, you need:
 
@@ -227,7 +217,7 @@ For enterprise environments, you can run Claude Code entirely on your cloud infr
 
     Add variables in Settings → CI/CD → Variables:
 
-    ```yaml  theme={null}
+    ```yaml
     # For Google Vertex AI:
     - GCP_WORKLOAD_IDENTITY_PROVIDER
     - GCP_SERVICE_ACCOUNT
@@ -235,8 +225,6 @@ For enterprise environments, you can run Claude Code entirely on your cloud infr
     ```
 
     Use the Google Vertex AI job example above to authenticate without storing keys.
-  </Tab>
-</Tabs>
 
 ## Configuration examples
 
@@ -244,7 +232,7 @@ Below are ready-to-use snippets you can adapt to your pipeline.
 
 ### Basic .gitlab-ci.yml (Claude API)
 
-```yaml  theme={null}
+```yaml
 stages:
   - ai
 
@@ -284,7 +272,7 @@ claude:
 * `AWS_ROLE_TO_ASSUME`: ARN of the IAM role for Bedrock access
 * `AWS_REGION`: Bedrock region (for example, `us-west-2`)
 
-```yaml  theme={null}
+```yaml
 claude-bedrock:
   stage: ai
   image: node:24-alpine3.21
@@ -318,9 +306,7 @@ claude-bedrock:
     AWS_REGION: "us-west-2"
 ```
 
-<Note>
-  Model IDs for Bedrock include region-specific prefixes (for example, `us.anthropic.claude-sonnet-4-6`). Pass the desired model via your job configuration or prompt if your workflow supports it.
-</Note>
+> **Note:** Model IDs for Bedrock include region-specific prefixes (for example, `us.anthropic.claude-sonnet-4-6`). Pass the desired model via your job configuration or prompt if your workflow supports it.
 
 ### Google Vertex AI job example (Workload Identity Federation)
 
@@ -336,7 +322,7 @@ claude-bedrock:
 * `GCP_SERVICE_ACCOUNT`: Service account email
 * `CLOUD_ML_REGION`: Vertex region (for example, `us-east5`)
 
-```yaml  theme={null}
+```yaml
 claude-vertex:
   stage: ai
   image: gcr.io/google.com/cloudsdktool/google-cloud-cli:slim
@@ -371,9 +357,7 @@ claude-vertex:
     CLOUD_ML_REGION: "us-east5"
 ```
 
-<Note>
-  With Workload Identity Federation, you do not need to store service account keys. Use repository-specific trust conditions and least-privilege service accounts.
-</Note>
+> **Note:** With Workload Identity Federation, you do not need to store service account keys. Use repository-specific trust conditions and least-privilege service accounts.
 
 ## Best practices
 
@@ -454,9 +438,7 @@ Claude Code supports these commonly used inputs:
 * `ANTHROPIC_API_KEY`: Required for the Claude API (not used for Bedrock/Vertex)
 * Provider-specific environment: `AWS_REGION`, project/region vars for Vertex
 
-<Note>
-  Exact flags and parameters may vary by version of `@anthropic-ai/claude-code`. Run `claude --help` in your job to see supported options.
-</Note>
+> **Note:** Exact flags and parameters may vary by version of `@anthropic-ai/claude-code`. Run `claude --help` in your job to see supported options.
 
 ### Customizing Claude's behavior
 

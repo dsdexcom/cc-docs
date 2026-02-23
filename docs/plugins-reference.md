@@ -1,14 +1,8 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Plugins reference
 
 > Complete technical reference for Claude Code plugin system, including schemas, CLI commands, and component specifications.
 
-<Tip>
-  Looking to install plugins? See [Discover and install plugins](/en/discover-plugins). For creating plugins, see [Plugins](/en/plugins). For distributing plugins, see [Plugin marketplaces](/en/plugin-marketplaces).
-</Tip>
+> **Tip:** Looking to install plugins? See [Discover and install plugins](/en/discover-plugins). For creating plugins, see [Plugins](/en/plugins). For distributing plugins, see [Plugin marketplaces](/en/plugin-marketplaces).
 
 This reference provides complete technical specifications for the Claude Code plugin system, including component schemas, CLI commands, and development tools.
 
@@ -54,7 +48,7 @@ Plugins can provide specialized subagents for specific tasks that Claude can inv
 
 **Agent structure**:
 
-```markdown  theme={null}
+```markdown
 ---
 name: agent-name
 description: What this agent specializes in and when Claude should invoke it
@@ -82,7 +76,7 @@ Plugins can provide event handlers that respond to Claude Code events automatica
 
 **Hook configuration**:
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "PostToolUse": [
@@ -133,7 +127,7 @@ Plugins can bundle Model Context Protocol (MCP) servers to connect Claude Code w
 
 **MCP server configuration**:
 
-```json  theme={null}
+```json
 {
   "mcpServers": {
     "plugin-database": {
@@ -161,9 +155,7 @@ Plugins can bundle Model Context Protocol (MCP) servers to connect Claude Code w
 
 ### LSP servers
 
-<Tip>
-  Looking to use LSP plugins? Install them from the official marketplace: search for "lsp" in the `/plugin` Discover tab. This section documents how to create LSP plugins for languages not covered by the official marketplace.
-</Tip>
+> **Tip:** Looking to use LSP plugins? Install them from the official marketplace: search for "lsp" in the `/plugin` Discover tab. This section documents how to create LSP plugins for languages not covered by the official marketplace.
 
 Plugins can provide [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP) servers to give Claude real-time code intelligence while working on your codebase.
 
@@ -179,7 +171,7 @@ LSP integration provides:
 
 **`.lsp.json` file format**:
 
-```json  theme={null}
+```json
 {
   "go": {
     "command": "gopls",
@@ -193,7 +185,7 @@ LSP integration provides:
 
 **Inline in `plugin.json`**:
 
-```json  theme={null}
+```json
 {
   "name": "my-plugin",
   "lspServers": {
@@ -230,9 +222,7 @@ LSP integration provides:
 | `restartOnCrash`        | Whether to automatically restart the server if it crashes |
 | `maxRestarts`           | Maximum number of restart attempts before giving up       |
 
-<Warning>
-  **You must install the language server binary separately.** LSP plugins configure how Claude Code connects to a language server, but they don't include the server itself. If you see `Executable not found in $PATH` in the `/plugin` Errors tab, install the required binary for your language.
-</Warning>
+> **Warning:** **You must install the language server binary separately.** LSP plugins configure how Claude Code connects to a language server, but they don't include the server itself. If you see `Executable not found in $PATH` in the `/plugin` Errors tab, install the required binary for your language.
 
 **Available LSP plugins:**
 
@@ -269,7 +259,7 @@ The manifest is optional. If omitted, Claude Code auto-discovers components in [
 
 ### Complete schema
 
-```json  theme={null}
+```json
 {
   "name": "plugin-name",
   "version": "1.2.0",
@@ -340,7 +330,7 @@ agent `agent-creator` for the plugin with name `plugin-dev` will appear as
 
 **Path examples**:
 
-```json  theme={null}
+```json
 {
   "commands": [
     "./specialized/deploy.md",
@@ -357,7 +347,7 @@ agent `agent-creator` for the plugin with name `plugin-dev` will appear as
 
 **`${CLAUDE_PLUGIN_ROOT}`**: Contains the absolute path to your plugin directory. Use this in hooks, MCP servers, and scripts to ensure correct paths regardless of installation location.
 
-```json  theme={null}
+```json
 {
   "hooks": {
     "PostToolUse": [
@@ -393,7 +383,7 @@ Installed plugins cannot reference files outside their directory. Paths that tra
 
 If your plugin needs to access files outside its directory, you can create symbolic links to external files within your plugin directory. Symlinks are honored during the copy process:
 
-```bash  theme={null}
+```bash
 # Inside your plugin directory
 ln -s /path/to/shared-utils ./shared-utils
 ```
@@ -439,9 +429,7 @@ enterprise-plugin/
 └── CHANGELOG.md             # Version history
 ```
 
-<Warning>
-  The `.claude-plugin/` directory contains the `plugin.json` file. All other directories (commands/, agents/, skills/, hooks/) must be at the plugin root, not inside `.claude-plugin/`.
-</Warning>
+> **Warning:** The `.claude-plugin/` directory contains the `plugin.json` file. All other directories (commands/, agents/, skills/, hooks/) must be at the plugin root, not inside `.claude-plugin/`.
 
 ### File locations reference
 
@@ -466,7 +454,7 @@ Claude Code provides CLI commands for non-interactive plugin management, useful 
 
 Install a plugin from available marketplaces.
 
-```bash  theme={null}
+```bash
 claude plugin install <plugin> [options]
 ```
 
@@ -485,7 +473,7 @@ Scope determines which settings file the installed plugin is added to. For examp
 
 **Examples:**
 
-```bash  theme={null}
+```bash
 # Install to user scope (default)
 claude plugin install formatter@my-marketplace
 
@@ -500,7 +488,7 @@ claude plugin install formatter@my-marketplace --scope local
 
 Remove an installed plugin.
 
-```bash  theme={null}
+```bash
 claude plugin uninstall <plugin> [options]
 ```
 
@@ -521,7 +509,7 @@ claude plugin uninstall <plugin> [options]
 
 Enable a disabled plugin.
 
-```bash  theme={null}
+```bash
 claude plugin enable <plugin> [options]
 ```
 
@@ -540,7 +528,7 @@ claude plugin enable <plugin> [options]
 
 Disable a plugin without uninstalling it.
 
-```bash  theme={null}
+```bash
 claude plugin disable <plugin> [options]
 ```
 
@@ -559,7 +547,7 @@ claude plugin disable <plugin> [options]
 
 Update a plugin to the latest version.
 
-```bash  theme={null}
+```bash
 claude plugin update <plugin> [options]
 ```
 
@@ -675,7 +663,7 @@ If your components are inside `.claude-plugin/`, move them to the plugin root.
 
 Follow semantic versioning for plugin releases:
 
-```json  theme={null}
+```json
 {
   "name": "my-plugin",
   "version": "2.1.0"
@@ -695,11 +683,9 @@ Follow semantic versioning for plugin releases:
 * Document changes in a `CHANGELOG.md` file
 * Use pre-release versions like `2.0.0-beta.1` for testing
 
-<Warning>
-  Claude Code uses the version to determine whether to update your plugin. If you change your plugin's code but don't bump the version in `plugin.json`, your plugin's existing users won't see your changes due to caching.
-
-  If your plugin is within a [marketplace](/en/plugin-marketplaces) directory, you can manage the version through `marketplace.json` instead and omit the `version` field from `plugin.json`.
-</Warning>
+> **Warning:** Claude Code uses the version to determine whether to update your plugin. If you change your plugin's code but don't bump the version in `plugin.json`, your plugin's existing users won't see your changes due to caching.
+>
+>   If your plugin is within a [marketplace](/en/plugin-marketplaces) directory, you can manage the version through `marketplace.json` instead and omit the `version` field from `plugin.json`.
 
 ***
 

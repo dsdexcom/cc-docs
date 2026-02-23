@@ -1,7 +1,3 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Model configuration
 
 > Learn about the Claude Code model configuration, including model aliases like `opusplan`
@@ -45,7 +41,7 @@ You can configure your model in several ways, listed in order of priority:
 
 Example usage:
 
-```bash  theme={null}
+```bash
 # Start with Opus
 claude --model opus
 
@@ -70,7 +66,7 @@ Enterprise administrators can use `availableModels` in [managed or policy settin
 
 When `availableModels` is set, users cannot switch to models not in the list via `/model`, `--model` flag, Config tool, or `ANTHROPIC_MODEL` environment variable.
 
-```json  theme={null}
+```json
 {
   "availableModels": ["sonnet", "haiku"]
 }
@@ -91,7 +87,7 @@ To fully control the model experience, use `availableModels` together with the `
 
 This example ensures all users run Sonnet 4.6 and can only choose between Sonnet and Haiku:
 
-```json  theme={null}
+```json
 {
   "model": "sonnet",
   "availableModels": ["sonnet", "haiku"]
@@ -144,9 +140,7 @@ Effort is currently supported on Opus 4.6. The effort slider appears in `/model`
 
 Opus 4.6 and Sonnet 4.6 support a [1 million token context window](https://platform.claude.com/docs/en/build-with-claude/context-windows#1m-token-context-window) for long sessions with large codebases.
 
-<Note>
-  The 1M context window is currently in beta. Features, pricing, and availability may change.
-</Note>
+> **Note:** The 1M context window is currently in beta. Features, pricing, and availability may change.
 
 Extended context is available for:
 
@@ -161,7 +155,7 @@ If your account supports 1M context, the option appears in the model picker (`/m
 
 You can also use the `[1m]` suffix with model aliases or full model names:
 
-```bash  theme={null}
+```bash
 # Use the sonnet[1m] alias
 /model sonnet[1m]
 
@@ -197,9 +191,7 @@ When deploying Claude Code through [Bedrock](/en/amazon-bedrock), [Vertex AI](/e
 
 Without pinning, Claude Code uses model aliases (`sonnet`, `opus`, `haiku`) that resolve to the latest version. When Anthropic releases a new model, users whose accounts don't have the new version enabled will break silently.
 
-<Warning>
-  Set all three model environment variables to specific version IDs as part of your initial setup. Skipping this step means a Claude Code update can break your users without any action on your part.
-</Warning>
+> **Warning:** Set all three model environment variables to specific version IDs as part of your initial setup. Skipping this step means a Claude Code update can break your users without any action on your part.
 
 Use the following environment variables with version-specific model IDs for your provider:
 
@@ -211,9 +203,7 @@ Use the following environment variables with version-specific model IDs for your
 
 Apply the same pattern for `ANTHROPIC_DEFAULT_SONNET_MODEL` and `ANTHROPIC_DEFAULT_HAIKU_MODEL`. For current and legacy model IDs across all providers, see [Models overview](https://platform.claude.com/docs/en/about-claude/models/overview). To upgrade users to a new model version, update these environment variables and redeploy.
 
-<Note>
-  The `settings.availableModels` allowlist still applies when using third-party providers. Filtering matches on the model alias (`opus`, `sonnet`, `haiku`), not the provider-specific model ID.
-</Note>
+> **Note:** The `settings.availableModels` allowlist still applies when using third-party providers. Filtering matches on the model alias (`opus`, `sonnet`, `haiku`), not the provider-specific model ID.
 
 ### Prompt caching configuration
 

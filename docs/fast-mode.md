@@ -1,14 +1,8 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Speed up responses with fast mode
 
 > Get faster Opus 4.6 responses in Claude Code by toggling fast mode.
 
-<Note>
-  Fast mode is in [research preview](#research-preview). The feature, pricing, and availability may change based on feedback.
-</Note>
+> **Note:** Fast mode is in [research preview](#research-preview). The feature, pricing, and availability may change based on feedback.
 
 Fast mode is a high-speed configuration for Claude Opus 4.6, making the model 2.5x faster at a higher cost per token. Toggle it on with `/fast` when you need speed for interactive work like rapid iteration or live debugging, and toggle it off when cost matters more than latency.
 
@@ -86,15 +80,11 @@ Fast mode requires all of the following:
 * **Not available on third-party cloud providers**: fast mode is not available on Amazon Bedrock, Google Vertex AI, or Microsoft Azure Foundry. Fast mode is available through the Anthropic Console API and for Claude subscription plans using extra usage.
 * **Extra usage enabled**: your account must have extra usage enabled, which allows billing beyond your plan's included usage. For individual accounts, enable this in your [Console billing settings](https://platform.claude.com/settings/organization/billing). For Teams and Enterprise, an admin must enable extra usage for the organization.
 
-<Note>
-  Fast mode usage is billed directly to extra usage, even if you have remaining usage on your plan. This means fast mode tokens do not count against your plan's included usage and are charged at the fast mode rate from the first token.
-</Note>
+> **Note:** Fast mode usage is billed directly to extra usage, even if you have remaining usage on your plan. This means fast mode tokens do not count against your plan's included usage and are charged at the fast mode rate from the first token.
 
 * **Admin enablement for Teams and Enterprise**: fast mode is disabled by default for Teams and Enterprise organizations. An admin must explicitly [enable fast mode](#enable-fast-mode-for-your-organization) before users can access it.
 
-<Note>
-  If your admin has not enabled fast mode for your organization, the `/fast` command will show "Fast mode has been disabled by your organization."
-</Note>
+> **Note:** If your admin has not enabled fast mode for your organization, the `/fast` command will show "Fast mode has been disabled by your organization."
 
 ### Enable fast mode for your organization
 

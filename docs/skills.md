@@ -1,18 +1,12 @@
-> ## Documentation Index
-> Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
-> Use this file to discover all available pages before exploring further.
-
 # Extend Claude with skills
 
 > Create, manage, and share skills to extend Claude's capabilities in Claude Code. Includes custom slash commands.
 
 Skills extend what Claude can do. Create a `SKILL.md` file with instructions, and Claude adds it to its toolkit. Claude uses skills when relevant, or you can invoke one directly with `/skill-name`.
 
-<Note>
-  For built-in commands like `/help` and `/compact`, see [interactive mode](/en/interactive-mode#built-in-commands).
-
-  **Custom slash commands have been merged into skills.** A file at `.claude/commands/review.md` and a skill at `.claude/skills/review/SKILL.md` both create `/review` and work the same way. Your existing `.claude/commands/` files keep working. Skills add optional features: a directory for supporting files, frontmatter to [control whether you or Claude invokes them](#control-who-invokes-a-skill), and the ability for Claude to load them automatically when relevant.
-</Note>
+> **Note:** For built-in commands like `/help` and `/compact`, see [interactive mode](/en/interactive-mode#built-in-commands).
+>
+>   **Custom slash commands have been merged into skills.** A file at `.claude/commands/review.md` and a skill at `.claude/skills/review/SKILL.md` both create `/review` and work the same way. Your existing `.claude/commands/` files keep working. Skills add optional features: a directory for supporting files, frontmatter to [control whether you or Claude invokes them](#control-who-invokes-a-skill), and the ability for Claude to load them automatically when relevant.
 
 Claude Code skills follow the [Agent Skills](https://agentskills.io) open standard, which works across multiple AI tools. Claude Code extends the standard with additional features like [invocation control](#control-who-invokes-a-skill), [subagent execution](#run-skills-in-a-subagent), and [dynamic context injection](#inject-dynamic-context).
 
@@ -22,21 +16,21 @@ Claude Code skills follow the [Agent Skills](https://agentskills.io) open standa
 
 This example creates a skill that teaches Claude to explain code using visual diagrams and analogies. Since it uses default frontmatter, Claude can load it automatically when you ask how something works, or you can invoke it directly with `/explain-code`.
 
-<Steps>
-  <Step title="Create the skill directory">
-    Create a directory for the skill in your personal skills folder. Personal skills are available across all your projects.
+1. **Create the skill directory**
 
-    ```bash  theme={null}
+Create a directory for the skill in your personal skills folder. Personal skills are available across all your projects.
+
+    ```bash
     mkdir -p ~/.claude/skills/explain-code
     ```
-  </Step>
 
-  <Step title="Write SKILL.md">
-    Every skill needs a `SKILL.md` file with two parts: YAML frontmatter (between `---` markers) that tells Claude when to use the skill, and markdown content with instructions Claude follows when the skill is invoked. The `name` field becomes the `/slash-command`, and the `description` helps Claude decide when to load it automatically.
+2. **Write SKILL.md**
+
+Every skill needs a `SKILL.md` file with two parts: YAML frontmatter (between `---` markers) that tells Claude when to use the skill, and markdown content with instructions Claude follows when the skill is invoked. The `name` field becomes the `/slash-command`, and the `description` helps Claude decide when to load it automatically.
 
     Create `~/.claude/skills/explain-code/SKILL.md`:
 
-    ```yaml  theme={null}
+    ```yaml
     ---
     name: explain-code
     description: Explains code with visual diagrams and analogies. Use when explaining how code works, teaching about a codebase, or when the user asks "how does this work?"
@@ -51,10 +45,10 @@ This example creates a skill that teaches Claude to explain code using visual di
 
     Keep explanations conversational. For complex concepts, use multiple analogies.
     ```
-  </Step>
 
-  <Step title="Test the skill">
-    You can test it two ways:
+3. **Test the skill**
+
+You can test it two ways:
 
     **Let Claude invoke it automatically** by asking something that matches the description:
 
@@ -69,8 +63,6 @@ This example creates a skill that teaches Claude to explain code using visual di
     ```
 
     Either way, Claude should include an analogy and ASCII diagram in its explanation.
-  </Step>
-</Steps>
 
 ### Where skills live
 
@@ -103,17 +95,13 @@ my-skill/
 
 The `SKILL.md` contains the main instructions and is required. Other files are optional and let you build more powerful skills: templates for Claude to fill in, example outputs showing the expected format, scripts Claude can execute, or detailed reference documentation. Reference these files from your `SKILL.md` so Claude knows what they contain and when to load them. See [Add supporting files](#add-supporting-files) for more details.
 
-<Note>
-  Files in `.claude/commands/` still work and support the same [frontmatter](#frontmatter-reference). Skills are recommended since they support additional features like supporting files.
-</Note>
+> **Note:** Files in `.claude/commands/` still work and support the same [frontmatter](#frontmatter-reference). Skills are recommended since they support additional features like supporting files.
 
 #### Skills from additional directories
 
 Skills defined in `.claude/skills/` within directories added via `--add-dir` are loaded automatically and picked up by live change detection, so you can edit them during a session without restarting.
 
-<Note>
-  CLAUDE.md files from `--add-dir` directories are not loaded by default. To load them, set `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`. See [Load memory from additional directories](/en/memory#load-memory-from-additional-directories).
-</Note>
+> **Note:** CLAUDE.md files from `--add-dir` directories are not loaded by default. To load them, set `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`. See [Load memory from additional directories](/en/memory#load-memory-from-additional-directories).
 
 ## Configure skills
 
@@ -125,7 +113,7 @@ Skill files can contain any instructions, but thinking about how you want to inv
 
 **Reference content** adds knowledge Claude applies to your current work. Conventions, patterns, style guides, domain knowledge. This content runs inline so Claude can use it alongside your conversation context.
 
-```yaml  theme={null}
+```yaml
 ---
 name: api-conventions
 description: API design patterns for this codebase
@@ -139,7 +127,7 @@ When writing API endpoints:
 
 **Task content** gives Claude step-by-step instructions for a specific action, like deployments, commits, or code generation. These are often actions you want to invoke directly with `/skill-name` rather than letting Claude decide when to run them. Add `disable-model-invocation: true` to prevent Claude from triggering it automatically.
 
-```yaml  theme={null}
+```yaml
 ---
 name: deploy
 description: Deploy the application to production
@@ -159,7 +147,7 @@ Your `SKILL.md` can contain anything, but thinking through how you want the skil
 
 Beyond the markdown content, you can configure skill behavior using YAML frontmatter fields between `---` markers at the top of your `SKILL.md` file:
 
-```yaml  theme={null}
+```yaml
 ---
 name: my-skill
 description: What this skill does
@@ -198,7 +186,7 @@ Skills support string substitution for dynamic values in the skill content:
 
 **Example using substitutions:**
 
-```yaml  theme={null}
+```yaml
 ---
 name: session-logger
 description: Log activity for this session
@@ -224,14 +212,14 @@ my-skill/
 
 Reference supporting files from `SKILL.md` so Claude knows what each file contains and when to load it:
 
-```markdown  theme={null}
+```markdown
 ## Additional resources
 
 - For complete API details, see [reference.md](reference.md)
 - For usage examples, see [examples.md](examples.md)
 ```
 
-<Tip>Keep `SKILL.md` under 500 lines. Move detailed reference material to separate files.</Tip>
+> **Tip:** Keep `SKILL.md` under 500 lines. Move detailed reference material to separate files.
 
 ### Control who invokes a skill
 
@@ -243,7 +231,7 @@ By default, both you and Claude can invoke any skill. You can type `/skill-name`
 
 This example creates a deploy skill that only you can trigger. The `disable-model-invocation: true` field prevents Claude from running it automatically:
 
-```yaml  theme={null}
+```yaml
 ---
 name: deploy
 description: Deploy the application to production
@@ -266,15 +254,13 @@ Here's how the two fields affect invocation and context loading:
 | `disable-model-invocation: true` | Yes            | No                | Description not in context, full skill loads when you invoke |
 | `user-invocable: false`          | No             | Yes               | Description always in context, full skill loads when invoked |
 
-<Note>
-  In a regular session, skill descriptions are loaded into context so Claude knows what's available, but full skill content only loads when invoked. [Subagents with preloaded skills](/en/sub-agents#preload-skills-into-subagents) work differently: the full skill content is injected at startup.
-</Note>
+> **Note:** In a regular session, skill descriptions are loaded into context so Claude knows what's available, but full skill content only loads when invoked. [Subagents with preloaded skills](/en/sub-agents#preload-skills-into-subagents) work differently: the full skill content is injected at startup.
 
 ### Restrict tool access
 
 Use the `allowed-tools` field to limit which tools Claude can use when a skill is active. This skill creates a read-only mode where Claude can explore files but not modify them:
 
-```yaml  theme={null}
+```yaml
 ---
 name: safe-reader
 description: Read files without making changes
@@ -288,7 +274,7 @@ Both you and Claude can pass arguments when invoking a skill. Arguments are avai
 
 This skill fixes a GitHub issue by number. The `$ARGUMENTS` placeholder gets replaced with whatever follows the skill name:
 
-```yaml  theme={null}
+```yaml
 ---
 name: fix-issue
 description: Fix a GitHub issue
@@ -310,7 +296,7 @@ If you invoke a skill with arguments but the skill doesn't include `$ARGUMENTS`,
 
 To access individual arguments by position, use `$ARGUMENTS[N]` or the shorter `$N`:
 
-```yaml  theme={null}
+```yaml
 ---
 name: migrate-component
 description: Migrate a component from one framework to another
@@ -322,7 +308,7 @@ Preserve all existing behavior and tests.
 
 Running `/migrate-component SearchBar React Vue` replaces `$ARGUMENTS[0]` with `SearchBar`, `$ARGUMENTS[1]` with `React`, and `$ARGUMENTS[2]` with `Vue`. The same skill using the `$N` shorthand:
 
-```yaml  theme={null}
+```yaml
 ---
 name: migrate-component
 description: Migrate a component from one framework to another
@@ -340,7 +326,7 @@ The `!`command\`\` syntax runs shell commands before the skill content is sent t
 
 This skill summarizes a pull request by fetching live PR data with the GitHub CLI. The `!`gh pr diff\`\` and other commands run first, and their output gets inserted into the prompt:
 
-```yaml  theme={null}
+```yaml
 ---
 name: pr-summary
 description: Summarize changes in a pull request
@@ -366,17 +352,13 @@ When this skill runs:
 
 This is preprocessing, not something Claude executes. Claude only sees the final result.
 
-<Tip>
-  To enable [extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) in a skill, include the word "ultrathink" anywhere in your skill content.
-</Tip>
+> **Tip:** To enable [extended thinking](/en/common-workflows#use-extended-thinking-thinking-mode) in a skill, include the word "ultrathink" anywhere in your skill content.
 
 ### Run skills in a subagent
 
 Add `context: fork` to your frontmatter when you want a skill to run in isolation. The skill content becomes the prompt that drives the subagent. It won't have access to your conversation history.
 
-<Warning>
-  `context: fork` only makes sense for skills with explicit instructions. If your skill contains guidelines like "use these API conventions" without a task, the subagent receives the guidelines but no actionable prompt, and returns without meaningful output.
-</Warning>
+> **Warning:** `context: fork` only makes sense for skills with explicit instructions. If your skill contains guidelines like "use these API conventions" without a task, the subagent receives the guidelines but no actionable prompt, and returns without meaningful output.
 
 Skills and [subagents](/en/sub-agents) work together in two directions:
 
@@ -391,7 +373,7 @@ With `context: fork`, you write the task in your skill and pick an agent type to
 
 This skill runs research in a forked Explore agent. The skill content becomes the task, and the agent provides read-only tools optimized for codebase exploration:
 
-```yaml  theme={null}
+```yaml
 ---
 name: deep-research
 description: Research a topic thoroughly
@@ -443,9 +425,7 @@ Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix mat
 
 **Hide individual skills** by adding `disable-model-invocation: true` to their frontmatter. This removes the skill from Claude's context entirely.
 
-<Note>
-  The `user-invocable` field only controls menu visibility, not Skill tool access. Use `disable-model-invocation: true` to block programmatic invocation.
-</Note>
+> **Note:** The `user-invocable` field only controls menu visibility, not Skill tool access. Use `disable-model-invocation: true` to block programmatic invocation.
 
 ## Share skills
 
@@ -463,13 +443,13 @@ This example creates a codebase explorer: an interactive tree view where you can
 
 Create the Skill directory:
 
-```bash  theme={null}
+```bash
 mkdir -p ~/.claude/skills/codebase-visualizer/scripts
 ```
 
 Create `~/.claude/skills/codebase-visualizer/SKILL.md`. The description tells Claude when to activate this Skill, and the instructions tell Claude to run the bundled script:
 
-````yaml  theme={null}
+````yaml
 ---
 name: codebase-visualizer
 description: Generate an interactive collapsible tree visualization of your codebase. Use when exploring a new repo, understanding project structure, or identifying large files.
@@ -506,7 +486,7 @@ Create `~/.claude/skills/codebase-visualizer/scripts/visualize.py`. This script 
 
 The script requires Python but uses only built-in libraries, so there are no packages to install:
 
-```python expandable theme={null}
+```python expandable
 #!/usr/bin/env python3
 """Generate an interactive collapsible tree visualization of a codebase."""
 
