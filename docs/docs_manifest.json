@@ -357,8 +357,8 @@
     "fetch_tool_version": "3.0"
   },
   "last_updated": "2026-02-23T13:40:37.884812",
-  "base_url": "https://raw.githubusercontent.com/ericbuess/claude-code-docs/main/docs/",
-  "github_repository": "ericbuess/claude-code-docs",
+  "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
+  "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
   "description": "Claude Code documentation manifest. Keys are filenames, append to base_url for full URL."
 }

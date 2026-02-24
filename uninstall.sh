@@ -113,16 +113,10 @@ if [[ ${#installations[@]} -gt 0 ]]; then
         fi
         
         if [[ -d "$path/.git" ]]; then
-            # Save current directory
-            local current_dir=$(pwd)
-            cd "$path"
-            
-            if [[ -z "$(git status --porcelain 2>/dev/null)" ]]; then
-                cd "$current_dir"
+            if git -C "$path" diff --quiet 2>/dev/null && [[ -z "$(git -C "$path" status --porcelain 2>/dev/null)" ]]; then
                 rm -rf "$path"
                 echo "✓ Removed $path (clean git repo)"
             else
-                cd "$current_dir"
                 echo "⚠️  Preserved $path (has uncommitted changes)"
             fi
         else
@@ -135,4 +129,4 @@ echo ""
 echo "✅ Uninstall complete!"
 echo ""
 echo "To reinstall:"
-echo "curl -fsSL https://raw.githubusercontent.com/ericbuess/claude-code-docs/main/install.sh | bash"
+echo "curl -fsSL https://raw.githubusercontent.com/dsdexcom/cc-docs/main/install.sh | bash"
