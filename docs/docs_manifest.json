@@ -339,14 +339,14 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "9e221a410653c98945569d2459c6325be75b146e326c82b6ce5ff316069718c9",
-      "last_updated": "2026-02-24T03:49:35.247257",
+      "hash": "1c6e4a8165d434794d8aba8ef3a6819285981e0935067c1be387cec33c285880",
+      "last_updated": "2026-02-24T09:18:49.494143",
       "source": "claude-code-repository"
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-24T06:22:12.893582",
-    "fetch_duration_seconds": 31.90355,
+    "last_fetch_completed": "2026-02-24T09:18:49.494167",
+    "fetch_duration_seconds": 31.983205,
     "total_pages_discovered": 56,
     "pages_fetched_successfully": 57,
     "pages_failed": 0,
@@ -356,7 +356,7 @@
     "total_files": 57,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-24T06:22:12.893603",
+  "last_updated": "2026-02-24T09:18:49.494186",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",

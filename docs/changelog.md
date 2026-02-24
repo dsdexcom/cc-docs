@@ -8,6 +8,10 @@
 
 # Changelog
 
+## 2.1.52
+
+- VS Code: Fixed extension crash on Windows ("command 'claude-vscode.editor.openLast' not found")
+
 ## 2.1.51
 
 - Added `claude remote-control` subcommand for external builds, enabling local environment serving for all users.
@@ -191,31 +195,6 @@
 - Added one-time Opus 4.6 effort callout for eligible users
 - Fixed /resume showing interrupt messages as session titles
 - Fixed image dimension limit errors to suggest /compact
-
-## 2.1.41
-
-- Added guard against launching Claude Code inside another Claude Code session
-- Fixed Agent Teams using wrong model identifier for Bedrock, Vertex, and Foundry customers
-- Fixed a crash when MCP tools return image content during streaming
-- Fixed /resume session previews showing raw XML tags instead of readable command names
-- Improved model error messages for Bedrock/Vertex/Foundry users with fallback suggestions
-- Fixed plugin browse showing misleading "Space to Toggle" hint for already-installed plugins
-- Fixed hook blocking errors (exit code 2) not showing stderr to the user
-- Added `speed` attribute to OTel events and trace spans for fast mode visibility
-- Added `claude auth login`, `claude auth status`, and `claude auth logout` CLI subcommands
-- Added Windows ARM64 (win32-arm64) native binary support
-- Improved `/rename` to auto-generate session name from conversation context when called without arguments
-- Improved narrow terminal layout for prompt footer
-- Fixed file resolution failing for @-mentions with anchor fragments (e.g., `@README.md#installation`)
-- Fixed FileReadTool blocking the process on FIFOs, `/dev/stdin`, and large files
-- Fixed background task notifications not being delivered in streaming Agent SDK mode
-- Fixed cursor jumping to end on each keystroke in classifier rule input
-- Fixed markdown link display text being dropped for raw URL
-- Fixed auto-compact failure error notifications being shown to users
-- Fixed permission wait time being included in subagent elapsed time display
-- Fixed proactive ticks firing while in plan mode
-- Fixed clear stale permission rules when settings change on disk
-- Fixed hook blocking errors showing stderr content in UI
 
 ---
 
