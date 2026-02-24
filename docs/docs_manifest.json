@@ -45,14 +45,14 @@
     "claude-code-on-the-web.md": {
       "original_url": "https://code.claude.com/docs/en/claude-code-on-the-web",
       "original_md_url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
-      "hash": "c9fe72f7173a8d92df6c42bdd6fd19768ecb7dbb42e400d4d706ccdb97deb1d6",
-      "last_updated": "2026-02-23T13:39:22.175025"
+      "hash": "11e7581d88e79ee31a31b25ae9fef5950cc254f0b05f7562fa133a90807bfe94",
+      "last_updated": "2026-02-24T18:19:43.710224"
     },
     "cli-reference.md": {
       "original_url": "https://code.claude.com/docs/en/cli-reference",
       "original_md_url": "https://code.claude.com/docs/en/cli-reference.md",
-      "hash": "e7275d478fa14de8f8b964e7cb0703dab0ffcf00e6e64011cb9063fff682db8d",
-      "last_updated": "2026-02-23T13:39:22.783923"
+      "hash": "c09f903a78fb3a9dada17e3b1c38e53f45f2597a2c779405b896b66cf64fadb8",
+      "last_updated": "2026-02-24T18:19:44.359384"
     },
     "common-workflows.md": {
       "original_url": "https://code.claude.com/docs/en/common-workflows",
@@ -69,8 +69,8 @@
     "data-usage.md": {
       "original_url": "https://code.claude.com/docs/en/data-usage",
       "original_md_url": "https://code.claude.com/docs/en/data-usage.md",
-      "hash": "a190cf5a9aa0e78d5cf4f11b3a995c106a8ef6d9c0845df29d2ce7d23b01bf90",
-      "last_updated": "2026-02-23T13:39:24.668731"
+      "hash": "01a626c1bbc5d955655e161e0782f923f67e5de1dbc491afa3ba50896d9d03fe",
+      "last_updated": "2026-02-24T18:19:46.321189"
     },
     "desktop.md": {
       "original_url": "https://code.claude.com/docs/en/desktop",
@@ -147,8 +147,8 @@
     "how-claude-code-works.md": {
       "original_url": "https://code.claude.com/docs/en/how-claude-code-works",
       "original_md_url": "https://code.claude.com/docs/en/how-claude-code-works.md",
-      "hash": "4da3aa83ba5b20ad57f0c1bf6661c62214a8576e0e53987f1ad55900a4556dc3",
-      "last_updated": "2026-02-23T13:39:32.836193"
+      "hash": "c10167e4ae2c4eab0a77ac2e82e03ae02dede344bb4f584ac77c23d676879ce8",
+      "last_updated": "2026-02-24T18:19:54.382879"
     },
     "interactive-mode.md": {
       "original_url": "https://code.claude.com/docs/en/interactive-mode",
@@ -225,14 +225,14 @@
     "overview.md": {
       "original_url": "https://code.claude.com/docs/en/overview",
       "original_md_url": "https://code.claude.com/docs/en/overview.md",
-      "hash": "0d773ac9f94eea230d7160ae7d73132269f1b00ee88c2ff41abd79116a30bc1f",
-      "last_updated": "2026-02-23T13:39:40.765222"
+      "hash": "50fd235b6e5205d444edd1c0898034fe1f08c56073d88d571944bb8b9e633445",
+      "last_updated": "2026-02-24T18:20:02.452902"
     },
     "permissions.md": {
       "original_url": "https://code.claude.com/docs/en/permissions",
       "original_md_url": "https://code.claude.com/docs/en/permissions.md",
-      "hash": "96d16e105be77d17f73293565fa8f6728104a176b0207a47cc11b02dc696fcc7",
-      "last_updated": "2026-02-23T13:39:41.407209"
+      "hash": "c766cca0d76a8f3d29a17b83a30b0c345cc12657719bfea1828b119fc7eea543",
+      "last_updated": "2026-02-24T18:20:03.050431"
     },
     "plugin-marketplaces.md": {
       "original_url": "https://code.claude.com/docs/en/plugin-marketplaces",
@@ -258,6 +258,12 @@
       "hash": "acfee0ccca140d7e9fcbc25099798a574a67d9ca422468b57388e9efa4a725e1",
       "last_updated": "2026-02-23T13:39:43.910113"
     },
+    "remote-control.md": {
+      "original_url": "https://code.claude.com/docs/en/remote-control",
+      "original_md_url": "https://code.claude.com/docs/en/remote-control.md",
+      "hash": "5c083db61cdab5e25ee7862e4cd94d186ff30839555d80a7d4eb7871f7540e51",
+      "last_updated": "2026-02-24T18:20:06.305483"
+    },
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
       "original_md_url": "https://code.claude.com/docs/en/sandboxing.md",
@@ -267,20 +273,20 @@
     "security.md": {
       "original_url": "https://code.claude.com/docs/en/security",
       "original_md_url": "https://code.claude.com/docs/en/security.md",
-      "hash": "8de1a97ec4930cbcc9e7fa83d06773a56efc283d03c047064c60c52dcf88a526",
-      "last_updated": "2026-02-23T13:39:45.111034"
+      "hash": "784140c636092dd3c12ac004ad977fe0e48db287c2d878a06dcd719bdde8e0ce",
+      "last_updated": "2026-02-24T18:20:07.667365"
     },
     "server-managed-settings.md": {
       "original_url": "https://code.claude.com/docs/en/server-managed-settings",
       "original_md_url": "https://code.claude.com/docs/en/server-managed-settings.md",
-      "hash": "b209ff4a0d64aa5836be1844824814220b85c13713050373c68049621d62e8ee",
-      "last_updated": "2026-02-23T13:39:45.719068"
+      "hash": "7c52175bd54a24270294db97d8c0896b84fc54e612fffecff713ceadab7e30f7",
+      "last_updated": "2026-02-24T18:20:08.266227"
     },
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "97e7572e1a3c49bb3c81f89a64e8384425cafa90c9442049206ff558b9b914e5",
-      "last_updated": "2026-02-23T13:39:46.336907"
+      "hash": "b7e1aca5f18753642f7e1e28d34325e7950517f97592bebcca60f97af236f4a1",
+      "last_updated": "2026-02-24T18:20:08.985541"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -345,18 +351,18 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-24T15:20:50.992766",
-    "fetch_duration_seconds": 34.06616,
-    "total_pages_discovered": 56,
-    "pages_fetched_successfully": 57,
+    "last_fetch_completed": "2026-02-24T18:20:14.905528",
+    "fetch_duration_seconds": 35.848149,
+    "total_pages_discovered": 57,
+    "pages_fetched_successfully": 58,
     "pages_failed": 0,
     "failed_pages": [],
     "sitemap_url": "https://code.claude.com/docs/sitemap.xml",
     "base_url": "https://code.claude.com",
-    "total_files": 57,
+    "total_files": 58,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-24T15:20:50.992797",
+  "last_updated": "2026-02-24T18:20:14.905551",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
