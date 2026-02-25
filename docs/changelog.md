@@ -8,6 +8,10 @@
 
 # Changelog
 
+## 2.1.56
+
+- VS Code: Fixed another cause of "command 'claude-vscode.editor.openLast' not found" crashes
+
 ## 2.1.55
 
 - Fixed BashTool failing on Windows with EINVAL error
@@ -192,11 +196,6 @@
 - Improved memory usage for shell commands that produce large output — RSS no longer grows unboundedly with command output size
 - Improved collapsed read/search groups to show the current file or search pattern being processed beneath the summary line while active
 - [VSCode] Improved permission destination choice (project/user/session) to persist across sessions
-
-## 2.1.44
-
-- Fixed ENAMETOOLONG errors for deeply-nested directory paths
-- Fixed auth refresh errors
 
 ---
 
