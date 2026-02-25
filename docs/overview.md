@@ -34,11 +34,13 @@ The full-featured CLI for working with Claude Code directly in your terminal. Ed
         curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
         ```
 
+        **Windows requires [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don't have it.
+
         > **Info:** Native installations automatically update in the background to keep you on the latest version.
 
 **Homebrew:**
 
-        ```sh
+        ```bash
         brew install --cask claude-code
         ```
 

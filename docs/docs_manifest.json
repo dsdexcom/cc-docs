@@ -21,8 +21,8 @@
     "authentication.md": {
       "original_url": "https://code.claude.com/docs/en/authentication",
       "original_md_url": "https://code.claude.com/docs/en/authentication.md",
-      "hash": "6ac4a85bb92ddd99496522a643027522b3637320ab444a922e68d106d95e09fa",
-      "last_updated": "2026-02-23T13:39:19.642585"
+      "hash": "92cf9ba4adced4a6858020f62f0a922e3e436e8d9ee8d021791acb886074ddab",
+      "last_updated": "2026-02-25T00:19:27.070011"
     },
     "best-practices.md": {
       "original_url": "https://code.claude.com/docs/en/best-practices",
@@ -51,8 +51,8 @@
     "cli-reference.md": {
       "original_url": "https://code.claude.com/docs/en/cli-reference",
       "original_md_url": "https://code.claude.com/docs/en/cli-reference.md",
-      "hash": "2b0b73488760f2a8b7c6b1e116e9fe61a0dc1952837cb46f5d3a26ebb9067caa",
-      "last_updated": "2026-02-24T21:10:16.823835"
+      "hash": "0304c671c545a26120ec279433a448d86d75740b9630b6a8739e7a64dd1efbe5",
+      "last_updated": "2026-02-25T00:19:30.164095"
     },
     "common-workflows.md": {
       "original_url": "https://code.claude.com/docs/en/common-workflows",
@@ -225,8 +225,8 @@
     "overview.md": {
       "original_url": "https://code.claude.com/docs/en/overview",
       "original_md_url": "https://code.claude.com/docs/en/overview.md",
-      "hash": "50fd235b6e5205d444edd1c0898034fe1f08c56073d88d571944bb8b9e633445",
-      "last_updated": "2026-02-24T18:20:02.452902"
+      "hash": "d294ceec7ee146707f861c04fb02e25312ea1d775e5803cf0055b5a1315442e6",
+      "last_updated": "2026-02-25T00:19:47.814600"
     },
     "permissions.md": {
       "original_url": "https://code.claude.com/docs/en/permissions",
@@ -255,8 +255,8 @@
     "quickstart.md": {
       "original_url": "https://code.claude.com/docs/en/quickstart",
       "original_md_url": "https://code.claude.com/docs/en/quickstart.md",
-      "hash": "acfee0ccca140d7e9fcbc25099798a574a67d9ca422468b57388e9efa4a725e1",
-      "last_updated": "2026-02-23T13:39:43.910113"
+      "hash": "003ad5935808d60c7fb23ac1f2cf5e59341c90855ff071135f6079fe944558e4",
+      "last_updated": "2026-02-25T00:19:50.825780"
     },
     "remote-control.md": {
       "original_url": "https://code.claude.com/docs/en/remote-control",
@@ -291,8 +291,8 @@
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
       "original_md_url": "https://code.claude.com/docs/en/setup.md",
-      "hash": "826cace4451692204b764a55f0e67a1371e2f0755333c4d7c14451e03fd63fd0",
-      "last_updated": "2026-02-24T21:10:40.992733"
+      "hash": "cc22d62e684492702d95d069ff682833f39a67ebeb31ca911d47a9355dc225b5",
+      "last_updated": "2026-02-25T00:19:54.465670"
     },
     "skills.md": {
       "original_url": "https://code.claude.com/docs/en/skills",
@@ -333,8 +333,8 @@
     "troubleshooting.md": {
       "original_url": "https://code.claude.com/docs/en/troubleshooting",
       "original_md_url": "https://code.claude.com/docs/en/troubleshooting.md",
-      "hash": "b6cead813ebe01ae78da268fe457fe9dc19428181329edff83318b000d1b1947",
-      "last_updated": "2026-02-24T21:10:45.340463"
+      "hash": "4fc05a7a8df85e8102e1fe35b73ca0cf37f7d14f3860e6c9bbd30c00def077f3",
+      "last_updated": "2026-02-25T00:19:58.830296"
     },
     "vs-code.md": {
       "original_url": "https://code.claude.com/docs/en/vs-code",
@@ -345,14 +345,14 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "53650736b9ca5049f7d258d29788ce824ded3255e4b4148e3a2f061a00818a97",
-      "last_updated": "2026-02-24T21:10:46.170150",
+      "hash": "5e73cb4baa4d9e7b5cb9bd597552c1d20c962d2f8b01322631135e4dba4804e8",
+      "last_updated": "2026-02-25T00:19:59.487119",
       "source": "claude-code-repository"
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-24T21:10:46.170172",
-    "fetch_duration_seconds": 34.524271,
+    "last_fetch_completed": "2026-02-25T00:19:59.487133",
+    "fetch_duration_seconds": 34.635269,
     "total_pages_discovered": 57,
     "pages_fetched_successfully": 58,
     "pages_failed": 0,
@@ -362,7 +362,7 @@
     "total_files": 58,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-24T21:10:46.170189",
+  "last_updated": "2026-02-25T00:19:59.487146",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
