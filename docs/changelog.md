@@ -8,6 +8,10 @@
 
 # Changelog
 
+## 2.1.55
+
+- Fixed BashTool failing on Windows with EINVAL error
+
 ## 2.1.53
 
 - Fixed a UI flicker where user input would briefly disappear after submission before the message rendered
@@ -193,12 +197,6 @@
 
 - Fixed ENAMETOOLONG errors for deeply-nested directory paths
 - Fixed auth refresh errors
-
-## 2.1.43
-
-- Fixed AWS auth refresh hanging indefinitely by adding a 3-minute timeout
-- Fixed spurious warnings for non-agent markdown files in `.claude/agents/` directory
-- Fixed structured-outputs beta header being sent unconditionally on Vertex/Bedrock
 
 ---
 

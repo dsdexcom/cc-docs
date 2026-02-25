@@ -237,8 +237,8 @@
     "plugin-marketplaces.md": {
       "original_url": "https://code.claude.com/docs/en/plugin-marketplaces",
       "original_md_url": "https://code.claude.com/docs/en/plugin-marketplaces.md",
-      "hash": "e984398fbe8fbddf6d44889ce513bed116f6b38f7f2c566d48bd511654510b10",
-      "last_updated": "2026-02-23T13:39:42.014842"
+      "hash": "a629ed60b7cd000a73ec36535ce2cc2d2fc0bd71ab373d550305ca3196de1f23",
+      "last_updated": "2026-02-25T03:49:30.133846"
     },
     "plugins.md": {
       "original_url": "https://code.claude.com/docs/en/plugins",
@@ -285,8 +285,8 @@
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "7113a5bc3abb98e0eb9a59d8fd11b0873a51ef57d1d83a8d8414ced5b9b0e602",
-      "last_updated": "2026-02-24T21:10:40.399366"
+      "hash": "e5631f1e5b57b0f7726b1f1f2deafae922d1f7b3c5f10609b358be62044bee0b",
+      "last_updated": "2026-02-25T03:49:34.735023"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -345,14 +345,14 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "5e73cb4baa4d9e7b5cb9bd597552c1d20c962d2f8b01322631135e4dba4804e8",
-      "last_updated": "2026-02-25T00:19:59.487119",
+      "hash": "0397d73775ad48cca807835ace08c04eb0740290e0e72a641697020265009392",
+      "last_updated": "2026-02-25T03:49:39.911325",
       "source": "claude-code-repository"
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-25T00:19:59.487133",
-    "fetch_duration_seconds": 34.635269,
+    "last_fetch_completed": "2026-02-25T03:49:39.911350",
+    "fetch_duration_seconds": 32.432132,
     "total_pages_discovered": 57,
     "pages_fetched_successfully": 58,
     "pages_failed": 0,
@@ -362,7 +362,7 @@
     "total_files": 58,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-25T00:19:59.487146",
+  "last_updated": "2026-02-25T03:49:39.911368",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
