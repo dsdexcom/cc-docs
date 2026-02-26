@@ -2,7 +2,7 @@
 
 > Welcome to Claude Code!
 
-This quickstart guide will have you using AI-powered coding assistance in just a few minutes. By the end, you'll understand how to use Claude Code for common development tasks.
+This quickstart guide will have you using AI-powered coding assistance in a few minutes. By the end, you'll understand how to use Claude Code for common development tasks.
 
 ## Before you begin
 
@@ -23,19 +23,19 @@ To install Claude Code, use one of the following methods:
 
 **macOS, Linux, WSL:**
 
-    ```bash
+    ```bash theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
     curl -fsSL https://claude.ai/install.sh | bash
     ```
 
     **Windows PowerShell:**
 
-    ```powershell
+    ```powershell theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
     irm https://claude.ai/install.ps1 | iex
     ```
 
     **Windows CMD:**
 
-    ```batch
+    ```batch theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
     ```
 
@@ -45,7 +45,7 @@ To install Claude Code, use one of the following methods:
 
 **Homebrew:**
 
-    ```bash
+    ```bash theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
     brew install --cask claude-code
     ```
 
@@ -53,7 +53,7 @@ To install Claude Code, use one of the following methods:
 
 **WinGet:**
 
-    ```powershell
+    ```powershell theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
     winget install Anthropic.ClaudeCode
     ```
 
@@ -98,45 +98,45 @@ You'll see the Claude Code welcome screen with your session information, recent 
 
 Let's start with understanding your codebase. Try one of these commands:
 
-```
+```text
 what does this project do?
 ```
 
 Claude will analyze your files and provide a summary. You can also ask more specific questions:
 
-```
+```text
 what technologies does this project use?
 ```
 
-```
+```text
 where is the main entry point?
 ```
 
-```
+```text
 explain the folder structure
 ```
 
 You can also ask Claude about its own capabilities:
 
-```
+```text
 what can Claude Code do?
 ```
 
-```
+```text
 how do I create custom skills in Claude Code?
 ```
 
-```
+```text
 can Claude Code work with Docker?
 ```
 
-> **Note:** Claude Code reads your files as needed - you don't have to manually add context. Claude also has access to its own documentation and can answer questions about its features and capabilities.
+> **Note:** Claude Code reads your project files as needed. You don't have to manually add context.
 
 ## Step 5: Make your first code change
 
 Now let's make Claude Code do some actual coding. Try a simple task:
 
-```
+```text
 add a hello world function to the main file
 ```
 
@@ -153,25 +153,25 @@ Claude Code will:
 
 Claude Code makes Git operations conversational:
 
-```
+```text
 what files have I changed?
 ```
 
-```
+```text
 commit my changes with a descriptive message
 ```
 
 You can also prompt for more complex Git operations:
 
-```
+```text
 create a new branch called feature/quickstart
 ```
 
-```
+```text
 show me the last 5 commits
 ```
 
-```
+```text
 help me resolve merge conflicts
 ```
 
@@ -181,13 +181,13 @@ Claude is proficient at debugging and feature implementation.
 
 Describe what you want in natural language:
 
-```
+```text
 add input validation to the user registration form
 ```
 
 Or fix existing issues:
 
-```
+```text
 there's a bug where users can submit empty forms - fix it
 ```
 
@@ -204,29 +204,29 @@ There are a number of ways to work with Claude:
 
 **Refactor code**
 
-```
+```text
 refactor the authentication module to use async/await instead of callbacks
 ```
 
 **Write tests**
 
-```
+```text
 write unit tests for the calculator functions
 ```
 
 **Update documentation**
 
-```
+```text
 update the README with installation instructions
 ```
 
 **Code review**
 
-```
+```text
 review my changes and suggest improvements
 ```
 
-> **Tip:** **Remember**: Claude Code is your AI pair programmer. Talk to it like you would a helpful colleague - describe what you want to achieve, and it will help you get there.
+> **Tip:** Talk to Claude like you would a helpful colleague. Describe what you want to achieve, and it will help you get there.
 
 ## Essential commands
 
@@ -259,7 +259,7 @@ Try: "fix the login bug where users see a blank screen after entering wrong cred
 
 Break complex tasks into steps:
 
-    ```
+    ```text
     1. create a new database table for user profiles
     2. create an API endpoint to get and update user profiles
     3. build a webpage that allows users to see and edit their information
@@ -269,11 +269,11 @@ Break complex tasks into steps:
 
 Before making changes, let Claude understand your code:
 
-    ```
+    ```text
     analyze the database schema
     ```
 
-    ```
+    ```text
     build a dashboard showing products that are most frequently returned by our UK customers
     ```
 

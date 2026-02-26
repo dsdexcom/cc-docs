@@ -220,7 +220,7 @@ When you start a session in Claude Code on the web, here's what happens under th
 
 > **Note:** Environment variables must be specified as key-value pairs, in [`.env` format](https://www.dotenv.org/). For example:
 > 
-  ```
+  ```text
   API_KEY=your_api_key
   DEBUG=true
   ```

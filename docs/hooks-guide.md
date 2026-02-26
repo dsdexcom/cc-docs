@@ -30,7 +30,7 @@ Select `+ Add new hook…`. The menu prompts you for a shell command to run when
 
 Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macOS notification through AppleScript:
 
-        ```
+        ```bash
         osascript -e 'display notification "Claude Code needs your attention" with title "Claude Code"'
         ```
 
@@ -38,7 +38,7 @@ Uses [`osascript`](https://ss64.com/mac/osascript.html) to trigger a native macO
 
 Uses `notify-send`, which is pre-installed on most Linux desktops with a notification daemon:
 
-        ```
+        ```bash
         notify-send 'Claude Code' 'Claude Code needs your attention'
         ```
 
@@ -46,7 +46,7 @@ Uses `notify-send`, which is pre-installed on most Linux desktops with a notific
 
 Uses PowerShell to show a native message box through .NET's Windows Forms:
 
-        ```
+        ```powershell
         powershell.exe -Command "[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms'); [System.Windows.Forms.MessageBox]::Show('Claude Code needs your attention', 'Claude Code')"
         ```
 
@@ -617,7 +617,7 @@ Claude Code shows a JSON parsing error even though your hook script outputs vali
 
 When Claude Code runs a hook, it spawns a shell that sources your profile (`~/.zshrc` or `~/.bashrc`). If your profile contains unconditional `echo` statements, that output gets prepended to your hook's JSON:
 
-```
+```text
 Shell ready on arm64
 {"decision": "block", "reason": "Not allowed"}
 ```

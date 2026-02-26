@@ -288,7 +288,7 @@ Use modifier keys with the `+` separator:
 
 For example:
 
-```
+```text
 ctrl+k          Single key with modifier
 shift+tab       Shift + Tab
 meta+p          Command/Meta + P
@@ -305,7 +305,7 @@ Uppercase letters with modifiers (e.g., `ctrl+K`) are treated as stylistic and d
 
 Chords are sequences of keystrokes separated by spaces:
 
-```
+```text
 ctrl+k ctrl+s   Press Ctrl+K, release, then Ctrl+S
 ```
 

@@ -81,7 +81,7 @@ On **Linux and WSL2**, install the required packages first:
 
 You can enable sandboxing by running the `/sandbox` command:
 
-```
+```text
 > /sandbox
 ```
 

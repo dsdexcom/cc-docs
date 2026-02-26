@@ -116,7 +116,7 @@ If you prefer a more controlled setup or need enterprise providers:
 
 In an issue comment:
 
-```
+```text
 @claude implement this feature based on the issue description
 ```
 
@@ -126,7 +126,7 @@ Claude analyzes the issue and codebase, writes changes in a branch, and opens an
 
 In an MR discussion:
 
-```
+```text
 @claude suggest a concrete approach to cache the results of this API call
 ```
 
@@ -136,7 +136,7 @@ Claude proposes changes, adds code with appropriate caching, and updates the MR.
 
 In an issue or MR comment:
 
-```
+```text
 @claude fix the TypeError in the user dashboard component
 ```
 

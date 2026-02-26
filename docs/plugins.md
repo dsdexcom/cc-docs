@@ -187,7 +187,7 @@ Plugins can include [Agent Skills](/en/skills) to extend Claude's capabilities. 
 
 Add a `skills/` directory at your plugin root with Skill folders containing `SKILL.md` files:
 
-```
+```text
 my-plugin/
 ├── .claude-plugin/
 │   └── plugin.json

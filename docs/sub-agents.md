@@ -76,7 +76,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
 
 In Claude Code, run:
 
-    ```
+    ```text
     /agents
     ```
 
@@ -88,7 +88,7 @@ Select **Create new agent**, then choose **User-level**. This saves the subagent
 
 Select **Generate with Claude**. When prompted, describe the subagent:
 
-    ```
+    ```text
     A code improvement agent that scans files and suggests improvements
     for readability, performance, and best practices. It should explain
     each issue, show the current code, and provide an improved version.
@@ -112,7 +112,7 @@ Pick a background color for the subagent. This helps you identify which subagent
 
 Save the subagent. It's available immediately (no restart needed). Try it:
 
-    ```
+    ```text
     Use the code-improver agent to suggest improvements in this project
     ```
 
@@ -482,7 +482,7 @@ Claude automatically delegates tasks based on the task description in your reque
 
 You can also request a specific subagent explicitly:
 
-```
+```text
 Use the test-runner subagent to fix failing tests
 Have the code-reviewer subagent look at my recent changes
 ```
@@ -509,7 +509,7 @@ To disable all background task functionality, set the `CLAUDE_CODE_DISABLE_BACKG
 
 One of the most effective uses for subagents is isolating operations that produce large amounts of output. Running tests, fetching documentation, or processing log files can consume significant context. By delegating these to a subagent, the verbose output stays in the subagent's context while only the relevant summary returns to your main conversation.
 
-```
+```text
 Use a subagent to run the test suite and report only the failing tests with their error messages
 ```
 
@@ -517,7 +517,7 @@ Use a subagent to run the test suite and report only the failing tests with thei
 
 For independent investigations, spawn multiple subagents to work simultaneously:
 
-```
+```text
 Research the authentication, database, and API modules in parallel using separate subagents
 ```
 
@@ -531,7 +531,7 @@ For tasks that need sustained parallelism or exceed your context window, [agent 
 
 For multi-step workflows, ask Claude to use subagents in sequence. Each subagent completes its task and returns results to Claude, which then passes relevant context to the next subagent.
 
-```
+```text
 Use the code-reviewer subagent to find performance issues, then use the optimizer subagent to fix them
 ```
 
@@ -564,7 +564,7 @@ Resumed subagents retain their full conversation history, including all previous
 
 When a subagent completes, Claude receives its agent ID. To resume a subagent, ask Claude to continue the previous work:
 
-```
+```text
 Use the code-reviewer subagent to review the authentication module
 [Agent completes]
 
