@@ -8,6 +8,16 @@
 
 # Changelog
 
+## 2.1.59
+
+- Claude automatically saves useful context to auto-memory. Manage with /memory
+- Added `/copy` command to show an interactive picker when code blocks are present, allowing selection of individual code blocks or the full response.
+- Improved "always allow" prefix suggestions for compound bash commands (e.g. `cd /tmp && git fetch && git push`) to compute smarter per-subcommand prefixes instead of treating the whole command as one
+- Improved ordering of short task lists
+- Improved memory usage in multi-agent sessions by releasing completed subagent task state
+- Fixed MCP OAuth token refresh race condition when running multiple Claude Code instances simultaneously
+- Fixed shell commands not showing a clear error message when the working directory has been deleted
+
 ## 2.1.58
 
 - Expand Remote Control to more users
@@ -177,11 +187,6 @@
 - The `/rename` command now updates the terminal tab title by default (anthropics/claude-code#25789)
 - Fixed Edit tool silently corrupting Unicode curly quotes (\u201c\u201d \u2018\u2019) by replacing them with straight quotes when making edits (anthropics/claude-code#26141)
 - Fixed OSC 8 hyperlinks only being clickable on the first line when link text wraps across multiple terminal lines.
-
-## 2.1.46
-
-- Fixed orphaned CC processes after terminal disconnect on macOS
-- Added support for using claude.ai MCP connectors in Claude Code
 
 ---
 
