@@ -99,8 +99,8 @@
     "fast-mode.md": {
       "original_url": "https://code.claude.com/docs/en/fast-mode",
       "original_md_url": "https://code.claude.com/docs/en/fast-mode.md",
-      "hash": "09dafa1d3d7ffca5c24382d5eb35e4563fdbf33d295a78a95c989d8847dd73cf",
-      "last_updated": "2026-02-23T13:39:27.869491"
+      "hash": "a390e494cd22b4fa3f4934604cd172f7085e6db617c0ca8e36b26cac1ba666c3",
+      "last_updated": "2026-02-27T06:17:20.389307"
     },
     "features-overview.md": {
       "original_url": "https://code.claude.com/docs/en/features-overview",
@@ -285,8 +285,8 @@
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "2d4384735ba2ebf7ae6487d9efd1e24985bf5b5d383fd3cbb86b0f2fcdf07faa",
-      "last_updated": "2026-02-27T00:19:21.261286"
+      "hash": "f0c4e96c7fd991d4cfd54f5f1e03e29b8485bdbe62c6bbf5791b493d2dafda70",
+      "last_updated": "2026-02-27T06:17:38.333321"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -351,8 +351,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-27T03:48:02.343352",
-    "fetch_duration_seconds": 32.081983,
+    "last_fetch_completed": "2026-02-27T06:17:43.574238",
+    "fetch_duration_seconds": 32.859435,
     "total_pages_discovered": 57,
     "pages_fetched_successfully": 58,
     "pages_failed": 0,
@@ -362,7 +362,7 @@
     "total_files": 58,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-27T03:48:02.343375",
+  "last_updated": "2026-02-27T06:17:43.574272",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
