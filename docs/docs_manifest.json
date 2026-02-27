@@ -45,8 +45,8 @@
     "claude-code-on-the-web.md": {
       "original_url": "https://code.claude.com/docs/en/claude-code-on-the-web",
       "original_md_url": "https://code.claude.com/docs/en/claude-code-on-the-web.md",
-      "hash": "79e3e6ce7f9deb7e41c209c62dadb6b392e006ae05e5b11831a10a92bdb82d3e",
-      "last_updated": "2026-02-26T21:11:07.412806"
+      "hash": "31df0f7db80a728358ddcddd87366fd8910777093e47b6d5043d1b613d34178d",
+      "last_updated": "2026-02-27T21:07:04.366124"
     },
     "cli-reference.md": {
       "original_url": "https://code.claude.com/docs/en/cli-reference",
@@ -69,8 +69,8 @@
     "data-usage.md": {
       "original_url": "https://code.claude.com/docs/en/data-usage",
       "original_md_url": "https://code.claude.com/docs/en/data-usage.md",
-      "hash": "36b9db722e6c2052505a966ab47549a82325fc2ec722f63bfe94c5a8df03fdca",
-      "last_updated": "2026-02-27T18:10:51.544813"
+      "hash": "3bde946ad2b66e9050a298dac98a73db04fcc3fc3304399777357c105396c755",
+      "last_updated": "2026-02-27T21:07:06.951335"
     },
     "desktop.md": {
       "original_url": "https://code.claude.com/docs/en/desktop",
@@ -135,8 +135,8 @@
     "hooks.md": {
       "original_url": "https://code.claude.com/docs/en/hooks",
       "original_md_url": "https://code.claude.com/docs/en/hooks.md",
-      "hash": "bc9249b29ebbe939bf2af56740b0feb71a480052816dc0118d77391868d0f98c",
-      "last_updated": "2026-02-27T18:10:58.167595"
+      "hash": "b4a91ec0c1644d4b51a3cdeaff427653241cbc2aaa94c465eca2f91c8bd7103b",
+      "last_updated": "2026-02-27T21:07:13.861049"
     },
     "hooks-guide.md": {
       "original_url": "https://code.claude.com/docs/en/hooks-guide",
@@ -285,8 +285,8 @@
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "a99d63f8b422d6cc5217be0efdf99801267a920d71aa86a804729931178a7478",
-      "last_updated": "2026-02-27T18:11:13.013724"
+      "hash": "0e959c0862d0a644c71e77cc6182766e6307818db58a26e09871381f5bdd641f",
+      "last_updated": "2026-02-27T21:07:29.355155"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-27T18:11:19.060262",
-    "fetch_duration_seconds": 34.370386,
+    "last_fetch_completed": "2026-02-27T21:07:35.632130",
+    "fetch_duration_seconds": 36.000155,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-27T18:11:19.060287",
+  "last_updated": "2026-02-27T21:07:35.632160",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
