@@ -8,6 +8,35 @@
 
 # Changelog
 
+## 2.1.63
+
+- Added `/simplify` and `/batch` bundled slash commands
+- Fixed local slash command output like /cost appearing as user-sent messages instead of system messages in the UI
+- Project configs & auto memory now shared across git worktrees of the same repository
+- Added `ENABLE_CLAUDEAI_MCP_SERVERS=false` env var to opt out from making claude.ai MCP servers available
+- Improved `/model` command to show the currently active model in the slash command menu
+- Added HTTP hooks, which can POST JSON to a URL and receive JSON instead of running a shell command
+- Fixed listener leak in bridge polling loop
+- Fixed listener leak in MCP OAuth flow cleanup
+- Added manual URL paste fallback during MCP OAuth authentication. If the automatic localhost redirect doesn't work, you can paste the callback URL to complete authentication.
+- Fixed memory leak when navigating hooks configuration menu
+- Fixed listener leak in interactive permission handler during auto-approvals
+- Fixed file count cache ignoring glob ignore patterns
+- Fixed memory leak in bash command prefix cache
+- Fixed MCP tool/resource cache leak on server reconnect
+- Fixed IDE host IP detection cache incorrectly sharing results across ports
+- Fixed WebSocket listener leak on transport reconnect
+- Fixed memory leak in git root detection cache that could cause unbounded growth in long-running sessions
+- Fixed memory leak in JSON parsing cache that grew unbounded over long sessions
+- VSCode: Fixed remote sessions not appearing in conversation history
+- Fixed a race condition in the REPL bridge where new messages could arrive at the server interleaved with historical messages during the initial connection flush, causing message ordering issues.
+- Fixed memory leak where long-running teammates retained all messages in AppState even after conversation compaction
+- Fixed a memory leak where MCP server fetch caches were not cleared on disconnect, causing growing memory usage with servers that reconnect frequently
+- Improved memory usage in long sessions with subagents by stripping heavy progress message payloads during context compaction
+- Added "Always copy full response" option to the `/copy` picker. When selected, future `/copy` commands will skip the code block picker and copy the full response directly.
+- VSCode: Added session rename and remove actions to the sessions list
+- Fixed `/clear` not resetting cached skills, which could cause stale skill content to persist in the new conversation
+
 ## 2.1.62
 
 - Fixed prompt suggestion cache regression that reduced cache hit rates
@@ -67,34 +96,6 @@
 - Fixed slash command autocomplete crashing when a plugin's SKILL.md description is a YAML array or other non-string type
 - The `/model` picker now shows human-readable labels (e.g., "Sonnet 4.5") instead of raw model IDs for pinned model versions, with an upgrade hint when a newer version is available.
 - Managed settings can now be set via macOS plist or Windows Registry. Learn more at https://code.claude.com/docs/en/settings#settings-files
-
-## 2.1.50
-
-- Added support for `startupTimeout` configuration for LSP servers
-- Added `WorktreeCreate` and `WorktreeRemove` hook events, enabling custom VCS setup and teardown when agent worktree isolation creates or removes worktrees.
-- Fixed a bug where resumed sessions could be invisible when the working directory involved symlinks, because the session storage path was resolved at different times during startup. Also fixed session data loss on SSH disconnect by flushing session data before hooks and analytics in the graceful shutdown sequence.
-- Linux: Fixed native modules not loading on systems with glibc older than 2.30 (e.g., RHEL 8)
-- Fixed memory leak in agent teams where completed teammate tasks were never garbage collected from session state
-- Fixed `CLAUDE_CODE_SIMPLE` to fully strip down skills, session memory, custom agents, and CLAUDE.md token counting
-- Fixed `/mcp reconnect` freezing the CLI when given a server name that doesn't exist
-- Fixed memory leak where completed task state objects were never removed from AppState
-- Added support for `isolation: worktree` in agent definitions, allowing agents to declaratively run in isolated git worktrees.
-- `CLAUDE_CODE_SIMPLE` mode now also disables MCP tools, attachments, hooks, and CLAUDE.md file loading for a fully minimal experience.
-- Fixed bug where MCP tools were not discovered when tool search is enabled and a prompt is passed in as a launch argument
-- Improved memory usage during long sessions by clearing internal caches after compaction
-- Added `claude agents` CLI command to list all configured agents
-- Improved memory usage during long sessions by clearing large tool results after they have been processed
-- Fixed a memory leak where LSP diagnostic data was never cleaned up after delivery, causing unbounded memory growth in long sessions
-- Fixed a memory leak where completed task output was not freed from memory, reducing memory usage in long sessions with many tasks
-- Improved startup performance for headless mode (`-p` flag) by deferring Yoga WASM and UI component imports
-- Fixed prompt suggestion cache regression that reduced cache hit rates
-- Fixed unbounded memory growth in long sessions by capping file history snapshots
-- Added `CLAUDE_CODE_DISABLE_1M_CONTEXT` environment variable to disable 1M context window support
-- Opus 4.6 (fast mode) now includes the full 1M context window
-- VSCode: Added `/extra-usage` command support in VS Code sessions
-- Fixed memory leak where TaskOutput retained recent lines after cleanup
-- Fixed memory leak in CircularBuffer where cleared items were retained in the backing array
-- Fixed memory leak in shell command execution where ChildProcess and AbortController references were retained after cleanup
 
 ---
 
