@@ -267,8 +267,8 @@
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
       "original_md_url": "https://code.claude.com/docs/en/sandboxing.md",
-      "hash": "956c58ae0e5a5e5fdba91ee2d5435be7440ddfd5c4322399557db570270ff8f3",
-      "last_updated": "2026-02-26T21:11:29.594399"
+      "hash": "01f4c0f2b314367fc18ab51df4c44762e53a3639193f4ae48bdfb2d4893e3351",
+      "last_updated": "2026-02-28T00:15:28.870282"
     },
     "security.md": {
       "original_url": "https://code.claude.com/docs/en/security",
@@ -285,8 +285,8 @@
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "0e959c0862d0a644c71e77cc6182766e6307818db58a26e09871381f5bdd641f",
-      "last_updated": "2026-02-27T21:07:29.355155"
+      "hash": "886334cd415cd5cd0c3bba46306988dffb7237e037dc7cc2ff28d15196c009e3",
+      "last_updated": "2026-02-28T00:15:30.654412"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-27T21:07:35.632130",
-    "fetch_duration_seconds": 36.000155,
+    "last_fetch_completed": "2026-02-28T00:15:36.607024",
+    "fetch_duration_seconds": 34.126124,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-27T21:07:35.632160",
+  "last_updated": "2026-02-28T00:15:36.607058",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
