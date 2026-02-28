@@ -261,8 +261,8 @@
     "remote-control.md": {
       "original_url": "https://code.claude.com/docs/en/remote-control",
       "original_md_url": "https://code.claude.com/docs/en/remote-control.md",
-      "hash": "edc04046357f0c09608663352f3eddee1f32ce3b39246c152e9332bd67b0dd03",
-      "last_updated": "2026-02-26T18:15:33.810463"
+      "hash": "b56b14c6848db1a372fe9339666352586b4023857a0d4dbbe3d649e4e259e6a1",
+      "last_updated": "2026-02-28T18:05:31.505832"
     },
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-02-28T15:04:39.150561",
-    "fetch_duration_seconds": 32.571091,
+    "last_fetch_completed": "2026-02-28T18:05:40.145294",
+    "fetch_duration_seconds": 35.492421,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-02-28T15:04:39.150592",
+  "last_updated": "2026-02-28T18:05:40.145325",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
