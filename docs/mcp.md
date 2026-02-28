@@ -383,7 +383,8 @@ In Claude code, use the command:
 >
 >   * Authentication tokens are stored securely and refreshed automatically
 >   * Use "Clear authentication" in the `/mcp` menu to revoke access
->   * If your browser doesn't open automatically, copy the provided URL
+>   * If your browser doesn't open automatically, copy the provided URL and open it manually
+>   * If the browser redirect fails with a connection error after authenticating, paste the full callback URL from your browser's address bar into the URL prompt that appears in Claude Code
 >   * OAuth authentication works with HTTP servers
 
 ### Use pre-configured OAuth credentials
@@ -524,6 +525,12 @@ In Claude Code, use the command:
     ```
 
     Claude.ai servers appear in the list with indicators showing they come from Claude.ai.
+
+To disable claude.ai MCP servers in Claude Code, set the `ENABLE_CLAUDEAI_MCP_SERVERS` environment variable to `false`:
+
+```bash
+ENABLE_CLAUDEAI_MCP_SERVERS=false claude
+```
 
 ## Use Claude Code as an MCP server
 
