@@ -51,8 +51,8 @@
     "cli-reference.md": {
       "original_url": "https://code.claude.com/docs/en/cli-reference",
       "original_md_url": "https://code.claude.com/docs/en/cli-reference.md",
-      "hash": "ff38abb97181e69df8639712318ba3105237f7a8d1026e2870e45cf719424ab3",
-      "last_updated": "2026-02-28T21:03:51.663770"
+      "hash": "91c78006dfc36b1496d1874e94d2cbf1534d6b9c703a7d4bfc2561b0378c548a",
+      "last_updated": "2026-03-01T03:51:42.921069"
     },
     "common-workflows.md": {
       "original_url": "https://code.claude.com/docs/en/common-workflows",
@@ -105,8 +105,8 @@
     "features-overview.md": {
       "original_url": "https://code.claude.com/docs/en/features-overview",
       "original_md_url": "https://code.claude.com/docs/en/features-overview.md",
-      "hash": "44ecad7d33233e7d489f83fbb12e39ebdbd4e8b4da3ace5188b0d93c60ded81e",
-      "last_updated": "2026-02-28T21:03:56.840499"
+      "hash": "ae5f59d92d5098e4a25dbd99a505fa38cb66e9425d50fdfc4732011a3f235404",
+      "last_updated": "2026-03-01T03:51:48.226049"
     },
     "github-actions.md": {
       "original_url": "https://code.claude.com/docs/en/github-actions",
@@ -141,8 +141,8 @@
     "hooks-guide.md": {
       "original_url": "https://code.claude.com/docs/en/hooks-guide",
       "original_md_url": "https://code.claude.com/docs/en/hooks-guide.md",
-      "hash": "321cfabbf186c316e38a22b0987fd9ee1dc44c756f16e96240d5a87f48973ffa",
-      "last_updated": "2026-02-28T21:04:00.264029"
+      "hash": "2189bf6ce34b3e12c934d92acd18d2e200891d5cdf8a8d0863c5906306f18a10",
+      "last_updated": "2026-03-01T03:51:51.811965"
     },
     "how-claude-code-works.md": {
       "original_url": "https://code.claude.com/docs/en/how-claude-code-works",
@@ -153,8 +153,8 @@
     "interactive-mode.md": {
       "original_url": "https://code.claude.com/docs/en/interactive-mode",
       "original_md_url": "https://code.claude.com/docs/en/interactive-mode.md",
-      "hash": "fc4e4fe52a63aef0bbe0d26c039cfe9074489197ac905376f02281568d69c77c",
-      "last_updated": "2026-02-28T21:04:01.451423"
+      "hash": "9e53e989b91968b31cc3b2bed03696b7e3e3d74395cc29c0f0b7079fd5212d58",
+      "last_updated": "2026-03-01T03:51:53.135827"
     },
     "jetbrains.md": {
       "original_url": "https://code.claude.com/docs/en/jetbrains",
@@ -225,8 +225,8 @@
     "overview.md": {
       "original_url": "https://code.claude.com/docs/en/overview",
       "original_md_url": "https://code.claude.com/docs/en/overview.md",
-      "hash": "ad8fd276ab765d03f22bebea549f1388cf396dd0f00e103c62549f9554b1aa01",
-      "last_updated": "2026-02-28T21:04:08.362869"
+      "hash": "6809b34522181baaabe22a35cbfefbefb09068f23023155a2f995de1a0ec6a96",
+      "last_updated": "2026-03-01T03:52:00.316763"
     },
     "permissions.md": {
       "original_url": "https://code.claude.com/docs/en/permissions",
@@ -297,8 +297,8 @@
     "skills.md": {
       "original_url": "https://code.claude.com/docs/en/skills",
       "original_md_url": "https://code.claude.com/docs/en/skills.md",
-      "hash": "d1e63b6163f89d8d06fb384717f052c15d3fd058dd8b34745f214f0abd02561d",
-      "last_updated": "2026-02-28T21:04:15.254235"
+      "hash": "e0f842a97c9e2b401e857d747595e51180851c3e09c6fef6c87e025713b94435",
+      "last_updated": "2026-03-01T03:52:07.513313"
     },
     "slack.md": {
       "original_url": "https://code.claude.com/docs/en/slack",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-01T00:19:27.368082",
-    "fetch_duration_seconds": 33.708884,
+    "last_fetch_completed": "2026-03-01T03:52:12.350905",
+    "fetch_duration_seconds": 34.602992,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-01T00:19:27.368112",
+  "last_updated": "2026-03-01T03:52:12.350930",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
