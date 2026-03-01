@@ -225,8 +225,8 @@
     "overview.md": {
       "original_url": "https://code.claude.com/docs/en/overview",
       "original_md_url": "https://code.claude.com/docs/en/overview.md",
-      "hash": "6809b34522181baaabe22a35cbfefbefb09068f23023155a2f995de1a0ec6a96",
-      "last_updated": "2026-03-01T03:52:00.316763"
+      "hash": "6f6c76a647b4b80a23e126e311c7489f1b1ea0b3ffbae543c4b30fb98796b2b1",
+      "last_updated": "2026-03-01T06:14:41.106309"
     },
     "permissions.md": {
       "original_url": "https://code.claude.com/docs/en/permissions",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-01T03:52:12.350905",
-    "fetch_duration_seconds": 34.602992,
+    "last_fetch_completed": "2026-03-01T06:14:52.836904",
+    "fetch_duration_seconds": 33.936837,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-01T03:52:12.350930",
+  "last_updated": "2026-03-01T06:14:52.836933",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
