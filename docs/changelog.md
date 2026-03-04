@@ -8,6 +8,12 @@
 
 # Changelog
 
+## 2.1.68
+
+- Opus 4.6 now defaults to medium effort for Max and Team subscribers. Medium effort works well for most tasks — it's the sweet spot between speed and thoroughness. You can change this anytime with `/model`
+- Re-introduced the "ultrathink" keyword to enable high effort for the next turn
+- Removed Opus 4 and 4.1 from Claude Code on the first-party API — users with these models pinned are automatically moved to Opus 4.6
+
 ## 2.1.66
 
 - Reduced spurious error logging
@@ -82,10 +88,6 @@
 - Fixed a crash that could occur when spawning many processes on Windows
 - Fixed a crash in the WebAssembly interpreter on Linux x64 & Windows x64
 - Fixed a crash that sometimes occurred after 2 minutes on Windows ARM64
-
-## 2.1.52
-
-- VS Code: Fixed extension crash on Windows ("command 'claude-vscode.editor.openLast' not found")
 
 ---
 
