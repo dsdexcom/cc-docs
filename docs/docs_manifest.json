@@ -183,8 +183,8 @@
     "mcp.md": {
       "original_url": "https://code.claude.com/docs/en/mcp",
       "original_md_url": "https://code.claude.com/docs/en/mcp.md",
-      "hash": "ebd37dd64ec006c52aa1bdc90f45d22a1386476d7b761aa4f0cc7593804722f9",
-      "last_updated": "2026-02-28T21:04:04.350181"
+      "hash": "895872f104969645a625c44f52429a1ea154feb6ae982bf8af1f0e21072b72b3",
+      "last_updated": "2026-03-04T21:09:00.025708"
     },
     "memory.md": {
       "original_url": "https://code.claude.com/docs/en/memory",
@@ -309,8 +309,8 @@
     "statusline.md": {
       "original_url": "https://code.claude.com/docs/en/statusline",
       "original_md_url": "https://code.claude.com/docs/en/statusline.md",
-      "hash": "ed569a302bec10025f19ce057fd8a85a6aa1ede01ca44c9268c5fec05e2f1499",
-      "last_updated": "2026-02-26T21:11:33.825767"
+      "hash": "37ad60346cf1516d742a235640790553e289cb798d13af57a32a00d738e78fc0",
+      "last_updated": "2026-03-04T21:09:12.310612"
     },
     "sub-agents.md": {
       "original_url": "https://code.claude.com/docs/en/sub-agents",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-04T18:13:25.847031",
-    "fetch_duration_seconds": 33.297325,
+    "last_fetch_completed": "2026-03-04T21:09:15.844366",
+    "fetch_duration_seconds": 33.594468,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-04T18:13:25.847058",
+  "last_updated": "2026-03-04T21:09:15.844397",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
