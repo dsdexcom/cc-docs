@@ -57,8 +57,8 @@
     "common-workflows.md": {
       "original_url": "https://code.claude.com/docs/en/common-workflows",
       "original_md_url": "https://code.claude.com/docs/en/common-workflows.md",
-      "hash": "51d78bf46e096a2d66c099d3276f86ea25a835a686105a0183a2b67cdcbd63e3",
-      "last_updated": "2026-03-04T09:13:15.756226"
+      "hash": "ebdb79858b9944e8cde85d5179a525fc1e130cf99ccc4c451d84f773bd59d7d1",
+      "last_updated": "2026-03-04T18:12:57.941293"
     },
     "costs.md": {
       "original_url": "https://code.claude.com/docs/en/costs",
@@ -201,8 +201,8 @@
     "model-config.md": {
       "original_url": "https://code.claude.com/docs/en/model-config",
       "original_md_url": "https://code.claude.com/docs/en/model-config.md",
-      "hash": "42e95c162282ede7ae3a49d4648a8c0cc77e8bc66f54eeeef286525303ef4e91",
-      "last_updated": "2026-03-04T09:13:29.818632"
+      "hash": "ca67285bbc78caedd0c61a054f59533b799c2b31a7284d48edc02ecd6d0e1fcd",
+      "last_updated": "2026-03-04T18:13:11.958674"
     },
     "monitoring-usage.md": {
       "original_url": "https://code.claude.com/docs/en/monitoring-usage",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-04T15:13:31.237534",
-    "fetch_duration_seconds": 33.086916,
+    "last_fetch_completed": "2026-03-04T18:13:25.847031",
+    "fetch_duration_seconds": 33.297325,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-04T15:13:31.237558",
+  "last_updated": "2026-03-04T18:13:25.847058",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
