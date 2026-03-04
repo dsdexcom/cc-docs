@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-03T21:09:58.262277",
-    "fetch_duration_seconds": 35.147115,
+    "last_fetch_completed": "2026-03-04T00:17:32.883673",
+    "fetch_duration_seconds": 33.763441,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-03T21:09:58.262323",
+  "last_updated": "2026-03-04T00:17:32.883708",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
