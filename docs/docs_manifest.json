@@ -135,8 +135,8 @@
     "hooks.md": {
       "original_url": "https://code.claude.com/docs/en/hooks",
       "original_md_url": "https://code.claude.com/docs/en/hooks.md",
-      "hash": "46354513ca3368ebeda94965bbafb5b318828609a3b085f2a10aede8fa6b10a4",
-      "last_updated": "2026-03-05T03:47:24.254529"
+      "hash": "8e65259aa4eac592cd7361583e78acd167b2a1840c84bf5fbd5f870a997a0305",
+      "last_updated": "2026-03-05T06:15:59.096522"
     },
     "hooks-guide.md": {
       "original_url": "https://code.claude.com/docs/en/hooks-guide",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-05T03:47:44.926853",
-    "fetch_duration_seconds": 34.19549,
+    "last_fetch_completed": "2026-03-05T06:16:19.851773",
+    "fetch_duration_seconds": 33.823472,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-05T03:47:44.926873",
+  "last_updated": "2026-03-05T06:16:19.851809",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
