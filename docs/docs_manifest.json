@@ -231,8 +231,8 @@
     "permissions.md": {
       "original_url": "https://code.claude.com/docs/en/permissions",
       "original_md_url": "https://code.claude.com/docs/en/permissions.md",
-      "hash": "bd97ab1c88015c40f8fa77385a62eb435f63902b0f5abf3a241bcb16c7b65c28",
-      "last_updated": "2026-02-28T21:04:08.932373"
+      "hash": "314bd17b8ec7cbb4575b11f642cc22fced5c8e17c439bae0dfafce3bf860c775",
+      "last_updated": "2026-03-05T00:18:22.416177"
     },
     "plugin-marketplaces.md": {
       "original_url": "https://code.claude.com/docs/en/plugin-marketplaces",
@@ -267,8 +267,8 @@
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
       "original_md_url": "https://code.claude.com/docs/en/sandboxing.md",
-      "hash": "01f4c0f2b314367fc18ab51df4c44762e53a3639193f4ae48bdfb2d4893e3351",
-      "last_updated": "2026-02-28T00:15:28.870282"
+      "hash": "103993d123cf020d1e59a904f22eb233af26d11dd140f2f12106f8c4eafd1f78",
+      "last_updated": "2026-03-05T00:18:25.953374"
     },
     "security.md": {
       "original_url": "https://code.claude.com/docs/en/security",
@@ -285,8 +285,8 @@
     "settings.md": {
       "original_url": "https://code.claude.com/docs/en/settings",
       "original_md_url": "https://code.claude.com/docs/en/settings.md",
-      "hash": "a9fd04fa32e72954bb01a8cf9a771319c607d5e068274e7ef62c6a71284e5798",
-      "last_updated": "2026-03-04T09:13:37.960543"
+      "hash": "29b45d5ae0c9d3d03ae2543ee06b37bb7d3be6a824f3bafe6e01e42791cafe7c",
+      "last_updated": "2026-03-05T00:18:27.746193"
     },
     "setup.md": {
       "original_url": "https://code.claude.com/docs/en/setup",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-04T21:09:15.844366",
-    "fetch_duration_seconds": 33.594468,
+    "last_fetch_completed": "2026-03-05T00:18:33.758043",
+    "fetch_duration_seconds": 34.506265,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-04T21:09:15.844397",
+  "last_updated": "2026-03-05T00:18:33.758069",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
