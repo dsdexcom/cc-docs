@@ -261,8 +261,8 @@
     "remote-control.md": {
       "original_url": "https://code.claude.com/docs/en/remote-control",
       "original_md_url": "https://code.claude.com/docs/en/remote-control.md",
-      "hash": "c1554c98f5e5d01d95033411cc54d0f41f0f6508a13e68ddb66a078659b459ee",
-      "last_updated": "2026-03-06T00:22:35.875519"
+      "hash": "d6338404daf7f0b290f1377cd8df387e1a3d2f057552de57ea9989e3b6ea4522",
+      "last_updated": "2026-03-06T03:47:13.151573"
     },
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
@@ -339,8 +339,8 @@
     "vs-code.md": {
       "original_url": "https://code.claude.com/docs/en/vs-code",
       "original_md_url": "https://code.claude.com/docs/en/vs-code.md",
-      "hash": "29396853ed99c4e44f33126b8c6a8d3a31e6bc9522a8ed75ee421549e3b33f61",
-      "last_updated": "2026-02-28T21:04:19.725795"
+      "hash": "08dc2a699f9bf83206e11ba603fc15f293c82f5346a6f7a103438d9beacc4117",
+      "last_updated": "2026-03-06T03:47:20.796128"
     },
     "zero-data-retention.md": {
       "original_url": "https://code.claude.com/docs/en/zero-data-retention",
@@ -351,14 +351,14 @@
     "changelog.md": {
       "original_url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
       "original_raw_url": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
-      "hash": "faa89e00293853682cfa5ee247a3d87a0584d995b7a78b15c96fa313d76be1f9",
-      "last_updated": "2026-03-05T03:47:44.926824",
+      "hash": "fc8068f95fc5c3b14326391c7751b25d44d2ec0e084eb64807305c9b7b6006aa",
+      "last_updated": "2026-03-06T03:47:21.442922",
       "source": "claude-code-repository"
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-06T00:22:44.621310",
-    "fetch_duration_seconds": 35.740632,
+    "last_fetch_completed": "2026-03-06T03:47:21.442948",
+    "fetch_duration_seconds": 33.834868,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-06T00:22:44.621336",
+  "last_updated": "2026-03-06T03:47:21.442967",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
