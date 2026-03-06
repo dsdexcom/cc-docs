@@ -57,8 +57,8 @@
     "common-workflows.md": {
       "original_url": "https://code.claude.com/docs/en/common-workflows",
       "original_md_url": "https://code.claude.com/docs/en/common-workflows.md",
-      "hash": "ebdb79858b9944e8cde85d5179a525fc1e130cf99ccc4c451d84f773bd59d7d1",
-      "last_updated": "2026-03-04T18:12:57.941293"
+      "hash": "e0e2f62e6be081f61db77900bc71e5c13d9cf162c9913f8892865fa4baa545b0",
+      "last_updated": "2026-03-06T00:22:14.794975"
     },
     "costs.md": {
       "original_url": "https://code.claude.com/docs/en/costs",
@@ -147,8 +147,8 @@
     "how-claude-code-works.md": {
       "original_url": "https://code.claude.com/docs/en/how-claude-code-works",
       "original_md_url": "https://code.claude.com/docs/en/how-claude-code-works.md",
-      "hash": "97c62fbb6e5aa33469f292d9443706ef16b9d1f6da3ecb68383013fa0238e37e",
-      "last_updated": "2026-02-28T21:04:00.833407"
+      "hash": "2f136381a29f1bf3b54efae695e96607ad2f6f5504c494c442d6bb828fd4c7dd",
+      "last_updated": "2026-03-06T00:22:24.033395"
     },
     "interactive-mode.md": {
       "original_url": "https://code.claude.com/docs/en/interactive-mode",
@@ -159,8 +159,8 @@
     "jetbrains.md": {
       "original_url": "https://code.claude.com/docs/en/jetbrains",
       "original_md_url": "https://code.claude.com/docs/en/jetbrains.md",
-      "hash": "84620a25234f5d7f8fe7656f12a4978d5bd5d0aabb892252edbbd0e4f6aa1384",
-      "last_updated": "2026-02-23T13:39:34.056595"
+      "hash": "bd5f2e5fb8550f57098b515d02f1bb3d150f0c056199d58a7960ae43c9040a0e",
+      "last_updated": "2026-03-06T00:22:25.419419"
     },
     "keybindings.md": {
       "original_url": "https://code.claude.com/docs/en/keybindings",
@@ -183,8 +183,8 @@
     "mcp.md": {
       "original_url": "https://code.claude.com/docs/en/mcp",
       "original_md_url": "https://code.claude.com/docs/en/mcp.md",
-      "hash": "e50753aac32b990bf63903aaab9a87c29a9fef3bf6d685038373033d84ac6b74",
-      "last_updated": "2026-03-05T03:47:28.944762"
+      "hash": "364cf358de603641eb32db8af4b74bcdc46e47b7b5176d5151d028dc1ca88655",
+      "last_updated": "2026-03-06T00:22:27.932647"
     },
     "memory.md": {
       "original_url": "https://code.claude.com/docs/en/memory",
@@ -261,14 +261,14 @@
     "remote-control.md": {
       "original_url": "https://code.claude.com/docs/en/remote-control",
       "original_md_url": "https://code.claude.com/docs/en/remote-control.md",
-      "hash": "4745f7796bae8af71652d9235aa326d921dc1409060cb163b2804b1bdd3dd85b",
-      "last_updated": "2026-03-05T03:47:36.533540"
+      "hash": "c1554c98f5e5d01d95033411cc54d0f41f0f6508a13e68ddb66a078659b459ee",
+      "last_updated": "2026-03-06T00:22:35.875519"
     },
     "sandboxing.md": {
       "original_url": "https://code.claude.com/docs/en/sandboxing",
       "original_md_url": "https://code.claude.com/docs/en/sandboxing.md",
-      "hash": "103993d123cf020d1e59a904f22eb233af26d11dd140f2f12106f8c4eafd1f78",
-      "last_updated": "2026-03-05T00:18:25.953374"
+      "hash": "a47758802b51bbd505861b305118b4c26280c37f968b5f25f210115bd30aafb0",
+      "last_updated": "2026-03-06T00:22:36.509494"
     },
     "security.md": {
       "original_url": "https://code.claude.com/docs/en/security",
@@ -333,8 +333,8 @@
     "troubleshooting.md": {
       "original_url": "https://code.claude.com/docs/en/troubleshooting",
       "original_md_url": "https://code.claude.com/docs/en/troubleshooting.md",
-      "hash": "9f6cccc6b82c4dee58ce70796d22871fb11a3cac615b8f8b691478b95f27c984",
-      "last_updated": "2026-02-26T21:11:36.211968"
+      "hash": "096f9404274c3813e6a2891e95f2abc0ee47c13c67c927b1a7d31902d724d5ff",
+      "last_updated": "2026-03-06T00:22:43.260208"
     },
     "vs-code.md": {
       "original_url": "https://code.claude.com/docs/en/vs-code",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-05T21:10:19.853509",
-    "fetch_duration_seconds": 35.491152,
+    "last_fetch_completed": "2026-03-06T00:22:44.621310",
+    "fetch_duration_seconds": 35.740632,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-05T21:10:19.853530",
+  "last_updated": "2026-03-06T00:22:44.621336",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",

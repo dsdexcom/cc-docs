@@ -48,13 +48,13 @@ Navigate to your project directory and run:
 
 If you're already in a Claude Code session and want to continue it remotely, use the `/remote-control` (or `/rc`) command:
 
-    ```
+    ```text
     /remote-control
     ```
 
     Pass a name as an argument to set a custom session title:
 
-    ```
+    ```text
     /remote-control My Project
     ```
 

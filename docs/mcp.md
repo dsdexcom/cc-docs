@@ -304,57 +304,92 @@ If a required environment variable is not set and has no default value, Claude C
 {/* ### Example: Automate browser testing with Playwright
 
   ```bash
-  # 1. Add the Playwright MCP server
   claude mcp add --transport stdio playwright -- npx -y @playwright/mcp@latest
+  ```
 
-  # 2. Write and run browser tests
-  > "Test if the login flow works with test@example.com"
-  > "Take a screenshot of the checkout page on mobile"
-  > "Verify that the search feature returns results"
+  Then write and run browser tests:
+
+  ```text
+  Test if the login flow works with test@example.com
+  ```
+  ```text
+  Take a screenshot of the checkout page on mobile
+  ```
+  ```text
+  Verify that the search feature returns results
   ``` */}
 
 ### Example: Monitor errors with Sentry
 
 ```bash
-# 1. Add the Sentry MCP server
 claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
+```
 
-# 2. Use /mcp to authenticate with your Sentry account
-> /mcp
+Authenticate with your Sentry account:
 
-# 3. Debug production issues
-> "What are the most common errors in the last 24 hours?"
-> "Show me the stack trace for error ID abc123"
-> "Which deployment introduced these new errors?"
+```text
+/mcp
+```
+
+Then debug production issues:
+
+```text
+What are the most common errors in the last 24 hours?
+```
+
+```text
+Show me the stack trace for error ID abc123
+```
+
+```text
+Which deployment introduced these new errors?
 ```
 
 ### Example: Connect to GitHub for code reviews
 
 ```bash
-# 1. Add the GitHub MCP server
 claude mcp add --transport http github https://api.githubcopilot.com/mcp/
+```
 
-# 2. In Claude Code, authenticate if needed
-> /mcp
-# Select "Authenticate" for GitHub
+Authenticate if needed by selecting "Authenticate" for GitHub:
 
-# 3. Now you can ask Claude to work with GitHub
-> "Review PR #456 and suggest improvements"
-> "Create a new issue for the bug we just found"
-> "Show me all open PRs assigned to me"
+```text
+/mcp
+```
+
+Then work with GitHub:
+
+```text
+Review PR #456 and suggest improvements
+```
+
+```text
+Create a new issue for the bug we just found
+```
+
+```text
+Show me all open PRs assigned to me
 ```
 
 ### Example: Query your PostgreSQL database
 
 ```bash
-# 1. Add the database server with your connection string
 claude mcp add --transport stdio db -- npx -y @bytebase/dbhub \
   --dsn "postgresql://readonly:pass@prod.db.com:5432/analytics"
+```
 
-# 2. Query your database naturally
-> "What's our total revenue this month?"
-> "Show me the schema for the orders table"
-> "Find customers who haven't made a purchase in 90 days"
+Then query your database naturally:
+
+```text
+What's our total revenue this month?
+```
+
+```text
+Show me the schema for the orders table
+```
+
+```text
+Find customers who haven't made a purchase in 90 days
 ```
 
 ## Authenticate with remote MCP servers
@@ -373,8 +408,8 @@ For example:
 
 In Claude code, use the command:
 
-    ```
-    > /mcp
+    ```text
+    /mcp
     ```
 
     Then follow the steps in your browser to login.
@@ -564,9 +599,8 @@ Complete any required authentication steps in Claude.ai.
 
 In Claude Code, use the command:
 
-    ```
-    # Within Claude Code, see all MCP servers including Claude.ai ones
-    > /mcp
+    ```text
+    /mcp
     ```
 
     Claude.ai servers appear in the list with indicators showing they come from Claude.ai.
@@ -670,20 +704,20 @@ Type `@` in your prompt to see available resources from all connected MCP server
 
 Use the format `@server:protocol://resource/path` to reference a resource:
 
-    ```
-    > Can you analyze @github:issue://123 and suggest a fix?
+    ```text
+    Can you analyze @github:issue://123 and suggest a fix?
     ```
 
-    ```
-    > Please review the API documentation at @docs:file://api/authentication
+    ```text
+    Please review the API documentation at @docs:file://api/authentication
     ```
 
 3. **Multiple resource references**
 
 You can reference multiple resources in a single prompt:
 
-    ```
-    > Compare @postgres:schema://users with @docs:file://database/user-model
+    ```text
+    Compare @postgres:schema://users with @docs:file://database/user-model
     ```
 
 > **Tip:** Tips:
@@ -761,20 +795,20 @@ Type `/` to see all available commands, including those from MCP servers. MCP pr
 
 2. **Execute a prompt without arguments**
 
-    ```
-    > /mcp__github__list_prs
+    ```text
+    /mcp__github__list_prs
     ```
 
 3. **Execute a prompt with arguments**
 
 Many prompts accept arguments. Pass them space-separated after the command:
 
-    ```
-    > /mcp__github__pr_review 456
+    ```text
+    /mcp__github__pr_review 456
     ```
 
-    ```
-    > /mcp__jira__create_issue "Bug in login flow" high
+    ```text
+    /mcp__jira__create_issue "Bug in login flow" high
     ```
 
 > **Tip:** Tips:

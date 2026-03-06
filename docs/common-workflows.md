@@ -24,22 +24,22 @@ Suppose you've just joined a new project and need to understand its structure qu
 
 3. **Ask for a high-level overview**
 
-    ```
-    > give me an overview of this codebase 
+    ```text
+    give me an overview of this codebase
     ```
 
 4. **Dive deeper into specific components**
 
-    ```
-    > explain the main architecture patterns used here 
-    ```
-
-    ```
-    > what are the key data models?
+    ```text
+    explain the main architecture patterns used here
     ```
 
+    ```text
+    what are the key data models?
     ```
-    > how is authentication handled?
+
+    ```text
+    how is authentication handled?
     ```
 
 > **Tip:** Tips:
@@ -54,20 +54,20 @@ Suppose you need to locate code related to a specific feature or functionality.
 
 1. **Ask Claude to find relevant files**
 
-    ```
-    > find the files that handle user authentication 
+    ```text
+    find the files that handle user authentication
     ```
 
 2. **Get context on how components interact**
 
-    ```
-    > how do these authentication files work together? 
+    ```text
+    how do these authentication files work together?
     ```
 
 3. **Understand the execution flow**
 
-    ```
-    > trace the login process from front-end to database 
+    ```text
+    trace the login process from front-end to database
     ```
 
 > **Tip:** Tips:
@@ -84,20 +84,20 @@ Suppose you've encountered an error message and need to find and fix its source.
 
 1. **Share the error with Claude**
 
-    ```
-    > I'm seeing an error when I run npm test 
+    ```text
+    I'm seeing an error when I run npm test
     ```
 
 2. **Ask for fix recommendations**
 
-    ```
-    > suggest a few ways to fix the @ts-ignore in user.ts 
+    ```text
+    suggest a few ways to fix the @ts-ignore in user.ts
     ```
 
 3. **Apply the fix**
 
-    ```
-    > update user.ts to add the null check you suggested 
+    ```text
+    update user.ts to add the null check you suggested
     ```
 
 > **Tip:** Tips:
@@ -114,26 +114,26 @@ Suppose you need to update old code to use modern patterns and practices.
 
 1. **Identify legacy code for refactoring**
 
-    ```
-    > find deprecated API usage in our codebase 
+    ```text
+    find deprecated API usage in our codebase
     ```
 
 2. **Get refactoring recommendations**
 
-    ```
-    > suggest how to refactor utils.js to use modern JavaScript features 
+    ```text
+    suggest how to refactor utils.js to use modern JavaScript features
     ```
 
 3. **Apply the changes safely**
 
-    ```
-    > refactor utils.js to use ES2024 features while maintaining the same behavior 
+    ```text
+    refactor utils.js to use ES2024 features while maintaining the same behavior
     ```
 
 4. **Verify the refactoring**
 
-    ```
-    > run tests for the refactored code 
+    ```text
+    run tests for the refactored code
     ```
 
 > **Tip:** Tips:
@@ -150,8 +150,8 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
 
 1. **View available subagents**
 
-    ```
-    > /agents
+    ```text
+    /agents
     ```
 
     This shows all available subagents and lets you create new ones.
@@ -160,28 +160,28 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
 
 Claude Code automatically delegates appropriate tasks to specialized subagents:
 
-    ```
-    > review my recent code changes for security issues
+    ```text
+    review my recent code changes for security issues
     ```
 
-    ```
-    > run all tests and fix any failures
+    ```text
+    run all tests and fix any failures
     ```
 
 3. **Explicitly request specific subagents**
 
-    ```
-    > use the code-reviewer subagent to check the auth module
+    ```text
+    use the code-reviewer subagent to check the auth module
     ```
 
-    ```
-    > have the debugger subagent investigate why users can't log in
+    ```text
+    have the debugger subagent investigate why users can't log in
     ```
 
 4. **Create custom subagents for your workflow**
 
-    ```
-    > /agents
+    ```text
+    /agents
     ```
 
     Then select "Create New subagent" and follow the prompts to define:
@@ -240,15 +240,18 @@ claude --permission-mode plan -p "Analyze the authentication system and suggest 
 claude --permission-mode plan
 ```
 
-```
-> I need to refactor our authentication system to use OAuth2. Create a detailed migration plan.
+```text
+I need to refactor our authentication system to use OAuth2. Create a detailed migration plan.
 ```
 
 Claude analyzes the current implementation and create a comprehensive plan. Refine with follow-ups:
 
+```text
+What about backward compatibility?
 ```
-> What about backward compatibility?
-> How should we handle database migration?
+
+```text
+How should we handle database migration?
 ```
 
 > **Tip:** Press `Ctrl+G` to open the plan in your default text editor, where you can edit it directly before Claude proceeds.
@@ -274,26 +277,26 @@ Suppose you need to add tests for uncovered code.
 
 1. **Identify untested code**
 
-    ```
-    > find functions in NotificationsService.swift that are not covered by tests 
+    ```text
+    find functions in NotificationsService.swift that are not covered by tests
     ```
 
 2. **Generate test scaffolding**
 
-    ```
-    > add tests for the notification service 
+    ```text
+    add tests for the notification service
     ```
 
 3. **Add meaningful test cases**
 
-    ```
-    > add test cases for edge conditions in the notification service 
+    ```text
+    add test cases for edge conditions in the notification service
     ```
 
 4. **Run and verify tests**
 
-    ```
-    > run the new tests and fix any failures 
+    ```text
+    run the new tests and fix any failures
     ```
 
 Claude can generate tests that follow your project's existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use.
@@ -308,20 +311,20 @@ You can create pull requests by asking Claude directly ("create a pr for my chan
 
 1. **Summarize your changes**
 
-    ```
-    > summarize the changes I've made to the authentication module
+    ```text
+    summarize the changes I've made to the authentication module
     ```
 
 2. **Generate a pull request**
 
-    ```
-    > create a pr
+    ```text
+    create a pr
     ```
 
 3. **Review and refine**
 
-    ```
-    > enhance the PR description with more context about the security improvements
+    ```text
+    enhance the PR description with more context about the security improvements
     ```
 
 When you create a PR using `gh pr create`, the session is automatically linked to that PR. You can resume it later with `claude --from-pr <number>`.
@@ -334,26 +337,26 @@ Suppose you need to add or update documentation for your code.
 
 1. **Identify undocumented code**
 
-    ```
-    > find functions without proper JSDoc comments in the auth module 
+    ```text
+    find functions without proper JSDoc comments in the auth module
     ```
 
 2. **Generate documentation**
 
-    ```
-    > add JSDoc comments to the undocumented functions in auth.js 
+    ```text
+    add JSDoc comments to the undocumented functions in auth.js
     ```
 
 3. **Review and enhance**
 
-    ```
-    > improve the generated documentation with more context and examples 
+    ```text
+    improve the generated documentation with more context and examples
     ```
 
 4. **Verify documentation**
 
-    ```
-    > check if the documentation follows our project standards 
+    ```text
+    check if the documentation follows our project standards
     ```
 
 > **Tip:** Tips:
@@ -378,36 +381,36 @@ You can use any of these methods:
 
 2. **Ask Claude to analyze the image**
 
-    ```
-    > What does this image show?
-    ```
-
-    ```
-    > Describe the UI elements in this screenshot
+    ```text
+    What does this image show?
     ```
 
+    ```text
+    Describe the UI elements in this screenshot
     ```
-    > Are there any problematic elements in this diagram?
+
+    ```text
+    Are there any problematic elements in this diagram?
     ```
 
 3. **Use images for context**
 
-    ```
-    > Here's a screenshot of the error. What's causing it?
+    ```text
+    Here's a screenshot of the error. What's causing it?
     ```
 
-    ```
-    > This is our current database schema. How should we modify it for the new feature?
+    ```text
+    This is our current database schema. How should we modify it for the new feature?
     ```
 
 4. **Get code suggestions from visual content**
 
-    ```
-    > Generate CSS to match this design mockup
+    ```text
+    Generate CSS to match this design mockup
     ```
 
-    ```
-    > What HTML structure would recreate this component?
+    ```text
+    What HTML structure would recreate this component?
     ```
 
 > **Tip:** Tips:
@@ -426,24 +429,24 @@ Use @ to quickly include files or directories without waiting for Claude to read
 
 1. **Reference a single file**
 
-    ```
-    > Explain the logic in @src/utils/auth.js
+    ```text
+    Explain the logic in @src/utils/auth.js
     ```
 
     This includes the full content of the file in the conversation.
 
 2. **Reference a directory**
 
-    ```
-    > What's the structure of @src/components?
+    ```text
+    What's the structure of @src/components?
     ```
 
     This provides a directory listing with file information.
 
 3. **Reference MCP resources**
 
-    ```
-    > Show me the data from @github:repos/owner/repo/issues
+    ```text
+    Show me the data from @github:repos/owner/repo/issues
     ```
 
     This fetches data from connected MCP servers using the format @server:resource. See [MCP resources](/en/mcp#use-mcp-resources) for details.
@@ -515,8 +518,8 @@ Give sessions descriptive names to find them later. This is a best practice when
 
 Use `/rename` during a session to give it a memorable name:
 
-    ```
-    > /rename auth-refactor
+    ```text
+    /rename auth-refactor
     ```
 
     You can also rename any session from the picker: run `/resume`, navigate to a session, and press `R`.
@@ -531,8 +534,8 @@ From the command line:
 
     Or from inside an active session:
 
-    ```
-    > /resume auth-refactor
+    ```text
+    /resume auth-refactor
     ```
 
 ### Use the session picker
@@ -793,28 +796,28 @@ Claude has built-in access to its documentation and can answer questions about i
 
 ### Example questions
 
-```
-> can Claude Code create pull requests?
-```
-
-```
-> how does Claude Code handle permissions?
+```text
+can Claude Code create pull requests?
 ```
 
-```
-> what skills are available?
-```
-
-```
-> how do I use MCP with Claude Code?
+```text
+how does Claude Code handle permissions?
 ```
 
-```
-> how do I configure Claude Code for Amazon Bedrock?
+```text
+what skills are available?
 ```
 
+```text
+how do I use MCP with Claude Code?
 ```
-> what are the limitations of Claude Code?
+
+```text
+how do I configure Claude Code for Amazon Bedrock?
+```
+
+```text
+what are the limitations of Claude Code?
 ```
 
 > **Note:** Claude provides documentation-based answers to these questions. For executable examples and hands-on demonstrations, refer to the specific workflow sections above.
