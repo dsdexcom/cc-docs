@@ -147,8 +147,8 @@
     "how-claude-code-works.md": {
       "original_url": "https://code.claude.com/docs/en/how-claude-code-works",
       "original_md_url": "https://code.claude.com/docs/en/how-claude-code-works.md",
-      "hash": "2f136381a29f1bf3b54efae695e96607ad2f6f5504c494c442d6bb828fd4c7dd",
-      "last_updated": "2026-03-06T00:22:24.033395"
+      "hash": "52ff7f9e2efd537a08ebb3259d2b3ebadc176594d4ea78ead397a64383df1316",
+      "last_updated": "2026-03-06T06:14:21.841536"
     },
     "interactive-mode.md": {
       "original_url": "https://code.claude.com/docs/en/interactive-mode",
@@ -357,8 +357,8 @@
     }
   },
   "fetch_metadata": {
-    "last_fetch_completed": "2026-03-06T03:47:21.442948",
-    "fetch_duration_seconds": 33.834868,
+    "last_fetch_completed": "2026-03-06T06:14:40.972937",
+    "fetch_duration_seconds": 33.253034,
     "total_pages_discovered": 58,
     "pages_fetched_successfully": 59,
     "pages_failed": 0,
@@ -368,7 +368,7 @@
     "total_files": 59,
     "fetch_tool_version": "3.0"
   },
-  "last_updated": "2026-03-06T03:47:21.442967",
+  "last_updated": "2026-03-06T06:14:40.972971",
   "base_url": "https://raw.githubusercontent.com/dsdexcom/cc-docs/main/docs/",
   "github_repository": "dsdexcom/cc-docs",
   "github_ref": "main",
