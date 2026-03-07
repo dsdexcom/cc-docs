@@ -18,19 +18,19 @@ The full-featured CLI for working with Claude Code directly in your terminal. Ed
 
 **macOS, Linux, WSL:**
 
-        ```bash theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
+        ```bash
         curl -fsSL https://claude.ai/install.sh | bash
         ```
 
         **Windows PowerShell:**
 
-        ```powershell theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
+        ```powershell
         irm https://claude.ai/install.ps1 | iex
         ```
 
         **Windows CMD:**
 
-        ```batch theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
+        ```batch
         curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
         ```
 
@@ -40,7 +40,7 @@ The full-featured CLI for working with Claude Code directly in your terminal. Ed
 
 **Homebrew:**
 
-        ```bash theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
+        ```bash
         brew install --cask claude-code
         ```
 
@@ -48,7 +48,7 @@ The full-featured CLI for working with Claude Code directly in your terminal. Ed
 
 **WinGet:**
 
-        ```powershell theme={null} theme={null} theme={null} theme={null} theme={null} theme={null} theme={null}
+        ```powershell
         winget install Anthropic.ClaudeCode
         ```
 
